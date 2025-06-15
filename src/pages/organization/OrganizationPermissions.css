@@ -1,0 +1,29 @@
+.org-permissions-container {
+  display: flex;
+  height: 100vh;
+}
+.org-permissions-right {
+  flex: 1.5;
+  border-left: 1px solid #eee;
+  padding: 16px;
+  background: #fafbfc;
+  overflow-y: auto;
+}
+.org-permissions-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 24px;
+  background: #fff;
+  overflow-y: auto;
+}
+.org-chart-section, .permissions-tree-section, .regulations-section {
+  margin-bottom: 24px;
+}
+.org-chart-toolbar, .permissions-tree-toolbar, .regulations-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}

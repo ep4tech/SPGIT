@@ -28,6 +28,12 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { arSA, enUS } from 'date-fns/locale';
 
 const PlanningTeam = ({ formData, setFormData }) => {
+  // Defensive: ensure we never crash if formData.planningTeam is missing
+  const safePlanningTeam = formData.planningTeam || {
+    internalTeam: [],
+    externalTeam: [],
+    committees: []
+  };
   const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = React.useState(0);
   const [dialogOpen, setDialogOpen] = React.useState(false);
@@ -129,7 +135,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
           { id: 'email', label: t('email') },
           { id: 'department', label: t('department') },
           { id: 'role', label: t('role') },
-          { id: 'membershipStart', label: t('membershipStart') },
+          { id: 'membershipStart', label: t('basicInfo.membershipStart') },
           { id: 'actions', label: '' },
         ];
       case 1: // External Team
@@ -139,7 +145,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
           { id: 'email', label: t('email') },
           { id: 'externalOrganization', label: t('externalOrganization') },
           { id: 'role', label: t('role') },
-          { id: 'membershipStart', label: t('membershipStart') },
+          { id: 'membershipStart', label: t('basicInfo.membershipStart') },
           { id: 'actions', label: '' },
         ];
       case 2: // Committees
@@ -147,9 +153,9 @@ const PlanningTeam = ({ formData, setFormData }) => {
           { id: 'name', label: t('name') },
           { id: 'mobile', label: t('mobile') },
           { id: 'email', label: t('email') },
-          { id: 'committeeName', label: t('committeeName') },
-          { id: 'committeeRole', label: t('committeeRole') },
-          { id: 'membershipStart', label: t('membershipStart') },
+          { id: 'committeeName', label: t('basicInfo.committeeName') },
+          { id: 'committeeRole', label: t('basicInfo.committeeRole') },
+          { id: 'membershipStart', label: t('basicInfo.membershipStart') },
           { id: 'actions', label: '' },
         ];
       default:
@@ -195,7 +201,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
             adapterLocale={i18n.language === 'ar' ? arSA : enUS}
           >
             <DatePicker
-              label={t('membershipStart')}
+              label={t('basicInfo.membershipStart')}
               value={newMember.membershipStart}
               onChange={handleDateChange}
               renderInput={(params) => (
@@ -268,7 +274,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('committeeName')}
+                label={t('basicInfo.committeeName')}
                 value={newMember.committeeName}
                 onChange={handleInputChange('committeeName')}
               />
@@ -277,7 +283,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('committeeRole')}
+                label={t('basicInfo.committeeRole')}
                 value={newMember.committeeRole}
                 onChange={handleInputChange('committeeRole')}
               />
@@ -292,7 +298,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('planningTeam')}
+        {t('basicInfo.planningTeam')}
       </Typography>
       
       <Tabs
@@ -313,7 +319,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
           onClick={() => setDialogOpen(true)}
           startIcon={<AddIcon />}
         >
-          {t('addMember')}
+          {t('basicInfo.addMember')}
         </Button>
       </Box>
 
@@ -327,7 +333,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {formData.planningTeam[tabs[activeTab]]?.map((member, index) => (
+            {safePlanningTeam[tabs[activeTab]]?.map((member, index) => (
               <TableRow key={index}>
                 <TableCell>{member.name}</TableCell>
                 <TableCell>{member.mobile}</TableCell>
@@ -368,7 +374,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
       </TableContainer>
 
       <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)} maxWidth="md" fullWidth>
-        <DialogTitle>{t('addMember')}</DialogTitle>
+        <DialogTitle>{t('basicInfo.addMember')}</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
             {renderDialogContent()}

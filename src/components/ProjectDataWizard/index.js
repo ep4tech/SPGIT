@@ -11,12 +11,13 @@ import {
   IconButton,
   AppBar,
   Toolbar,
+  useTheme,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import BasicInfo from './steps/BasicInfo';
 import Documents from './steps/Documents';
 import PlanningTeam from './steps/PlanningTeam';
-import TrainingContent from './steps/TrainingContent';
+
 import Evaluation from './steps/Evaluation';
 import Confirmation from './steps/Confirmation';
 
@@ -53,29 +54,26 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
     planningTeam: {
       internalTeam: [],
       externalTeam: [],
-      committees: []
-    },
-    trainingContent: [],
-    evaluation: {
-      organizationMissionEval: '',
-      humanResourcesEval: '',
-      financialResourcesEval: ''
+      committees: [],
     }
   };
 
   const [formData, setFormData] = useState(initialData || emptyFormData);
 
   const steps = [
-    { label: t('basicInfo'), component: BasicInfo },
-    { label: t('documents'), component: Documents },
-    { label: t('planningTeam'), component: PlanningTeam },
-    { label: t('trainingContent'), component: TrainingContent },
-    { label: t('evaluation'), component: Evaluation },
-    { label: t('confirm'), component: Confirmation }
+    { label: t('basicInfo.title'), component: BasicInfo },
+    { label: t('basicInfo.documentsTitle'), component: Documents },
+    { label: t('basicInfo.planningTeamTitle'), component: PlanningTeam },
+    { label: t('basicInfo.evaluationTitle'), component: Evaluation },
+    { label: t('basicInfo.confirmationTitle'), component: Confirmation }
   ];
 
   const handleNext = () => {
-    setActiveStep((prevStep) => prevStep + 1);
+    if (activeStep === steps.length - 1) {
+      handleSubmit();
+    } else {
+      setActiveStep((prevStep) => prevStep + 1);
+    }
   };
 
   const handleBack = () => {
@@ -83,6 +81,10 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
   };
 
   const handleSaveAndExit = () => {
+    if (onDataUpdate) {
+      onDataUpdate(formData);
+    }
+    localStorage.setItem('projectData', JSON.stringify(formData));
     onClose();
   };
 
@@ -90,10 +92,22 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
     if (onDataUpdate) {
       onDataUpdate(formData);
     }
+    localStorage.setItem('projectData', JSON.stringify(formData));
     onClose();
   };
 
   const CurrentStepComponent = steps[activeStep].component;
+
+  const handleStepUpdate = (stepData) => {
+    const newFormData = { ...formData };
+    const stepKey = Object.keys(emptyFormData)[activeStep];
+    newFormData[stepKey] = stepData;
+    setFormData(newFormData);
+    if (onDataUpdate) {
+      onDataUpdate(newFormData);
+    }
+    localStorage.setItem('projectData', JSON.stringify(newFormData));
+  };
 
   return (
     <Box sx={{ 
@@ -131,18 +145,24 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
           </Button>
         </Box>
 
-      <Stepper activeStep={activeStep} sx={{ mb: 4 }}>
-        {steps.map((step) => (
+      <Stepper activeStep={activeStep} nonLinear sx={{ mb: 4 }}>
+        {steps.map((step, idx) => (
           <Step key={step.label}>
-            <StepLabel>{step.label}</StepLabel>
+            <StepLabel
+              onClick={() => setActiveStep(idx)}
+              style={{ cursor: 'pointer' }}
+            >
+              {step.label}
+            </StepLabel>
           </Step>
         ))}
       </Stepper>
 
       <Box sx={{ mb: 4 }}>
         <CurrentStepComponent
-          formData={formData}
-          setFormData={setFormData}
+          formData={formData[Object.keys(emptyFormData)[activeStep]] || {}}
+          onUpdate={handleStepUpdate}
+          isRtl={isRtl}
         />
       </Box>
 
@@ -151,7 +171,7 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
           variant="outlined"
           onClick={handleSaveAndExit}
         >
-          {t('saveAndExit')}
+          {t('basicInfo.saveAndExit')}
         </Button>
         {activeStep > 0 && (
           <Button

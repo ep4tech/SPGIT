@@ -1,0 +1,34 @@
+{
+  "internal": {
+    "title": "Internal",
+    "description": "Internal strategic planning"
+  },
+  "external": {
+    "title": "External",
+    "description": "External strategic planning"
+  },
+  "analysis": {
+    "title": "Analysis",
+    "description": "Strategic analysis tools"
+  },
+  "strategy": {
+    "title": "Strategy",
+    "description": "Strategy formulation"
+  },
+  "execution": {
+    "title": "Execution",
+    "description": "Execution and monitoring"
+  },
+  "committees": {
+    "title": "Committees",
+    "description": "Committee management"
+  },
+  "meetings": {
+    "title": "Meetings",
+    "description": "Meetings management"
+  },
+  "documents": {
+    "title": "Documents",
+    "description": "Document repository"
+  }
+}

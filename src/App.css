@@ -75,3 +75,6 @@ body {
   color: #2c3e50;
   font-weight: 500 !important;
 }
+
+.react-flow__background { z-index: 0 !important; }
+.react-flow__node { z-index: 1000 !important; }

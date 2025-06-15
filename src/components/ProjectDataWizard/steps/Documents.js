@@ -59,10 +59,11 @@ const Documents = ({ formData, setFormData }) => {
     }));
   };
 
+  const documents = formData.documents || {};
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('documents')}
+        {t('basicInfo.documents')}
       </Typography>
       <Grid container spacing={3}>
         {documentTypes.map((docType) => (
@@ -80,13 +81,13 @@ const Documents = ({ formData, setFormData }) => {
             >
               <Box sx={{ flexGrow: 1 }}>
                 <Typography variant="subtitle1" gutterBottom>
-                  {t(docType)}
+                  {t('basicInfo.documents' + docType)}
                 </Typography>
-                {formData.documents[docType] ? (
+                {documents[docType] ? (
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <DescriptionIcon color="primary" />
                     <Typography variant="body2" sx={{ flexGrow: 1 }}>
-                      {formData.documents[docType].name}
+                      {documents[docType].name}
                     </Typography>
                     <IconButton
                       size="small"
@@ -104,7 +105,7 @@ const Documents = ({ formData, setFormData }) => {
                     endIcon={isRtl && <UploadIcon />}
                     sx={{ direction: isRtl ? 'rtl' : 'ltr' }}
                   >
-                    {t('uploadFile')}
+                    {t('basicInfo.upLoadFile')}
                     <input
                       type="file"
                       hidden

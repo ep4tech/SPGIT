@@ -1,0 +1,34 @@
+{
+  "internal": {
+    "title": "الداخلي",
+    "description": "التخطيط الاستراتيجي الداخلي"
+  },
+  "external": {
+    "title": "الخارجي",
+    "description": "التخطيط الاستراتيجي الخارجي"
+  },
+  "analysis": {
+    "title": "التحليل",
+    "description": "أدوات التحليل الاستراتيجي"
+  },
+  "strategy": {
+    "title": "الاستراتيجية",
+    "description": "صياغة الاستراتيجية"
+  },
+  "execution": {
+    "title": "التنفيذ",
+    "description": "تنفيذ ومتابعة الاستراتيجية"
+  },
+  "committees": {
+    "title": "اللجان",
+    "description": "إدارة اللجان"
+  },
+  "meetings": {
+    "title": "الاجتماعات",
+    "description": "إدارة الاجتماعات"
+  },
+  "documents": {
+    "title": "المستندات",
+    "description": "مستودع المستندات"
+  }
+}

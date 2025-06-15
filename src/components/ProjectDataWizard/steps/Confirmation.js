@@ -29,36 +29,36 @@ const Confirmation = ({ formData }) => {
   const renderBasicInfo = () => (
     <Paper sx={{ p: 2, mb: 2 }}>
       <Typography variant="subtitle1" gutterBottom>
-        {t('basicInfo')}
+        {t('basicInfo.title')}
       </Typography>
       <List dense>
         <ListItem>
           <ListItemText
-            primary={t('projectName')}
+            primary={t('basicInfo.projectName')}
             secondary={formData.basicInfo?.projectName}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('organization')}
+            primary={t('basicInfo.organization')}
             secondary={formData.basicInfo?.organization}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('description')}
+            primary={t('basicInfo.description')}
             secondary={formData.basicInfo?.description}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('startDate')}
+            primary={t('basicInfo.startDate')}
             secondary={formData.basicInfo?.startDate?.toLocaleDateString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('endDate')}
+            primary={t('basicInfo.endDate')}
             secondary={formData.basicInfo?.endDate?.toLocaleDateString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')}
           />
         </ListItem>
@@ -69,11 +69,11 @@ const Confirmation = ({ formData }) => {
   const renderPlanningTeam = () => (
     <Paper sx={{ p: 2, mb: 2 }}>
       <Typography variant="subtitle1" gutterBottom>
-        {t('planningTeam')}
+        {t('basicInfo.planningTeam')}
       </Typography>
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('internalTeam')}
+          {t('basicInfo.internalTeam')}
         </Typography>
         <TableContainer>
           <Table size="small">
@@ -101,7 +101,7 @@ const Confirmation = ({ formData }) => {
 
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('externalTeam')}
+          {t('basicInfo.externalTeam')}
         </Typography>
         <TableContainer>
           <Table size="small">
@@ -129,7 +129,7 @@ const Confirmation = ({ formData }) => {
 
       <Box>
         <Typography variant="subtitle2" color="primary">
-          {t('committees')}
+          {t('basicInfo.committees')}
         </Typography>
         <TableContainer>
           <Table size="small">
@@ -138,7 +138,7 @@ const Confirmation = ({ formData }) => {
                 <TableCell>{t('name')}</TableCell>
                 <TableCell>{t('mobile')}</TableCell>
                 <TableCell>{t('email')}</TableCell>
-                <TableCell>{t('committeeRole')}</TableCell>
+                <TableCell>{t('basicInfo.committeeRole')}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -157,99 +157,15 @@ const Confirmation = ({ formData }) => {
     </Paper>
   );
 
-  const renderTrainingContent = () => (
-    <Paper sx={{ p: 2, mb: 2 }}>
-      <Typography variant="subtitle1" gutterBottom>
-        {t('trainingContent')}
-      </Typography>
-      {formData.trainingContent?.map((training, index) => (
-        <Box key={index} sx={{ mb: 2 }}>
-          <Typography variant="subtitle2" color="primary">
-            {training.title}
-          </Typography>
-          <List dense>
-            <ListItem>
-              <ListItemText
-                primary={t('description')}
-                secondary={training.description}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('targetAudience')}
-                secondary={training.targetAudience}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('numberOfTrainees')}
-                secondary={training.numberOfTrainees}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('trainingType')}
-                secondary={t(training.trainingType)}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('startDate')}
-                secondary={training.startDate?.toLocaleDateString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('endDate')}
-                secondary={training.endDate?.toLocaleDateString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('location')}
-                secondary={training.location}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('trainer')}
-                secondary={training.trainer}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('trainingHours')}
-                secondary={training.trainingHours}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('mainTopics')}
-                secondary={training.mainTopics}
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={t('expectedOutcomes')}
-                secondary={training.expectedOutcomes}
-              />
-            </ListItem>
-          </List>
-          {index < formData.trainingContent.length - 1 && <Divider sx={{ my: 2 }} />}
-        </Box>
-      ))}
-    </Paper>
-  );
-
   const renderEvaluation = () => (
     <Paper sx={{ p: 2, mb: 2 }}>
       <Typography variant="subtitle1" gutterBottom>
-        {t('evaluation')}
+        {t('evaluation.title')}
       </Typography>
       
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('projectObjectives')}
+          {t('basicInfo.projectObjectives')}
         </Typography>
         <Typography variant="body2" sx={{ mt: 1 }}>
           {formData.evaluation?.objectives}
@@ -258,17 +174,17 @@ const Confirmation = ({ formData }) => {
 
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('keyPerformanceIndicators')}
+          {t('evaluation.keyPerformanceIndicators')}
         </Typography>
         <TableContainer>
           <Table size="small">
             <TableHead>
               <TableRow>
-                <TableCell>{t('kpiName')}</TableCell>
-                <TableCell>{t('targetValue')}</TableCell>
-                <TableCell>{t('unit')}</TableCell>
-                <TableCell>{t('frequency')}</TableCell>
-                <TableCell>{t('responsibleParty')}</TableCell>
+                <TableCell>{t('evaluation.kpiName')}</TableCell>
+                <TableCell>{t('evaluation.targetValue')}</TableCell>
+                <TableCell>{t('evaluation.unit')}</TableCell>
+                <TableCell>{t('evaluation.frequency')}</TableCell>
+                <TableCell>{t('evaluation.responsibleParty')}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -288,17 +204,17 @@ const Confirmation = ({ formData }) => {
 
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('riskAssessment')}
+          {t('evaluation.riskAssessment')}
         </Typography>
         <TableContainer>
           <Table size="small">
             <TableHead>
               <TableRow>
-                <TableCell>{t('riskDescription')}</TableCell>
-                <TableCell>{t('impact')}</TableCell>
-                <TableCell>{t('probability')}</TableCell>
-                <TableCell>{t('mitigation')}</TableCell>
-                <TableCell>{t('owner')}</TableCell>
+                <TableCell>{t('evaluation.riskDescription')}</TableCell>
+                <TableCell>{t('evaluation.impact')}</TableCell>
+                <TableCell>{t('evaluation.probability')}</TableCell>
+                <TableCell>{t('evaluation.mitigation')}</TableCell>
+                <TableCell>{t('evaluation.owner')}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -324,10 +240,10 @@ const Confirmation = ({ formData }) => {
 
       <Box>
         <Typography variant="subtitle2" color="primary">
-          {t('successCriteria')}
+          {t('basicInfo.successCriteria')}
         </Typography>
         <Typography variant="body2" sx={{ mt: 1 }}>
-          {formData.evaluation?.successCriteria}
+          {formData.basicInfo?.successCriteria}
         </Typography>
       </Box>
     </Paper>
@@ -336,10 +252,10 @@ const Confirmation = ({ formData }) => {
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('confirmationTitle')}
+        {t('basicInfo.confirmationTitle')}
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        {t('confirmationMessage')}
+        {t('basicInfo.confirmationMessage')}
       </Typography>
 
       {renderBasicInfo()}

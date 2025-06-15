@@ -23,7 +23,8 @@ const ProjectSelector = ({
   selectedProjectId, 
   onProjectSelect = () => {}, 
   onProjectCreate = () => {}, 
-  onProjectUpdate = () => {} 
+  onProjectUpdate = () => {},
+  sx = {}
 }) => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
@@ -48,24 +49,25 @@ const ProjectSelector = ({
   };
 
   const handleSave = () => {
-    if (editMode) {
-      onProjectUpdate(selectedProjectId, projectName);
+    if (editMode && selectedProjectId) {
+      onProjectUpdate({ id: selectedProjectId, name: projectName });
     } else {
-      onProjectCreate(projectName);
+      onProjectCreate({ name: projectName });
     }
     handleCloseDialog();
   };
 
   return (
-    <>
+    <Box sx={{ ...sx }}>
       <Box sx={{ 
         display: 'flex', 
         alignItems: 'center', 
-        gap: 1,
+        gap: 2,
         direction: isRtl ? 'rtl' : 'ltr',
         p: 2,
         bgcolor: 'background.paper',
         borderRadius: 1,
+        mb: 2,
         boxShadow: 1
       }}>
         <Select
@@ -95,7 +97,7 @@ const ProjectSelector = ({
         </Select>
         
         <IconButton 
-          onClick={() => handleOpenDialog('new')}
+          onClick={() => handleOpenDialog('create')}
           color="primary"
           size="small"
           sx={{ bgcolor: 'white', '&:hover': { bgcolor: 'rgba(0, 0, 0, 0.04)' } }}
@@ -115,43 +117,30 @@ const ProjectSelector = ({
         )}
       </Box>
 
-      <Dialog 
-        open={dialogOpen} 
-        onClose={handleCloseDialog}
-        PaperProps={{
-          sx: { direction: isRtl ? 'rtl' : 'ltr' }
-        }}
-      >
+      <Dialog open={dialogOpen} onClose={handleCloseDialog}>
         <DialogTitle>
-          {editMode ? t('editProject') : t('newProject')}
+          {editMode ? t('editProject') : t('createProject')}
         </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
             margin="dense"
-            label={t('projectName')}
+            label={t('basicInfo.projectName')}
+            type="text"
             fullWidth
+            variant="standard"
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
-            sx={{ 
-              '& .MuiInputLabel-root': {
-                right: isRtl ? 14 : 'auto',
-                left: isRtl ? 'auto' : 14,
-                transformOrigin: isRtl ? 'right' : 'left'
-              }
-            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseDialog}>
-            {t('cancel')}
-          </Button>
+          <Button onClick={handleCloseDialog}>{t('cancel')}</Button>
           <Button onClick={handleSave} variant="contained">
             {t('save')}
           </Button>
         </DialogActions>
       </Dialog>
-    </>
+    </Box>
   );
 };
 

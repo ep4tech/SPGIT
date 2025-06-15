@@ -1,0 +1,33 @@
+import React, { useState } from 'react';
+import { Box, Typography, TextField, Button, Paper, List, ListItem, ListItemText } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+
+const CommunicationExecutionPage = () => {
+  const { t } = useTranslation();
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+
+  const handleSend = () => {
+    if (message.trim()) {
+      setMessages([...messages, { text: message, date: new Date().toLocaleString() }]);
+      setMessage('');
+    }
+  };
+
+  return (
+    <Box p={3}>
+      <Typography variant="h5" gutterBottom>{t('execution.communication.title')}</Typography>
+      <Paper sx={{ p: 2, mb: 2 }}>
+        <TextField label={t('execution.communication.message')} fullWidth value={message} onChange={e => setMessage(e.target.value)} onKeyPress={e => e.key === 'Enter' && handleSend()} sx={{ mb: 2 }} />
+        <Button onClick={handleSend} variant="contained">{t('execution.communication.send')}</Button>
+      </Paper>
+      <List>
+        {messages.map((msg, idx) => (
+          <ListItem key={idx}><ListItemText primary={msg.text} secondary={msg.date} /></ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+};
+
+export default CommunicationExecutionPage;

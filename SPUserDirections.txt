@@ -1,0 +1,7 @@
+1. I want to make project selector visible only in main page
+2. redeploy. an error occured
+3. I want you to collect all the direction i gave you in a file
+4. make it text file
+5. i need exact text the i entered in th epronpt from the begiing of the project
+6. add a anew tile in the main menu which opena orgnizatin and permissins page with the following details: ... (full prompt in Arabic and English)
+7. leaf  database linknig for later stage

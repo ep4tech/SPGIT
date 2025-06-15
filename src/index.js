@@ -10,6 +10,7 @@ import createCache from '@emotion/cache';
 import { prefixer } from 'stylis';
 import { translations } from './translations';
 import App from './App';
+import 'react-flow-renderer/dist/style.css';
 
 // Initialize i18next
 i18n
@@ -19,12 +20,45 @@ i18n
       en: { translation: translations.en },
       ar: { translation: translations.ar }
     },
-    lng: 'ar',
-    fallbackLng: 'ar',
+    lng: 'en',
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false
+    },
+    react: {
+      useSuspense: false,
+      bindI18n: 'languageChanged'
+    },
+    debug: true,
+    initImmediate: false,
+    load: 'currentOnly',
+    ns: ['translation'],
+    defaultNS: 'translation'
+  }, (err) => {
+    if (err) {
+      console.error('i18n initialization error:', err);
+    } else {
+      console.log('i18n initialized successfully');
+      console.log('Current translations:', {
+        en: i18n.getResourceBundle('en', 'translation'),
+        ar: i18n.getResourceBundle('ar', 'translation')
+      });
     }
   });
+
+// Set initial language from localStorage or browser
+const savedLang = localStorage.getItem('i18nextLng');
+if (savedLang) {
+  i18n.changeLanguage(savedLang);
+  document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.lang = savedLang;
+}
+
+// Log initial translations
+console.log('Initial translations:', {
+  en: i18n.getResourceBundle('en', 'translation'),
+  ar: i18n.getResourceBundle('ar', 'translation')
+});
 
 // Create rtl cache
 const cacheRtl = createCache({

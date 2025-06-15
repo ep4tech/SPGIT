@@ -7,6 +7,7 @@ import {
   ListItemIcon,
   ListItemText,
   Button,
+  Typography,
 } from '@mui/material';
 import {
   ExploreOutlined as FoundationIcon,
@@ -16,14 +17,16 @@ import {
   BusinessOutlined as InternalIcon,
   AssessmentOutlined as AnalysisIcon,
   ArrowBack as ArrowBackIcon,
+  BusinessOutlined
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import StrategicFoundation from './pages/StrategicFoundation';
-import MandatesResponsibilities from './pages/MandatesResponsibilities';
-import MissionStatement from './pages/MissionStatement';
-import ExternalEnvironment from './pages/ExternalEnvironment';
-import InternalEnvironment from './pages/InternalEnvironment';
-import DataAnalysis from './pages/DataAnalysis';
+import StrategicFoundation from '../../pages/strategicAnalysis/StrategicFoundation';
+import MandatesResponsibilities from '../../pages/strategicAnalysis/MandatesResponsibilities';
+import MissionStatement from '../../pages/strategicAnalysis/MissionStatement';
+import ExternalEnvironment from '../../pages/strategicAnalysis/ExternalEnvironment';
+import InternalEnvironment from '../../pages/strategicAnalysis/InternalEnvironment';
+import DataAnalysis from '../../pages/strategicAnalysis/DataAnalysis';
+import OrgReengineering from '../../pages/strategicAnalysis/OrgReengineering';
 
 const drawerWidth = 280;
 
@@ -34,11 +37,18 @@ const menuItems = [
   { id: 'external', icon: <ExternalIcon /> },
   { id: 'internal', icon: <InternalIcon /> },
   { id: 'analysis', icon: <AnalysisIcon /> },
+  { id: 'reengineering', icon: <BusinessOutlined /> },
 ];
 
 const StrategicAnalysis = () => {
   const { t } = useTranslation();
-  const [selectedPage, setSelectedPage] = useState('foundation');
+  const [selectedPage, setSelectedPage] = useState(localStorage.getItem('strategicAnalysisPage') || 'foundation');
+
+  // Save selected page to localStorage
+  const handlePageSelect = (pageId) => {
+    setSelectedPage(pageId);
+    localStorage.setItem('strategicAnalysisPage', pageId);
+  };
 
   const handleBack = () => {
     // Go back to the main dashboard
@@ -59,6 +69,8 @@ const StrategicAnalysis = () => {
         return <InternalEnvironment />;
       case 'analysis':
         return <DataAnalysis />;
+      case 'reengineering':
+        return <OrgReengineering />;
       default:
         return <StrategicFoundation />;
     }
@@ -66,6 +78,14 @@ const StrategicAnalysis = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider', bgcolor: 'primary.main', color: 'white' }}>
+        <Typography variant="h4" gutterBottom>
+          {t('strategicAnalysis.title')}
+        </Typography>
+        <Typography variant="subtitle1">
+          {t('strategicAnalysis.description')}
+        </Typography>
+      </Box>
       <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider' }}>
         <Button
           startIcon={<ArrowBackIcon />}
@@ -94,7 +114,7 @@ const StrategicAnalysis = () => {
                 button
                 key={item.id}
                 selected={selectedPage === item.id}
-                onClick={() => setSelectedPage(item.id)}
+                onClick={() => handlePageSelect(item.id)}
                 sx={{
                   '&.Mui-selected': {
                     backgroundColor: 'primary.light',

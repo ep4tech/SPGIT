@@ -27,7 +27,7 @@ import {
 } from '@mui/material';
 import { Add as AddIcon, Delete as DeleteIcon } from '@mui/icons-material';
 
-const Evaluation = ({ formData, setFormData }) => {
+const Monitoring = ({ formData, setFormData }) => {
   const { t } = useTranslation();
   const [kpiDialogOpen, setKpiDialogOpen] = React.useState(false);
   const [riskDialogOpen, setRiskDialogOpen] = React.useState(false);
@@ -51,8 +51,8 @@ const Evaluation = ({ formData, setFormData }) => {
   const handleChange = (field) => (event) => {
     setFormData((prev) => ({
       ...prev,
-      evaluation: {
-        ...prev.evaluation,
+      monitoring: {
+        ...prev.monitoring,
         [field]: event.target.value,
       },
     }));
@@ -76,9 +76,9 @@ const Evaluation = ({ formData, setFormData }) => {
     if (newKpi.name && newKpi.targetValue) {
       setFormData((prev) => ({
         ...prev,
-        evaluation: {
-          ...prev.evaluation,
-          kpis: [...(prev.evaluation?.kpis || []), { ...newKpi }],
+        monitoring: {
+          ...prev.monitoring,
+          kpis: [...(prev.monitoring?.kpis || []), { ...newKpi }],
         },
       }));
       setNewKpi({
@@ -97,9 +97,9 @@ const Evaluation = ({ formData, setFormData }) => {
     if (newRisk.description && newRisk.impact && newRisk.probability) {
       setFormData((prev) => ({
         ...prev,
-        evaluation: {
-          ...prev.evaluation,
-          risks: [...(prev.evaluation?.risks || []), { ...newRisk }],
+        monitoring: {
+          ...prev.monitoring,
+          risks: [...(prev.monitoring?.risks || []), { ...newRisk }],
         },
       }));
       setNewRisk({
@@ -117,9 +117,9 @@ const Evaluation = ({ formData, setFormData }) => {
   const handleDeleteKpi = (index) => {
     setFormData((prev) => ({
       ...prev,
-      evaluation: {
-        ...prev.evaluation,
-        kpis: prev.evaluation.kpis.filter((_, i) => i !== index),
+      monitoring: {
+        ...prev.monitoring,
+        kpis: prev.monitoring.kpis.filter((_, i) => i !== index),
       },
     }));
   };
@@ -127,9 +127,9 @@ const Evaluation = ({ formData, setFormData }) => {
   const handleDeleteRisk = (index) => {
     setFormData((prev) => ({
       ...prev,
-      evaluation: {
-        ...prev.evaluation,
-        risks: prev.evaluation.risks.filter((_, i) => i !== index),
+      monitoring: {
+        ...prev.monitoring,
+        risks: prev.monitoring.risks.filter((_, i) => i !== index),
       },
     }));
   };
@@ -141,27 +141,27 @@ const Evaluation = ({ formData, setFormData }) => {
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('evaluation')}
+        {t('monitoring.title')}
       </Typography>
 
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-            {t('projectObjectives')}
+            {t('evaluation.projectObjectives')}
           </Typography>
           <TextField
             fullWidth
             multiline
             rows={4}
-            label={t('objectives')}
-            value={formData.evaluation?.objectives || ''}
+            label={t('evaluation.objectives')}
+            value={formData.monitoring?.objectives || ''}
             onChange={handleChange('objectives')}
           />
         </Grid>
 
         <Grid item xs={12}>
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-            {t('keyPerformanceIndicators')}
+            {t('evaluation.keyPerformanceIndicators')}
           </Typography>
           <Box sx={{ mb: 2 }}>
             <Button
@@ -169,24 +169,24 @@ const Evaluation = ({ formData, setFormData }) => {
               onClick={() => setKpiDialogOpen(true)}
               startIcon={<AddIcon />}
             >
-              {t('addKpi')}
+              {t('evaluation.addKpi')}
             </Button>
           </Box>
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>{t('kpiName')}</TableCell>
-                  <TableCell>{t('description')}</TableCell>
-                  <TableCell>{t('targetValue')}</TableCell>
-                  <TableCell>{t('unit')}</TableCell>
-                  <TableCell>{t('frequency')}</TableCell>
-                  <TableCell>{t('responsibleParty')}</TableCell>
+                  <TableCell>{t('evaluation.kpiName')}</TableCell>
+                  <TableCell>{t('evaluation.kpiDescription')}</TableCell>
+                  <TableCell>{t('evaluation.targetValue')}</TableCell>
+                  <TableCell>{t('evaluation.unit')}</TableCell>
+                  <TableCell>{t('evaluation.frequency')}</TableCell>
+                  <TableCell>{t('evaluation.responsibleParty')}</TableCell>
                   <TableCell></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {formData.evaluation?.kpis?.map((kpi, index) => (
+                {formData.monitoring?.kpis?.map((kpi, index) => (
                   <TableRow key={index}>
                     <TableCell>{kpi.name}</TableCell>
                     <TableCell>{kpi.description}</TableCell>
@@ -209,80 +209,68 @@ const Evaluation = ({ formData, setFormData }) => {
           </TableContainer>
         </Grid>
 
-        <Grid item xs={12}>
-          <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-            {t('riskAssessment')}
-          </Typography>
-          <Box sx={{ mb: 2 }}>
-            <Button
-              variant="contained"
-              onClick={() => setRiskDialogOpen(true)}
-              startIcon={<AddIcon />}
-            >
-              {t('addRisk')}
-            </Button>
-          </Box>
-          <TableContainer component={Paper}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>{t('riskDescription')}</TableCell>
-                  <TableCell>{t('impact')}</TableCell>
-                  <TableCell>{t('probability')}</TableCell>
-                  <TableCell>{t('mitigation')}</TableCell>
-                  <TableCell>{t('contingency')}</TableCell>
-                  <TableCell>{t('owner')}</TableCell>
-                  <TableCell></TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {formData.evaluation?.risks?.map((risk, index) => (
-                  <TableRow key={index}>
-                    <TableCell>{risk.description}</TableCell>
-                    <TableCell>{t(risk.impact)}</TableCell>
-                    <TableCell>{t(risk.probability)}</TableCell>
-                    <TableCell>{risk.mitigation}</TableCell>
-                    <TableCell>{risk.contingency}</TableCell>
-                    <TableCell>{risk.owner}</TableCell>
-                    <TableCell>
-                      <IconButton
-                        size="small"
-                        onClick={() => handleDeleteRisk(index)}
-                      >
-                        <DeleteIcon />
-                      </IconButton>
-                    </TableCell>
+        {monitoringTab === 2 && (
+          <Grid item xs={12}>
+            <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
+              {t('evaluation.riskAssessment')}
+            </Typography>
+            <Box sx={{ mb: 2 }}>
+              <Button
+                variant="contained"
+                onClick={() => setRiskDialogOpen(true)}
+                startIcon={<AddIcon />}
+              >
+                {t('evaluation.addRisk')}
+              </Button>
+            </Box>
+            <TableContainer component={Paper}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>{t('evaluation.riskDescription')}</TableCell>
+                    <TableCell>{t('evaluation.impact')}</TableCell>
+                    <TableCell>{t('evaluation.probability')}</TableCell>
+                    <TableCell>{t('evaluation.mitigation')}</TableCell>
+                    <TableCell>{t('evaluation.contingency')}</TableCell>
+                    <TableCell>{t('evaluation.owner')}</TableCell>
+                    <TableCell></TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Grid>
-
-        <Grid item xs={12}>
-          <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-            {t('successCriteria')}
-          </Typography>
-          <TextField
-            fullWidth
-            multiline
-            rows={4}
-            label={t('successCriteria')}
-            value={formData.evaluation?.successCriteria || ''}
-            onChange={handleChange('successCriteria')}
-          />
-        </Grid>
+                </TableHead>
+                <TableBody>
+                  {formData.monitoring?.risks?.map((risk, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{risk.description}</TableCell>
+                      <TableCell>{t(risk.impact)}</TableCell>
+                      <TableCell>{t(risk.probability)}</TableCell>
+                      <TableCell>{risk.mitigation}</TableCell>
+                      <TableCell>{risk.contingency}</TableCell>
+                      <TableCell>{risk.owner}</TableCell>
+                      <TableCell>
+                        <IconButton
+                          size="small"
+                          onClick={() => handleDeleteRisk(index)}
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
+        )}
       </Grid>
 
       <Dialog open={kpiDialogOpen} onClose={() => setKpiDialogOpen(false)} maxWidth="md" fullWidth>
-        <DialogTitle>{t('addKpi')}</DialogTitle>
+        <DialogTitle>{t('evaluation.addKpi')}</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
                 required
-                label={t('kpiName')}
+                label={t('evaluation.kpiName')}
                 value={newKpi.name}
                 onChange={handleKpiChange('name')}
               />
@@ -291,7 +279,7 @@ const Evaluation = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('targetValue')}
+                label={t('evaluation.targetValue')}
                 value={newKpi.targetValue}
                 onChange={handleKpiChange('targetValue')}
               />
@@ -301,7 +289,7 @@ const Evaluation = ({ formData, setFormData }) => {
                 fullWidth
                 multiline
                 rows={2}
-                label={t('description')}
+                label={t('evaluation.description')}
                 value={newKpi.description}
                 onChange={handleKpiChange('description')}
               />
@@ -309,18 +297,18 @@ const Evaluation = ({ formData, setFormData }) => {
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                label={t('unit')}
+                label={t('evaluation.unit')}
                 value={newKpi.unit}
-                onChange={handleKpiChange('unit')}
+                onChange={handleKpiChange('evaluation.unit')}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6}>  
               <FormControl fullWidth>
-                <InputLabel>{t('frequency')}</InputLabel>
+                <InputLabel>{t('evaluation.frequency')}</InputLabel>
                 <Select
                   value={newKpi.frequency}
                   onChange={handleKpiChange('frequency')}
-                  label={t('frequency')}
+                  label={t('evaluation.frequency')}
                 >
                   {measurementFrequencies.map((freq) => (
                     <MenuItem key={freq} value={freq}>
@@ -333,7 +321,7 @@ const Evaluation = ({ formData, setFormData }) => {
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                label={t('responsibleParty')}
+                label={t('evaluation.responsibleParty')}
                 value={newKpi.responsibleParty}
                 onChange={handleKpiChange('responsibleParty')}
               />
@@ -351,7 +339,7 @@ const Evaluation = ({ formData, setFormData }) => {
       </Dialog>
 
       <Dialog open={riskDialogOpen} onClose={() => setRiskDialogOpen(false)} maxWidth="md" fullWidth>
-        <DialogTitle>{t('addRisk')}</DialogTitle>
+        <DialogTitle>{t('evaluation.addRisk')}</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12}>
@@ -360,18 +348,18 @@ const Evaluation = ({ formData, setFormData }) => {
                 required
                 multiline
                 rows={2}
-                label={t('riskDescription')}
+                label={t('evaluation.riskDescription')}
                 value={newRisk.description}
                 onChange={handleRiskChange('description')}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth required>
-                <InputLabel>{t('impact')}</InputLabel>
+                <InputLabel>{t('evaluation.impact')}</InputLabel>
                 <Select
                   value={newRisk.impact}
                   onChange={handleRiskChange('impact')}
-                  label={t('impact')}
+                  label={t('evaluation.impact')}
                 >
                   {impactLevels.map((level) => (
                     <MenuItem key={level} value={level}>
@@ -383,11 +371,11 @@ const Evaluation = ({ formData, setFormData }) => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth required>
-                <InputLabel>{t('probability')}</InputLabel>
+                <InputLabel>{t('evaluation.probability')}</InputLabel>
                 <Select
                   value={newRisk.probability}
                   onChange={handleRiskChange('probability')}
-                  label={t('probability')}
+                  label={t('evaluation.probability')}
                 >
                   {probabilityLevels.map((level) => (
                     <MenuItem key={level} value={level}>
@@ -403,7 +391,7 @@ const Evaluation = ({ formData, setFormData }) => {
                 required
                 multiline
                 rows={2}
-                label={t('mitigation')}
+                label={t('evaluation.mitigation')}
                 value={newRisk.mitigation}
                 onChange={handleRiskChange('mitigation')}
               />
@@ -413,7 +401,7 @@ const Evaluation = ({ formData, setFormData }) => {
                 fullWidth
                 multiline
                 rows={2}
-                label={t('contingency')}
+                label={t('evaluation.contingency')}
                 value={newRisk.contingency}
                 onChange={handleRiskChange('contingency')}
               />
@@ -422,7 +410,7 @@ const Evaluation = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('owner')}
+                label={t('evaluation.owner')}
                 value={newRisk.owner}
                 onChange={handleRiskChange('owner')}
               />
@@ -442,4 +430,4 @@ const Evaluation = ({ formData, setFormData }) => {
   );
 };
 
-export default Evaluation;
+export default Monitoring;

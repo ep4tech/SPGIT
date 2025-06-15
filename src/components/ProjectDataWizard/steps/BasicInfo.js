@@ -22,11 +22,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { arSA, enUS } from 'date-fns/locale';
 
-const BasicInfo = ({ formData, setFormData }) => {
+const BasicInfo = ({ formData, onUpdate }) => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
 
-  const [stakeholders, setStakeholders] = useState(formData.basicInfo.stakeholders || []);
+  const [stakeholders, setStakeholders] = useState(formData.stakeholders || []);
   const [newStakeholder, setNewStakeholder] = useState({
     name: '',
     organization: '',
@@ -34,21 +34,20 @@ const BasicInfo = ({ formData, setFormData }) => {
     contactInfo: '',
     notes: ''
   });
-  const [indicators, setIndicators] = useState(formData.basicInfo.indicators || []);
+  const [indicators, setIndicators] = useState(formData.indicators || []);
 
   const handleChange = (field) => (event) => {
-    setFormData((prev) => ({
-      ...prev,
-      basicInfo: {
-        ...prev.basicInfo,
-        [field]: event.target.value,
-      },
-    }));
+    const updatedData = {
+      ...formData,
+      [field]: event.target.value,
+    };
+    onUpdate(updatedData);
   };
 
   const handleAddStakeholder = () => {
     if (newStakeholder.name.trim()) {
-      setStakeholders([...stakeholders, { ...newStakeholder, id: Date.now() }]);
+      const updatedStakeholders = [...stakeholders, { ...newStakeholder, id: Date.now() }];
+      setStakeholders(updatedStakeholders);
       setNewStakeholder({
         name: '',
         organization: '',
@@ -56,18 +55,20 @@ const BasicInfo = ({ formData, setFormData }) => {
         contactInfo: '',
         notes: ''
       });
+      onUpdate({
+        ...formData,
+        stakeholders: updatedStakeholders
+      });
     }
   };
 
   const handleDeleteStakeholder = (id) => {
-    setStakeholders(stakeholders.filter(s => s.id !== id));
-    setFormData((prev) => ({
-      ...prev,
-      basicInfo: {
-        ...prev.basicInfo,
-        stakeholders: stakeholders.filter(s => s.id !== id),
-      },
-    }));
+    const updatedStakeholders = stakeholders.filter(s => s.id !== id);
+    setStakeholders(updatedStakeholders);
+    onUpdate({
+      ...formData,
+      stakeholders: updatedStakeholders
+    });
   };
 
   const handleStakeholderChange = (field, value) => {
@@ -75,6 +76,25 @@ const BasicInfo = ({ formData, setFormData }) => {
       ...prev,
       [field]: value
     }));
+  };
+
+  // Restore: Add Stakeholder
+  const handleStakeholderAdd = () => {
+    if (newStakeholder.name.trim()) {
+      const updatedStakeholders = [...stakeholders, { ...newStakeholder, id: Date.now() }];
+      setStakeholders(updatedStakeholders);
+      setNewStakeholder({
+        name: '',
+        organization: '',
+        relation: '',
+        contactInfo: '',
+        notes: ''
+      });
+      onUpdate({
+        ...formData,
+        stakeholders: updatedStakeholders
+      });
+    }
   };
 
   const handleIndicatorAdd = () => {
@@ -88,25 +108,19 @@ const BasicInfo = ({ formData, setFormData }) => {
     };
     const updatedIndicators = [...indicators, newIndicator];
     setIndicators(updatedIndicators);
-    setFormData((prev) => ({
-      ...prev,
-      basicInfo: {
-        ...prev.basicInfo,
-        indicators: updatedIndicators,
-      },
-    }));
+    onUpdate({
+      ...formData,
+      indicators: updatedIndicators
+    });
   };
 
   const handleIndicatorDelete = (id) => {
     const updatedIndicators = indicators.filter((i) => i.id !== id);
     setIndicators(updatedIndicators);
-    setFormData((prev) => ({
-      ...prev,
-      basicInfo: {
-        ...prev.basicInfo,
-        indicators: updatedIndicators,
-      },
-    }));
+    onUpdate({
+      ...formData,
+      indicators: updatedIndicators
+    });
   };
 
   const handleIndicatorChange = (id, field) => (event) => {
@@ -114,23 +128,17 @@ const BasicInfo = ({ formData, setFormData }) => {
       i.id === id ? { ...i, [field]: event.target.value } : i
     );
     setIndicators(updatedIndicators);
-    setFormData((prev) => ({
-      ...prev,
-      basicInfo: {
-        ...prev.basicInfo,
-        indicators: updatedIndicators,
-      },
-    }));
+    onUpdate({
+      ...formData,
+      indicators: updatedIndicators
+    });
   };
 
   const handleDateChange = (date) => {
-    setFormData((prev) => ({
-      ...prev,
-      basicInfo: {
-        ...prev.basicInfo,
-        startDate: date,
-      },
-    }));
+    onUpdate({
+      ...formData,
+      startDate: date
+    });
   };
 
   const textFieldStyle = {
@@ -141,19 +149,23 @@ const BasicInfo = ({ formData, setFormData }) => {
     },
   };
 
+  // Defensive: ensure we never crash if formData.basicInfo is missing
+  // Defensive: ensure we never crash if formData.basicInfo is missing
+  const safeBasicInfo = formData.basicInfo || {};
+
   return (
     <Box sx={{ direction: isRtl ? 'rtl' : 'ltr' }}>
       <Typography variant="h6" gutterBottom sx={{ textAlign: isRtl ? 'right' : 'left', width: '100%' }}>
-        {t('basicInfo')}
+        {t('basicInfo.title')}
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <TextField
             required
             fullWidth
-            label={t('projectName')}
-            value={formData.basicInfo.projectName || ''}
-            onChange={handleChange('projectName')}
+            label={t('basicInfo.projectName')}
+            value={safeBasicInfo.projectName || ''}
+            onChange={handleChange('basicInfo.projectName')}
             sx={textFieldStyle}
           />
         </Grid>
@@ -161,8 +173,8 @@ const BasicInfo = ({ formData, setFormData }) => {
           <TextField
             required
             fullWidth
-            label={t('organizationName')}
-            value={formData.basicInfo.organizationName || ''}
+            label={t('basicInfo.organizationName')}
+            value={safeBasicInfo.organizationName || ''}
             onChange={handleChange('organizationName')}
             sx={textFieldStyle}
           />
@@ -171,8 +183,8 @@ const BasicInfo = ({ formData, setFormData }) => {
           <TextField
             required
             fullWidth
-            label={t('responsiblePerson')}
-            value={formData.basicInfo.responsiblePerson || ''}
+            label={t('basicInfo.responsiblePerson')}
+            value={safeBasicInfo.responsiblePerson || ''}
             onChange={handleChange('responsiblePerson')}
             sx={textFieldStyle}
           />
@@ -182,7 +194,7 @@ const BasicInfo = ({ formData, setFormData }) => {
             required
             fullWidth
             label={t('jobTitle')}
-            value={formData.basicInfo.jobTitle || ''}
+            value={safeBasicInfo.jobTitle || ''}
             onChange={handleChange('jobTitle')}
             sx={textFieldStyle}
           />
@@ -192,7 +204,7 @@ const BasicInfo = ({ formData, setFormData }) => {
             required
             fullWidth
             label={t('mobile')}
-            value={formData.basicInfo.mobile || ''}
+            value={safeBasicInfo.mobile || ''}
             onChange={handleChange('mobile')}
             type="tel"
             sx={textFieldStyle}
@@ -203,7 +215,7 @@ const BasicInfo = ({ formData, setFormData }) => {
             required
             fullWidth
             label={t('email')}
-            value={formData.basicInfo.email || ''}
+            value={safeBasicInfo.email || ''}
             onChange={handleChange('email')}
             type="email"
             sx={textFieldStyle}
@@ -212,8 +224,8 @@ const BasicInfo = ({ formData, setFormData }) => {
         <Grid item xs={12} sm={6}>
           <LocalizationProvider dateAdapter={AdapterDateFns} locale={isRtl ? arSA : enUS} adapterLocale={isRtl ? arSA : enUS}>
             <DatePicker
-              label={t('startDate')}
-              value={formData.basicInfo.startDate || null}
+              label={t('basicInfo.startDate')}
+              value={safeBasicInfo.startDate || null}
               onChange={handleDateChange}
               renderInput={(params) => (
                 <TextField {...params} required fullWidth />
@@ -226,8 +238,8 @@ const BasicInfo = ({ formData, setFormData }) => {
             fullWidth
             multiline
             rows={4}
-            label={t('generalNotes')}
-            value={formData.basicInfo.generalNotes || ''}
+            label={t('basicInfo.generalNotes')}
+            value={safeBasicInfo.generalNotes || ''}
             onChange={handleChange('generalNotes')}
           />
         </Grid>
@@ -236,8 +248,8 @@ const BasicInfo = ({ formData, setFormData }) => {
             fullWidth
             multiline
             rows={4}
-            label={t('description')}
-            value={formData.basicInfo.description || ''}
+            label={t('basicInfo.description')}
+            value={safeBasicInfo.description || ''}
             onChange={handleChange('description')}
           />
         </Grid>
@@ -247,7 +259,7 @@ const BasicInfo = ({ formData, setFormData }) => {
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
               <Typography variant="h6">{t('stakeholders')}</Typography>
               <Button startIcon={<AddIcon />} variant="contained" onClick={handleStakeholderAdd}>
-                {t('addStakeholder')}
+                {t('basicInfo.addStakeholder')}
               </Button>
             </Box>
             <TableContainer>
@@ -256,8 +268,8 @@ const BasicInfo = ({ formData, setFormData }) => {
                   <TableRow>
                     <TableCell>{t('name')}</TableCell>
                     <TableCell>{t('organization')}</TableCell>
-                    <TableCell>{t('relation')}</TableCell>
-                    <TableCell>{t('contactInfo')}</TableCell>
+                    <TableCell>{t('basicInfo.relation')}</TableCell>
+                    <TableCell>{t('basicInfo.contactInfo')}</TableCell>
                     <TableCell>{t('notes')}</TableCell>
                     <TableCell>{t('actions')}</TableCell>
                   </TableRow>
@@ -296,20 +308,20 @@ const BasicInfo = ({ formData, setFormData }) => {
         <Grid item xs={12}>
           <Paper sx={{ p: 2 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-              <Typography variant="h6">{t('performanceIndicators')}</Typography>
+              <Typography variant="h6">{t('basicInfo.performanceIndicators')}</Typography>
               <Button startIcon={<AddIcon />} variant="contained" onClick={handleIndicatorAdd}>
-                {t('addIndicator')}
+                {t('basicInfo.addIndicator')}
               </Button>
             </Box>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>{t('name')}</TableCell>
-                    <TableCell>{t('description')}</TableCell>
-                    <TableCell>{t('target')}</TableCell>
-                    <TableCell>{t('frequency')}</TableCell>
-                    <TableCell>{t('source')}</TableCell>
+                    <TableCell>{t('basicInfo.name')}</TableCell>
+                    <TableCell>{t('basicInfo.description')}</TableCell>
+                    <TableCell>{t('basicInfo.target')}</TableCell>
+                    <TableCell>{t('basicInfo.frequency')}</TableCell>
+                    <TableCell>{t('basicInfo.source')}</TableCell>
                     <TableCell>{t('actions')}</TableCell>
                   </TableRow>
                 </TableHead>

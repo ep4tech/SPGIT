@@ -1,0 +1,32 @@
+/* OrgChart CSS - copied from https://github.com/dabeng/react-orgchart/blob/master/dist/orgchart.css */
+.orgchart {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  padding: 20px;
+}
+.orgchart .node {
+  display: inline-block;
+  text-align: center;
+  background: #1976d2;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px 16px;
+  margin: 4px;
+  font-size: 16px;
+  min-width: 100px;
+  min-height: 36px;
+}
+.orgchart .lines {
+  height: 20px;
+  border-left: 2px solid #1976d2;
+  border-bottom: 2px solid #1976d2;
+  margin: 0 auto;
+}
+.orgchart .children {
+  display: flex;
+  justify-content: center;
+}
+/* يمكنك تخصيص المزيد حسب الحاجة */
