@@ -30,6 +30,11 @@ import CommitteeLayout from './components/CommitteeLayout';
 import CommitteesDashboard from './components/CommitteesDashboard';
 import CommitteeListPage from './pages/committee/CommitteeListPage';
 import CommitteeDetailsRoutes from './pages/committee/CommitteeDetailsRoutes';
+import UpcomingMeetingsPage from './pages/committee/UpcomingMeetingsPage';
+import ActionItemsPage from './pages/committee/ActionItemsPage';
+import AttendanceOverviewPage from './pages/committee/AttendanceOverviewPage';
+import DocumentsRepositoryPage from './pages/committee/DocumentsRepositoryPage';
+import TrainingSection from './pages/training/TrainingSection';
 import OrganizationPermissionsPage from './pages/organization/OrganizationPermissionsPage';
 import DashboardGrid from './components/DashboardGrid';
 
@@ -76,24 +81,10 @@ function getInitialProjectData(data) {
 }
 
 function App() {
+  console.log('Rendering App')
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
 
-  // DEBUG LOGS FOR TRANSLATION ISSUE
-  console.log('Current language:', i18n.language);
-  console.log('AR internal object:', i18n.getResourceBundle('ar', 'translation').internal);
-  console.log('internal.title:', t('internal.title'));
-  console.log('internal.description:', t('internal.description'));
-  console.log('execution.title:', t('execution.title'));
-  console.log('All tile titles:', [
-    t('basicInfo.title'),
-    t('strategicAnalysis.title'),
-    t('strategyFormulation.title'),
-    t('training.title'),
-    t('execution.title'),
-    t('evaluation.title'),
-    t('committee.title')
-  ]);
 
 
   const [currentSection, setCurrentSection] = useState(null);
@@ -219,16 +210,18 @@ function App() {
         <Route path="/organization-permissions" element={<MainLayout onLanguageChange={handleLanguageChange}><OrganizationPermissionsPage /></MainLayout>} />
 
         {/* Main Dashboard Route (cleaned up) */}
-        <Route path="/" element={
-          <MainLayout onLanguageChange={handleLanguageChange}>
-            <ProjectSelector
-              projects={projects}
-              selectedProjectId={selectedProjectId}
-              onProjectChange={setSelectedProjectId}
-            />
-            <DashboardPage selectedProjectId={selectedProjectId} />
-          </MainLayout>
-        } />
+        <Route path="/" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
+          <Route index element={
+            <>
+              <ProjectSelector
+                projects={projects}
+                selectedProjectId={selectedProjectId}
+                onProjectChange={setSelectedProjectId}
+              />
+              <DashboardPage />
+            </>
+          } />
+        </Route>
 
         <Route path="/training/*" element={<TrainingSection />} />
         <Route path="/execution/*" element={<ExecutionSection />} />

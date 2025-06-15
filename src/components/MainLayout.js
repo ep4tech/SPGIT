@@ -36,7 +36,8 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare'; // Used for organization tile
 
 
-const MainLayout = ({ children, onLanguageChange }) => {
+const MainLayout = ({ onLanguageChange }) => {
+  console.log('Rendering MainLayout');
   const { t, i18n } = useTranslation();
   const [languageMenu, setLanguageMenu] = useState(null);
   const [notificationMenu, setNotificationMenu] = useState(null);

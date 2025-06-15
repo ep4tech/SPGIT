@@ -2,9 +2,9 @@ import React from 'react';
 import { Grid, Card, CardContent, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const DashboardGrid = ({ tiles, selectedProjectId }) => {
+const DashboardGrid = ({ tiles }) => {
   const navigate = useNavigate();
-
+  console.log('inside DashboardGrid tiles: ', tiles);
   return (
     <Grid container spacing={3}>
       {tiles.map((tile) => (

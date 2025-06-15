@@ -26,6 +26,9 @@ const ProjectSelector = ({
   onProjectUpdate = () => {},
   sx = {}
 }) => {
+
+  console.log('Rendering ProjectSelector');
+
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
   const [dialogOpen, setDialogOpen] = useState(false);
