@@ -29,36 +29,36 @@ const Confirmation = ({ formData }) => {
   const renderBasicInfo = () => (
     <Paper sx={{ p: 2, mb: 2 }}>
       <Typography variant="subtitle1" gutterBottom>
-        {t('basicInfo.title')}
+        {t('dataWizard.confirmation.title')}
       </Typography>
       <List dense>
         <ListItem>
           <ListItemText
-            primary={t('basicInfo.projectName')}
+            primary={t('dataWizard.confirmation.projectName')}
             secondary={formData.basicInfo?.projectName}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('basicInfo.organization')}
+            primary={t('dataWizard.confirmation.organization')}
             secondary={formData.basicInfo?.organization}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('basicInfo.description')}
+            primary={t('dataWizard.confirmation.description')}
             secondary={formData.basicInfo?.description}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('basicInfo.startDate')}
+            primary={t('startDate')}
             secondary={formData.basicInfo?.startDate?.toLocaleDateString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary={t('basicInfo.endDate')}
+            primary={t('endDate')}
             secondary={formData.basicInfo?.endDate?.toLocaleDateString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')}
           />
         </ListItem>
@@ -69,11 +69,11 @@ const Confirmation = ({ formData }) => {
   const renderPlanningTeam = () => (
     <Paper sx={{ p: 2, mb: 2 }}>
       <Typography variant="subtitle1" gutterBottom>
-        {t('basicInfo.planningTeam')}
+        {t('dataWizard.confirmation.planningTeam')}
       </Typography>
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('basicInfo.internalTeam')}
+          {t('dataWizard.confirmation.internalTeam')}
         </Typography>
         <TableContainer>
           <Table size="small">
@@ -101,7 +101,7 @@ const Confirmation = ({ formData }) => {
 
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('basicInfo.externalTeam')}
+          {t('dataWizard.confirmation.externalTeam')}
         </Typography>
         <TableContainer>
           <Table size="small">
@@ -129,7 +129,7 @@ const Confirmation = ({ formData }) => {
 
       <Box>
         <Typography variant="subtitle2" color="primary">
-          {t('basicInfo.committees')}
+          {t('dataWizard.confirmation.committees')}
         </Typography>
         <TableContainer>
           <Table size="small">
@@ -138,7 +138,7 @@ const Confirmation = ({ formData }) => {
                 <TableCell>{t('name')}</TableCell>
                 <TableCell>{t('mobile')}</TableCell>
                 <TableCell>{t('email')}</TableCell>
-                <TableCell>{t('basicInfo.committeeRole')}</TableCell>
+                <TableCell>{t('dataWizard.planningTeam.committeeRole')}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -160,12 +160,12 @@ const Confirmation = ({ formData }) => {
   const renderEvaluation = () => (
     <Paper sx={{ p: 2, mb: 2 }}>
       <Typography variant="subtitle1" gutterBottom>
-        {t('evaluation.title')}
+        {t('dataWizard.evaluation.title')}
       </Typography>
       
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('basicInfo.projectObjectives')}
+          {t('dataWizard.evaluation.projectObjectives')}
         </Typography>
         <Typography variant="body2" sx={{ mt: 1 }}>
           {formData.evaluation?.objectives}
@@ -174,17 +174,17 @@ const Confirmation = ({ formData }) => {
 
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('evaluation.keyPerformanceIndicators')}
+          {t('dataWizard.evaluation.keyPerformanceIndicators')}
         </Typography>
         <TableContainer>
           <Table size="small">
             <TableHead>
               <TableRow>
-                <TableCell>{t('evaluation.kpiName')}</TableCell>
-                <TableCell>{t('evaluation.targetValue')}</TableCell>
-                <TableCell>{t('evaluation.unit')}</TableCell>
-                <TableCell>{t('evaluation.frequency')}</TableCell>
-                <TableCell>{t('evaluation.responsibleParty')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.kpiName')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.targetValue')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.unit')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.frequency')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.responsibleParty')}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -204,17 +204,17 @@ const Confirmation = ({ formData }) => {
 
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" color="primary">
-          {t('evaluation.riskAssessment')}
+          {t('dataWizard.evaluation.riskAssessment')}
         </Typography>
         <TableContainer>
           <Table size="small">
             <TableHead>
               <TableRow>
-                <TableCell>{t('evaluation.riskDescription')}</TableCell>
-                <TableCell>{t('evaluation.impact')}</TableCell>
-                <TableCell>{t('evaluation.probability')}</TableCell>
-                <TableCell>{t('evaluation.mitigation')}</TableCell>
-                <TableCell>{t('evaluation.owner')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.riskDescription')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.impact')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.probability')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.mitigation')}</TableCell>
+                <TableCell>{t('dataWizard.evaluation.owner')}</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -240,7 +240,7 @@ const Confirmation = ({ formData }) => {
 
       <Box>
         <Typography variant="subtitle2" color="primary">
-          {t('basicInfo.successCriteria')}
+          {t('dataWizard.evaluation.successCriteria')}
         </Typography>
         <Typography variant="body2" sx={{ mt: 1 }}>
           {formData.basicInfo?.successCriteria}
@@ -252,10 +252,10 @@ const Confirmation = ({ formData }) => {
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('basicInfo.confirmationTitle')}
+        {t('dataWizard.confirmation.title')}
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        {t('basicInfo.confirmationMessage')}
+        {t('dataWizard.confirmation.confirmationMessage')}
       </Typography>
 
       {renderBasicInfo()}

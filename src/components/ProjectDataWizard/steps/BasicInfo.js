@@ -37,12 +37,22 @@ const BasicInfo = ({ formData, onUpdate }) => {
   const [indicators, setIndicators] = useState(formData.indicators || []);
 
   const handleChange = (field) => (event) => {
-    const updatedData = {
+  if (field.startsWith('basicInfo.')) {
+    const key = field.split('.')[1];
+    onUpdate({
+      ...formData,
+      basicInfo: {
+        ...formData.basicInfo,
+        [key]: event.target.value,
+      },
+    });
+  } else {
+    onUpdate({
       ...formData,
       [field]: event.target.value,
-    };
-    onUpdate(updatedData);
-  };
+    });
+  }
+};
 
   const handleAddStakeholder = () => {
     if (newStakeholder.name.trim()) {
@@ -154,16 +164,19 @@ const BasicInfo = ({ formData, onUpdate }) => {
   const safeBasicInfo = formData.basicInfo || {};
 
   return (
-    <Box sx={{ direction: isRtl ? 'rtl' : 'ltr' }}>
+    <>
+      
+      <Box sx={{ direction: isRtl ? 'rtl' : 'ltr' }}>
+
       <Typography variant="h6" gutterBottom sx={{ textAlign: isRtl ? 'right' : 'left', width: '100%' }}>
-        {t('basicInfo.title')}
+        {t('dataWizard.basicInfo.title')}
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <TextField
             required
             fullWidth
-            label={t('basicInfo.projectName')}
+            label={t('projectName')}
             value={safeBasicInfo.projectName || ''}
             onChange={handleChange('basicInfo.projectName')}
             sx={textFieldStyle}
@@ -173,7 +186,7 @@ const BasicInfo = ({ formData, onUpdate }) => {
           <TextField
             required
             fullWidth
-            label={t('basicInfo.organizationName')}
+            label={t('dataWizard.basicInfo.organizationName')}
             value={safeBasicInfo.organizationName || ''}
             onChange={handleChange('organizationName')}
             sx={textFieldStyle}
@@ -183,7 +196,7 @@ const BasicInfo = ({ formData, onUpdate }) => {
           <TextField
             required
             fullWidth
-            label={t('basicInfo.responsiblePerson')}
+            label={t('responsiblePerson')}
             value={safeBasicInfo.responsiblePerson || ''}
             onChange={handleChange('responsiblePerson')}
             sx={textFieldStyle}
@@ -224,7 +237,7 @@ const BasicInfo = ({ formData, onUpdate }) => {
         <Grid item xs={12} sm={6}>
           <LocalizationProvider dateAdapter={AdapterDateFns} locale={isRtl ? arSA : enUS} adapterLocale={isRtl ? arSA : enUS}>
             <DatePicker
-              label={t('basicInfo.startDate')}
+              label={t('startDate')}
               value={safeBasicInfo.startDate || null}
               onChange={handleDateChange}
               renderInput={(params) => (
@@ -238,7 +251,7 @@ const BasicInfo = ({ formData, onUpdate }) => {
             fullWidth
             multiline
             rows={4}
-            label={t('basicInfo.generalNotes')}
+            label={t('dataWizard.basicInfo.generalNotes')}
             value={safeBasicInfo.generalNotes || ''}
             onChange={handleChange('generalNotes')}
           />
@@ -248,7 +261,7 @@ const BasicInfo = ({ formData, onUpdate }) => {
             fullWidth
             multiline
             rows={4}
-            label={t('basicInfo.description')}
+            label={t('dataWizard.basicInfo.description')}
             value={safeBasicInfo.description || ''}
             onChange={handleChange('description')}
           />
@@ -259,7 +272,7 @@ const BasicInfo = ({ formData, onUpdate }) => {
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
               <Typography variant="h6">{t('stakeholders')}</Typography>
               <Button startIcon={<AddIcon />} variant="contained" onClick={handleStakeholderAdd}>
-                {t('basicInfo.addStakeholder')}
+                {t('dataWizard.basicInfo.addStakeholder')}
               </Button>
             </Box>
             <TableContainer>
@@ -268,8 +281,8 @@ const BasicInfo = ({ formData, onUpdate }) => {
                   <TableRow>
                     <TableCell>{t('name')}</TableCell>
                     <TableCell>{t('organization')}</TableCell>
-                    <TableCell>{t('basicInfo.relation')}</TableCell>
-                    <TableCell>{t('basicInfo.contactInfo')}</TableCell>
+                    <TableCell>{t('dataWizard.basicInfo.relation')}</TableCell>
+                    <TableCell>{t('dataWizard.basicInfo.contactInfo')}</TableCell>
                     <TableCell>{t('notes')}</TableCell>
                     <TableCell>{t('actions')}</TableCell>
                   </TableRow>
@@ -308,20 +321,20 @@ const BasicInfo = ({ formData, onUpdate }) => {
         <Grid item xs={12}>
           <Paper sx={{ p: 2 }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-              <Typography variant="h6">{t('basicInfo.performanceIndicators')}</Typography>
+              <Typography variant="h6">{t('dataWizard.basicInfo.performanceIndicators')}</Typography>
               <Button startIcon={<AddIcon />} variant="contained" onClick={handleIndicatorAdd}>
-                {t('basicInfo.addIndicator')}
+                {t('dataWizard.basicInfo.addIndicator')}
               </Button>
             </Box>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>{t('basicInfo.name')}</TableCell>
-                    <TableCell>{t('basicInfo.description')}</TableCell>
-                    <TableCell>{t('basicInfo.target')}</TableCell>
-                    <TableCell>{t('basicInfo.frequency')}</TableCell>
-                    <TableCell>{t('basicInfo.source')}</TableCell>
+                    <TableCell>{t('dataWizard.basicInfo.name')}</TableCell>
+                    <TableCell>{t('dataWizard.basicInfo.description')}</TableCell>
+                    <TableCell>{t('dataWizard.basicInfo.target')}</TableCell>
+                    <TableCell>{t('frequency')}</TableCell>
+                    <TableCell>{t('dataWizard.basicInfo.source')}</TableCell>
                     <TableCell>{t('actions')}</TableCell>
                   </TableRow>
                 </TableHead>
@@ -357,6 +370,7 @@ const BasicInfo = ({ formData, onUpdate }) => {
         </Grid>
       </Grid>
     </Box>
+    </>
   );
 };
 

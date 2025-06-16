@@ -141,19 +141,19 @@ const Monitoring = ({ formData, setFormData }) => {
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('monitoring.title')}
+        {t('dataWizard.evaluation.title')}
       </Typography>
 
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-            {t('evaluation.projectObjectives')}
+            {t('dataWizard.evaluation.projectObjectives')}
           </Typography>
           <TextField
             fullWidth
             multiline
             rows={4}
-            label={t('evaluation.objectives')}
+            label={t('dataWizard.evaluation.objectives')}
             value={formData.monitoring?.objectives || ''}
             onChange={handleChange('objectives')}
           />
@@ -161,7 +161,7 @@ const Monitoring = ({ formData, setFormData }) => {
 
         <Grid item xs={12}>
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-            {t('evaluation.keyPerformanceIndicators')}
+            {t('dataWizard.evaluation.keyPerformanceIndicators')}
           </Typography>
           <Box sx={{ mb: 2 }}>
             <Button
@@ -169,19 +169,19 @@ const Monitoring = ({ formData, setFormData }) => {
               onClick={() => setKpiDialogOpen(true)}
               startIcon={<AddIcon />}
             >
-              {t('evaluation.addKpi')}
+              {t('dataWizard.evaluation.addKpi')}
             </Button>
           </Box>
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>{t('evaluation.kpiName')}</TableCell>
-                  <TableCell>{t('evaluation.kpiDescription')}</TableCell>
-                  <TableCell>{t('evaluation.targetValue')}</TableCell>
-                  <TableCell>{t('evaluation.unit')}</TableCell>
-                  <TableCell>{t('evaluation.frequency')}</TableCell>
-                  <TableCell>{t('evaluation.responsibleParty')}</TableCell>
+                  <TableCell>{t('dataWizard.evaluation.kpiName')}</TableCell>
+                  <TableCell>{t('dataWizard.evaluation.kpiDescription')}</TableCell>
+                  <TableCell>{t('dataWizard.evaluation.targetValue')}</TableCell>
+                  <TableCell>{t('dataWizard.evaluation.unit')}</TableCell>
+                  <TableCell>{t('dataWizard.evaluation.frequency')}</TableCell>
+                  <TableCell>{t('dataWizard.evaluation.responsibleParty')}</TableCell>
                   <TableCell></TableCell>
                 </TableRow>
               </TableHead>
@@ -212,7 +212,7 @@ const Monitoring = ({ formData, setFormData }) => {
         {monitoringTab === 2 && (
           <Grid item xs={12}>
             <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-              {t('evaluation.riskAssessment')}
+              {t('dataWizard.evaluation.riskAssessment')}
             </Typography>
             <Box sx={{ mb: 2 }}>
               <Button
@@ -220,19 +220,19 @@ const Monitoring = ({ formData, setFormData }) => {
                 onClick={() => setRiskDialogOpen(true)}
                 startIcon={<AddIcon />}
               >
-                {t('evaluation.addRisk')}
+                {t('dataWizard.evaluation.addRisk')}
               </Button>
             </Box>
             <TableContainer component={Paper}>
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>{t('evaluation.riskDescription')}</TableCell>
-                    <TableCell>{t('evaluation.impact')}</TableCell>
-                    <TableCell>{t('evaluation.probability')}</TableCell>
-                    <TableCell>{t('evaluation.mitigation')}</TableCell>
-                    <TableCell>{t('evaluation.contingency')}</TableCell>
-                    <TableCell>{t('evaluation.owner')}</TableCell>
+                    <TableCell>{t('dataWizard.evaluation.riskDescription')}</TableCell>
+                    <TableCell>{t('dataWizard.evaluation.impact')}</TableCell>
+                    <TableCell>{t('dataWizard.evaluation.probability')}</TableCell>
+                    <TableCell>{t('dataWizard.evaluation.mitigation')}</TableCell>
+                    <TableCell>{t('dataWizard.evaluation.contingency')}</TableCell>
+                    <TableCell>{t('dataWizard.evaluation.owner')}</TableCell>
                     <TableCell></TableCell>
                   </TableRow>
                 </TableHead>
@@ -263,14 +263,14 @@ const Monitoring = ({ formData, setFormData }) => {
       </Grid>
 
       <Dialog open={kpiDialogOpen} onClose={() => setKpiDialogOpen(false)} maxWidth="md" fullWidth>
-        <DialogTitle>{t('evaluation.addKpi')}</DialogTitle>
+        <DialogTitle>{t('dataWizard.evaluation.addKpi')}</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
                 required
-                label={t('evaluation.kpiName')}
+                label={t('dataWizard.evaluation.kpiName')}
                 value={newKpi.name}
                 onChange={handleKpiChange('name')}
               />
@@ -279,7 +279,7 @@ const Monitoring = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('evaluation.targetValue')}
+                label={t('dataWizard.evaluation.targetValue')}
                 value={newKpi.targetValue}
                 onChange={handleKpiChange('targetValue')}
               />
@@ -289,7 +289,7 @@ const Monitoring = ({ formData, setFormData }) => {
                 fullWidth
                 multiline
                 rows={2}
-                label={t('evaluation.description')}
+                label={t('dataWizard.evaluation.description')}
                 value={newKpi.description}
                 onChange={handleKpiChange('description')}
               />
@@ -297,18 +297,18 @@ const Monitoring = ({ formData, setFormData }) => {
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                label={t('evaluation.unit')}
+                label={t('dataWizard.evaluation.unit')}
                 value={newKpi.unit}
                 onChange={handleKpiChange('evaluation.unit')}
               />
             </Grid>
             <Grid item xs={12} sm={6}>  
               <FormControl fullWidth>
-                <InputLabel>{t('evaluation.frequency')}</InputLabel>
+                <InputLabel>{t('dataWizard.evaluation.frequency')}</InputLabel>
                 <Select
                   value={newKpi.frequency}
                   onChange={handleKpiChange('frequency')}
-                  label={t('evaluation.frequency')}
+                  label={t('dataWizard.evaluation.frequency')}
                 >
                   {measurementFrequencies.map((freq) => (
                     <MenuItem key={freq} value={freq}>
@@ -321,7 +321,7 @@ const Monitoring = ({ formData, setFormData }) => {
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                label={t('evaluation.responsibleParty')}
+                label={t('dataWizard.evaluation.responsibleParty')}
                 value={newKpi.responsibleParty}
                 onChange={handleKpiChange('responsibleParty')}
               />
@@ -339,7 +339,7 @@ const Monitoring = ({ formData, setFormData }) => {
       </Dialog>
 
       <Dialog open={riskDialogOpen} onClose={() => setRiskDialogOpen(false)} maxWidth="md" fullWidth>
-        <DialogTitle>{t('evaluation.addRisk')}</DialogTitle>
+        <DialogTitle>{t('dataWizard.evaluation.addRisk')}</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12}>
@@ -348,18 +348,18 @@ const Monitoring = ({ formData, setFormData }) => {
                 required
                 multiline
                 rows={2}
-                label={t('evaluation.riskDescription')}
+                label={t('dataWizard.evaluation.riskDescription')}
                 value={newRisk.description}
                 onChange={handleRiskChange('description')}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth required>
-                <InputLabel>{t('evaluation.impact')}</InputLabel>
+                <InputLabel>{t('dataWizard.evaluation.impact')}</InputLabel>
                 <Select
                   value={newRisk.impact}
                   onChange={handleRiskChange('impact')}
-                  label={t('evaluation.impact')}
+                  label={t('dataWizard.evaluation.impact')}
                 >
                   {impactLevels.map((level) => (
                     <MenuItem key={level} value={level}>
@@ -371,11 +371,11 @@ const Monitoring = ({ formData, setFormData }) => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <FormControl fullWidth required>
-                <InputLabel>{t('evaluation.probability')}</InputLabel>
+                <InputLabel>{t('dataWizard.evaluation.probability')}</InputLabel>
                 <Select
                   value={newRisk.probability}
                   onChange={handleRiskChange('probability')}
-                  label={t('evaluation.probability')}
+                  label={t('dataWizard.evaluation.probability')}
                 >
                   {probabilityLevels.map((level) => (
                     <MenuItem key={level} value={level}>
@@ -391,7 +391,7 @@ const Monitoring = ({ formData, setFormData }) => {
                 required
                 multiline
                 rows={2}
-                label={t('evaluation.mitigation')}
+                label={t('dataWizard.evaluation.mitigation')}
                 value={newRisk.mitigation}
                 onChange={handleRiskChange('mitigation')}
               />
@@ -401,7 +401,7 @@ const Monitoring = ({ formData, setFormData }) => {
                 fullWidth
                 multiline
                 rows={2}
-                label={t('evaluation.contingency')}
+                label={t('dataWizard.evaluation.contingency')}
                 value={newRisk.contingency}
                 onChange={handleRiskChange('contingency')}
               />
@@ -410,7 +410,7 @@ const Monitoring = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('evaluation.owner')}
+                label={t('dataWizard.evaluation.owner')}
                 value={newRisk.owner}
                 onChange={handleRiskChange('owner')}
               />

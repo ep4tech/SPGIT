@@ -245,7 +245,7 @@ const MissionStatement = () => {
                   color="error"
                   onClick={() => setFinalStatement('')}
                 >
-                  {t('strategicAnalysis.mission.delete')}
+                  {t('delete')}
                 </Button>
               </Box>
             ) : (

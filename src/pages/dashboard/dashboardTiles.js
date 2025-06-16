@@ -14,8 +14,8 @@
     return [
       {
         id: 'basicInfo',
-        title: t('basicInfo.title'),
-        description: t('basicInfo.description'),
+        title: t('dataWizard.basicInfo.title'),
+        description: t('dataWizard.basicInfo.description'),
         icon: <FolderIcon fontSize="large" />,
         route: '/basic-info'
       },
@@ -49,8 +49,8 @@
       },
       {
         id: 'evaluation',
-        title: t('evaluation.title'),
-        description: t('evaluation.description'),
+        title: t('dataWizard.evaluation.title'),
+        description: t('dataWizard.evaluation.description'),
         icon: <AssessmentIcon fontSize="large" />, 
         route: '/evaluation'
       },

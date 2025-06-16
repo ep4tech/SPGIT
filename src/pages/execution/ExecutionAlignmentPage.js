@@ -7,7 +7,7 @@ const ExecutionAlignmentPage = () => {
   return (
     <Box p={3}>
       <Typography variant="h5" gutterBottom>{t('execution.alignment.title')}</Typography>
-      <Typography variant="body1" gutterBottom>{t('execution.alignment.desc')}</Typography>
+      <Typography variant="body1" gutterBottom>{t('execution.alignment.description')}</Typography>
       <Typography variant="subtitle1">{t('execution.alignment.contents')}</Typography>
       <ul>
         <li>{t('execution.alignment.compare')}</li>

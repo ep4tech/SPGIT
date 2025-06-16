@@ -6,19 +6,19 @@ const ExecutionSetupPage = () => {
   const { t } = useTranslation();
   return (
     <Box p={3}>
-      <Typography variant="h5" gutterBottom>{t('execution.setup.Title')}</Typography>
-      <Typography variant="body1" gutterBottom>{t('execution.setup.Desc')}</Typography>
+      <Typography variant="h5" gutterBottom>{t('execution.setup.title')}</Typography>
+      <Typography variant="body1" gutterBottom>{t('execution.setup.description')}</Typography>
       <ul>
-        <li>{t('execution.setup.Doc')}</li>
-        <li>{t('execution.setup.Schedule')}</li>
-        <li>{t('execution.setup.Org')}</li>
+        <li>{t('execution.setup.doc')}</li>
+        <li>{t('execution.setup.schedule')}</li>
+        <li>{t('execution.setup.org')}</li>
       </ul>
-      <Typography variant="subtitle1">{t('execution.setup.Contents')}</Typography>
+      <Typography variant="subtitle1">{t('execution.setup.contents')}</Typography>
       <ul>
-        <li>{t('execution.setup.DocInput')}</li>
-        <li>{t('execution.setup.TeamsMatrix')}</li>
-        <li>{t('execution.setup.OrgChart')}</li>
-        <li>{t('execution.setup.Assign')}</li>
+        <li>{t('execution.setup.docInput')}</li>
+        <li>{t('execution.setup.teamsMatrix')}</li>
+        <li>{t('execution.setup.orgChart')}</li>
+        <li>{t('execution.setup.assign')}</li>
       </ul>
     </Box>
   );

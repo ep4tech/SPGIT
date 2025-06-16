@@ -210,13 +210,13 @@ const DataAnalysis = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>
-            {t('common.cancel')}
+            {t('cancel')}
           </Button>
           <Button
             onClick={(e) => handleAddSwotItem(e.target.previousSibling.querySelector('textarea').value)}
             variant="contained"
           >
-            {t('common.add')}
+            {t('add')}
           </Button>
         </DialogActions>
       </Dialog>

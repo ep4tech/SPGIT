@@ -189,10 +189,10 @@ const ExecutivePlans = () => {
                           sx={{ flex: 1 }}
                         />
                         <FormControl size="small" sx={{ flex: 1 }}>
-                          <InputLabel>{t('strategyFormulation.executivePlans.responsible')}</InputLabel>
+                          <InputLabel>{t('responsible')}</InputLabel>
                           <Select
                             value={newItem.responsible}
-                            label={t('strategyFormulation.executivePlans.responsible')}
+                            label={t('responsible')}
                             onChange={(e) => setNewItem(prev => ({ ...prev, responsible: e.target.value }))}
                           >
                             {responsibles.map(responsible => (
@@ -237,10 +237,10 @@ const ExecutivePlans = () => {
                     <TableRow>
                       <TableCell>{t('title')}</TableCell>
                       <TableCell>{t('description')}</TableCell>
-                      <TableCell width={100}>{t('strategyFormulation.executivePlans.dateRange')}</TableCell>
+                      <TableCell width={100}>{t('dateRange')}</TableCell>
                       <TableCell width={80}>{t('budget')}</TableCell>
                       <TableCell width={80}>{t('priority')}</TableCell>
-                      <TableCell width={100}>{t('strategyFormulation.executivePlans.responsible')}</TableCell>
+                      <TableCell width={100}>{t('responsible')}</TableCell>
                       <TableCell width={80}>{t('status')}</TableCell>
                       <TableCell width={50} align="center">{t('actions')}</TableCell>
                     </TableRow>

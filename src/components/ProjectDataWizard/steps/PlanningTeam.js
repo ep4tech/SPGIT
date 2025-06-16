@@ -135,7 +135,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
           { id: 'email', label: t('email') },
           { id: 'department', label: t('department') },
           { id: 'role', label: t('role') },
-          { id: 'membershipStart', label: t('basicInfo.membershipStart') },
+          { id: 'membershipStart', label: t('dataWizard.planningTeam.membershipStart') },
           { id: 'actions', label: '' },
         ];
       case 1: // External Team
@@ -143,9 +143,9 @@ const PlanningTeam = ({ formData, setFormData }) => {
           { id: 'name', label: t('name') },
           { id: 'mobile', label: t('mobile') },
           { id: 'email', label: t('email') },
-          { id: 'externalOrganization', label: t('externalOrganization') },
+          { id: 'externalOrganization', label: t('dataWizard.planningTeam.externalOrganization') },
           { id: 'role', label: t('role') },
-          { id: 'membershipStart', label: t('basicInfo.membershipStart') },
+          { id: 'membershipStart', label: t('dataWizard.planningTeam.membershipStart') },
           { id: 'actions', label: '' },
         ];
       case 2: // Committees
@@ -153,9 +153,9 @@ const PlanningTeam = ({ formData, setFormData }) => {
           { id: 'name', label: t('name') },
           { id: 'mobile', label: t('mobile') },
           { id: 'email', label: t('email') },
-          { id: 'committeeName', label: t('basicInfo.committeeName') },
-          { id: 'committeeRole', label: t('basicInfo.committeeRole') },
-          { id: 'membershipStart', label: t('basicInfo.membershipStart') },
+          { id: 'committeeName', label: t('dataWizard.planningTeam.committeeName') },
+          { id: 'committeeRole', label: t('dataWizard.planningTeam.committeeRole') },
+          { id: 'membershipStart', label: t('dataWizard.planningTeam.membershipStart') },
           { id: 'actions', label: '' },
         ];
       default:
@@ -201,7 +201,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
             adapterLocale={i18n.language === 'ar' ? arSA : enUS}
           >
             <DatePicker
-              label={t('basicInfo.membershipStart')}
+              label={t('dataWizard.planningTeam.membershipStart')}
               value={newMember.membershipStart}
               onChange={handleDateChange}
               renderInput={(params) => (
@@ -250,7 +250,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('externalOrganization')}
+                label={t('dataWizard.planningTeam.externalOrganization')}
                 value={newMember.externalOrganization}
                 onChange={handleInputChange('externalOrganization')}
               />
@@ -274,7 +274,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('basicInfo.committeeName')}
+                label={t('dataWizard.planningTeam.committeeName')}
                 value={newMember.committeeName}
                 onChange={handleInputChange('committeeName')}
               />
@@ -283,7 +283,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
               <TextField
                 fullWidth
                 required
-                label={t('basicInfo.committeeRole')}
+                label={t('dataWizard.planningTeam.committeeRole')}
                 value={newMember.committeeRole}
                 onChange={handleInputChange('committeeRole')}
               />
@@ -298,7 +298,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('basicInfo.planningTeam')}
+        {t('dataWizard.planningTeam.title')}
       </Typography>
       
       <Tabs
@@ -309,7 +309,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
         sx={{ mb: 3 }}
       >
         {tabs.map((tab) => (
-          <Tab key={tab} label={t(tab)} />
+          <Tab key={tab} label={t(`dataWizard.planningTeam.${tab}`)} />
         ))}
       </Tabs>
 
@@ -319,7 +319,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
           onClick={() => setDialogOpen(true)}
           startIcon={<AddIcon />}
         >
-          {t('basicInfo.addMember')}
+          {t('dataWizard.planningTeam.addMember')}
         </Button>
       </Box>
 
@@ -374,7 +374,7 @@ const PlanningTeam = ({ formData, setFormData }) => {
       </TableContainer>
 
       <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)} maxWidth="md" fullWidth>
-        <DialogTitle>{t('basicInfo.addMember')}</DialogTitle>
+        <DialogTitle>{t('dataWizard.planningTeam.addMember')}</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
             {renderDialogContent()}

@@ -55,17 +55,23 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
       internalTeam: [],
       externalTeam: [],
       committees: [],
+    },
+    evaluation: {
+      evaluationNotes: ''
+    },
+    confirmation: {
+      confirm: false
     }
   };
 
   const [formData, setFormData] = useState(initialData || emptyFormData);
 
   const steps = [
-    { label: t('basicInfo.title'), component: BasicInfo },
-    { label: t('basicInfo.documentsTitle'), component: Documents },
-    { label: t('basicInfo.planningTeamTitle'), component: PlanningTeam },
-    { label: t('basicInfo.evaluationTitle'), component: Evaluation },
-    { label: t('basicInfo.confirmationTitle'), component: Confirmation }
+    { label: t('dataWizard.basicInfo.title'), component: BasicInfo },
+    { label: t('dataWizard.documents.title'), component: Documents },
+    { label: t('dataWizard.planningTeam.title'), component: PlanningTeam },
+    { label: t('dataWizard.evaluation.title'), component: Evaluation },
+    { label: t('dataWizard.confirmation.title'), component: Confirmation }
   ];
 
   const handleNext = () => {
@@ -160,8 +166,15 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
 
       <Box sx={{ mb: 4 }}>
         <CurrentStepComponent
-          formData={formData[Object.keys(emptyFormData)[activeStep]] || {}}
-          onUpdate={handleStepUpdate}
+          formData={formData}
+          onUpdate={setFormData}
+          onNext={handleNext}
+          onBack={handleBack}
+          isLastStep={activeStep === steps.length - 1}
+          isFirstStep={activeStep === 0}
+          onClose={onClose}
+          projectId={projectId}
+          onDataUpdate={onDataUpdate}
           isRtl={isRtl}
         />
       </Box>
@@ -171,7 +184,7 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
           variant="outlined"
           onClick={handleSaveAndExit}
         >
-          {t('basicInfo.saveAndExit')}
+          {t('dataWizard.confirmation.saveAndExit')}
         </Button>
         {activeStep > 0 && (
           <Button

@@ -80,7 +80,7 @@ const ExternalEnvironment = () => {
                     multiline
                     rows={4}
                     variant="outlined"
-                    placeholder={t('strategicAnalysis.common.enterDetails')}
+                    placeholder={t('enterDetails')}
                   />
                 </AccordionDetails>
               </Accordion>
@@ -106,7 +106,7 @@ const ExternalEnvironment = () => {
                   multiline
                   rows={4}
                   variant="outlined"
-                  placeholder={t('strategicAnalysis.common.enterDetails')}
+                  placeholder={t('enterDetails')}
                 />
               </Box>
             ))}

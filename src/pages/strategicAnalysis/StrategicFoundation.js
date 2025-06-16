@@ -164,18 +164,18 @@ const StrategicFoundation = () => {
                           <Grid container spacing={1}>
                             <Grid item xs={6}>
                               <Typography variant="body2" color="text.secondary">
-                                {t('strategicAnalysis.status')}: {t(`strategicAnalysis.${item.status}`)}
+                                {t('status')}: {t(`strategicAnalysis.${item.status}`)}
                               </Typography>
                             </Grid>
                             <Grid item xs={6}>
                               <Typography variant="body2" color="text.secondary">
-                                {t('strategicAnalysis.priority')}: {t(`strategicAnalysis.${item.priority}`)}
+                                {t('priority')}: {t(`strategicAnalysis.${item.priority}`)}
                               </Typography>
                             </Grid>
                             {item.responsibleTeam && (
                               <Grid item xs={12}>
                                 <Typography variant="body2" color="text.secondary">
-                                  {t('strategicAnalysis.responsibleTeam')}: {item.responsibleTeam}
+                                  {t('strategicAnalysis.foundation.responsibleTeam')}: {item.responsibleTeam}
                                 </Typography>
                               </Grid>
                             )}
@@ -233,11 +233,11 @@ const StrategicFoundation = () => {
             <Grid container spacing={2}>
               <Grid item xs={6}>
                 <FormControl fullWidth>
-                  <InputLabel>{t('strategicAnalysis.status')}</InputLabel>
+                  <InputLabel>{t('status')}</InputLabel>
                   <Select
                     value={newItem.status}
                     onChange={(e) => setNewItem(prev => ({ ...prev, status: e.target.value }))}
-                    label={t('strategicAnalysis.status')}
+                    label={t('status')}
                   >
                     {['active', 'inactive', 'pending'].map(status => (
                       <MenuItem key={status} value={status}>
@@ -249,11 +249,11 @@ const StrategicFoundation = () => {
               </Grid>
               <Grid item xs={6}>
                 <FormControl fullWidth>
-                  <InputLabel>{t('strategicAnalysis.priority')}</InputLabel>
+                  <InputLabel>{t('priority')}</InputLabel>
                   <Select
                     value={newItem.priority}
                     onChange={(e) => setNewItem(prev => ({ ...prev, priority: e.target.value }))}
-                    label={t('strategicAnalysis.priority')}
+                    label={t('priority')}
                   >
                     {['high', 'medium', 'low'].map(priority => (
                       <MenuItem key={priority} value={priority}>
@@ -265,7 +265,7 @@ const StrategicFoundation = () => {
               </Grid>
             </Grid>
             <TextField
-              label={t('strategicAnalysis.responsibleTeam')}
+              label={t('strategicAnalysis.foundation.responsibleTeam')}
               value={newItem.responsibleTeam}
               onChange={(e) => setNewItem(prev => ({ ...prev, responsibleTeam: e.target.value }))}
               fullWidth
@@ -274,10 +274,10 @@ const StrategicFoundation = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>
-            {t('strategicAnalysis.foundation.cancel')}
+            {t('cancel')}
           </Button>
           <Button onClick={handleSave} variant="contained" color="primary">
-            {t('strategicAnalysis.foundation.save')}
+            {t('save')}
           </Button>
         </DialogActions>
       </Dialog>

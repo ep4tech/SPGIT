@@ -226,7 +226,9 @@ function App() {
         <Route path="/training/*" element={<TrainingSection />} />
         <Route path="/execution/*" element={<ExecutionSection />} />
         <Route path="/evaluation" element={<MainLayout onLanguageChange={handleLanguageChange}><div>Evaluation Section</div></MainLayout>} />
-        <Route path="/basic-info" element={<MainLayout onLanguageChange={handleLanguageChange}><div>Basic Info Section</div></MainLayout>} />
+        <Route path="/basic-info" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
+  <Route index element={<ProjectDataWizard />} />
+</Route>
         <Route path="/organization-permissions" element={<MainLayout onLanguageChange={handleLanguageChange}><OrganizationPermissionsPage /></MainLayout>} />
         <Route path="/strategy" element={<MainLayout onLanguageChange={handleLanguageChange}><StrategicAnalysis /></MainLayout>} />
         <Route path="/strategy-formulation" element={<MainLayout onLanguageChange={handleLanguageChange}><StrategyFormulation /></MainLayout>} />

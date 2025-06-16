@@ -14,8 +14,8 @@ const SetupExecutionPage = () => {
   });
 
   const steps = [
-    t('execution.setup.projectInfo'),
-    t('execution.setup.team'),
+    t('execution.setup.projectInfo.title'),
+    t('execution.setup.team.title'),
     t('execution.setup.timeline'),
     t('execution.setup.documentUpload')
   ];
@@ -35,19 +35,19 @@ const SetupExecutionPage = () => {
       </Stepper>
       <Paper sx={{ p: 3, mb: 2 }}>
         {activeStep === 0 && (
-          <TextField label={t('execution.setup.projectName')} name="projectName" fullWidth value={form.projectName} onChange={handleChange} sx={{ mb: 2 }} />
+          <TextField label={t('execution.setup.projectInfo.projectName')} name="projectName" fullWidth value={form.projectName} onChange={handleChange} sx={{ mb: 2 }} />
         )}
         {activeStep === 1 && (
-          <TextField label={t('execution.setup.team')} name="team" fullWidth value={form.team} onChange={handleChange} sx={{ mb: 2 }} />
+          <TextField label={t('execution.setup.team.title')} name="team" fullWidth value={form.team} onChange={handleChange} sx={{ mb: 2 }} />
         )}
         {activeStep === 2 && (
           <Grid container spacing={2}>
-            <Grid item xs={6}><TextField label={t('execution.setup.startDate')} name="startDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.startDate} onChange={handleChange} /></Grid>
-            <Grid item xs={6}><TextField label={t('execution.setup.endDate')} name="endDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.endDate} onChange={handleChange} /></Grid>
+            <Grid item xs={6}><TextField label={t('execution.setup.projectInfo.startDate')} name="startDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.startDate} onChange={handleChange} /></Grid>
+            <Grid item xs={6}><TextField label={t('execution.setup.projectInfo.endDate')} name="endDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.endDate} onChange={handleChange} /></Grid>
           </Grid>
         )}
         {activeStep === 3 && (
-          <TextField label={t('execution.setup.document')} name="document" fullWidth value={form.document} onChange={handleChange} sx={{ mb: 2 }} />
+          <TextField label={t('execution.setup.projectInfo.document')} name="document" fullWidth value={form.document} onChange={handleChange} sx={{ mb: 2 }} />
         )}
       </Paper>
       <Box display="flex" justifyContent="space-between">

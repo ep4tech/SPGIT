@@ -93,7 +93,7 @@ const InternalEnvironment = () => {
                           multiline
                           rows={4}
                           variant="outlined"
-                          placeholder={t('strategicAnalysis.common.enterDetails')}
+                          placeholder={t('enterDetails')}
                         />
                       </Box>
                       {subsection.hasRating && (
@@ -114,7 +114,7 @@ const InternalEnvironment = () => {
                     multiline
                     rows={4}
                     variant="outlined"
-                    placeholder={t('strategicAnalysis.common.enterDetails')}
+                    placeholder={t('enterDetails')}
                     sx={{ mb: section.hasRating ? 2 : 0 }}
                   />
                   {section.hasRating && (

@@ -63,7 +63,7 @@ const Documents = ({ formData, setFormData }) => {
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
-        {t('basicInfo.documents')}
+        {t('dataWizard.documents.title')}
       </Typography>
       <Grid container spacing={3}>
         {documentTypes.map((docType) => (
@@ -81,7 +81,7 @@ const Documents = ({ formData, setFormData }) => {
             >
               <Box sx={{ flexGrow: 1 }}>
                 <Typography variant="subtitle1" gutterBottom>
-                  {t('basicInfo.documents' + docType)}
+                  {t('dataWizard.documents.' + docType)}
                 </Typography>
                 {documents[docType] ? (
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -105,7 +105,7 @@ const Documents = ({ formData, setFormData }) => {
                     endIcon={isRtl && <UploadIcon />}
                     sx={{ direction: isRtl ? 'rtl' : 'ltr' }}
                   >
-                    {t('basicInfo.upLoadFile')}
+                    {t('dataWizard.documents.upLoadFile')}
                     <input
                       type="file"
                       hidden

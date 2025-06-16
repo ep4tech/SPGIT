@@ -105,14 +105,14 @@ const Coordination = () => {
                           </Typography>
                           {item.frequency && (
                             <Typography variant="body2" color="text.secondary" gutterBottom>
-                              {t('basicInfo.frequency')}: {t(item.frequency)}
+                              {t('frequency')}: {t(item.frequency)}
                             </Typography>
                           )}
                         </Box>
                         {item.relatedProjects.length > 0 && (
                           <Box sx={{ mb: 1 }}>
                             <Typography variant="body2" color="text.secondary" gutterBottom>
-                              {t('basicInfo.relatedProjects')}:
+                              {t('relatedProjects')}:
                             </Typography>
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                               {item.relatedProjects.map((project, index) => (
@@ -190,11 +190,11 @@ const Coordination = () => {
                           </Select>
                         </FormControl>
                         <FormControl size="small" sx={{ minWidth: 120 }}>
-                          <InputLabel>{t('basicInfo.frequency')}</InputLabel>
+                          <InputLabel>{t('frequency')}</InputLabel>
                           <Select
                             value={newItem.frequency}
-                            label={t('basicInfo.frequency')}
-                            onChange={(e) => setNewItem(prev => ({ ...prev, frequency: e.target.value }))}
+                            label={t('frequency')}
+                            onChange={(e) => setNewItem(prev => ({ ...prev,frequency: e.target.value }))}
                           >
                             {frequencies.map(freq => (
                               <MenuItem key={freq} value={freq}>
@@ -216,8 +216,8 @@ const Coordination = () => {
                         renderInput={(params) => (
                           <TextField
                             {...params}
-                            label={t('basicInfo.relatedProjects')}
-                            placeholder={t('basicInfo.selectProject')}
+                            label={t('relatedProjects')}
+                            placeholder={t('selectProject')}
                           />
                         )}
                       />
@@ -233,8 +233,8 @@ const Coordination = () => {
                         renderInput={(params) => (
                           <TextField
                             {...params}
-                            label={t('stakeholders')}
-                            placeholder={t('basicInfo.selectStakeholders')}
+                            label={t('strategyFormulation.coordination.items.selectStakeholders')}
+                            placeholder={t('strategyFormulation.coordination.items.selectStakeholders')}
                           />
                         )}
                       />

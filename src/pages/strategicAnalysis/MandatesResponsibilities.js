@@ -83,14 +83,14 @@ const MandatesResponsibilities = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography variant="h4" gutterBottom>
-        {t('mandatesAndResponsibilities')}
+        {t('strategicAnalysis.mandates.title')}
       </Typography>
 
       <Paper sx={{ p: 3, mb: 3 }}>
         <Box sx={{ mb: 3, display: 'flex', gap: 2 }}>
           <TextField
             fullWidth
-            label={t('newResponsibility')}
+            label={t('strategicAnalysis.mandates.newResponsibility')}
             value={newResponsibility}
             onChange={(e) => setNewResponsibility(e.target.value)}
           />
@@ -128,7 +128,7 @@ const MandatesResponsibilities = () => {
                     <TextField
                       fullWidth
                       size="small"
-                      label={t('newMandate')}
+                      label={t('strategicAnalysis.mandates.newMandate')}
                       value={newMandate}
                       onChange={(e) => setNewMandate(e.target.value)}
                     />

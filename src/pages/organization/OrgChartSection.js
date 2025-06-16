@@ -210,12 +210,12 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
           onClick={moveNode}
           style={{ marginLeft: 8 }}
         >
-          {t('moveUnit')}
+          {t('organizationPermissions.orgChart.moveUnit')}
         </Button>
         {editMode && (
           <>
             <TextField size="small" value={editNodeName} onChange={e => setEditNodeName(e.target.value)} />
-            <Button onClick={editNode}>{t('editUnit')}</Button>
+            <Button onClick={editNode}>{t('organizationPermissions.orgChart.editUnit')}</Button>
             <Button onClick={() => setEditMode(false)}>{t('cancel')}</Button>
           </>
         )}

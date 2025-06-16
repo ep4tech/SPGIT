@@ -128,7 +128,7 @@ const ProjectSelector = ({
           <TextField
             autoFocus
             margin="dense"
-            label={t('basicInfo.projectName')}
+            label={t('projectName')}
             type="text"
             fullWidth
             variant="standard"

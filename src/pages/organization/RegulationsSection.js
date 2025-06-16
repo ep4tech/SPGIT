@@ -45,7 +45,7 @@ const RegulationsSection = ({ selectedOrgNodeId }) => {
         <TextField size="small" value={newRegulation} onChange={e => setNewRegulation(e.target.value)} placeholder={t('organizationPermissions.regulations.addRegulation')}
           onKeyDown={e => { if (e.key === 'Enter') handleAdd(); }}
         />
-        <Button variant="contained" size="small" onClick={handleAdd}>{t('organizationPermissions.regulations.add')}</Button>
+        <Button variant="contained" size="small" onClick={handleAdd}>{t('add')}</Button>
       </div>
       <List>
         {regulations.map(reg => (

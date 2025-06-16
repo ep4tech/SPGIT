@@ -18,17 +18,17 @@ const AlignmentExecutionPage = () => {
     <Box p={3}>
       <Typography variant="h5" gutterBottom>{t('execution.alignment.title')}</Typography>
       <Paper sx={{ p: 3, mb: 2 }}>
-        <TextField label={t('execution.alignment.goal')} name="goal" value={alignment.goal} onChange={e => setAlignment({ ...alignment, goal: e.target.value })} sx={{ mr: 1 }} />
-        <TextField label={t('execution.alignment.department')} name="department" value={alignment.department} onChange={e => setAlignment({ ...alignment, department: e.target.value })} sx={{ mr: 1 }} />
-        <TextField label={t('execution.alignment.status')} name="status" value={alignment.status} onChange={e => setAlignment({ ...alignment, status: e.target.value })} sx={{ mr: 1 }} />
+        <TextField label={t('goal')} name="goal" value={alignment.goal} onChange={e => setAlignment({ ...alignment, goal: e.target.value })} sx={{ mr: 1 }} />
+        <TextField label={t('department')} name="department" value={alignment.department} onChange={e => setAlignment({ ...alignment, department: e.target.value })} sx={{ mr: 1 }} />
+        <TextField label={t('status')} name="status" value={alignment.status} onChange={e => setAlignment({ ...alignment, status: e.target.value })} sx={{ mr: 1 }} />
         <Button onClick={handleAdd} variant="contained">{t('add')}</Button>
       </Paper>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('execution.alignment.goal')}</TableCell>
-            <TableCell>{t('execution.alignment.department')}</TableCell>
-            <TableCell>{t('execution.alignment.status')}</TableCell>
+            <TableCell>{t('goal')}</TableCell>
+            <TableCell>{t('department')}</TableCell>
+            <TableCell>{t('status')}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -198,7 +198,7 @@ const ObjectivesProjects = () => {
                         <Typography variant="body2">{t('stakeholders')}:</Typography>
                         <TextField
                           size="small"
-                          placeholder={t('strategyFormulation.objectivesProjects.addStakeholder')}
+                          placeholder={t('strategyFormulation.objectivesProjects.items.addStakeholder')}
                           onKeyPress={(e) => {
                             if (e.key === 'Enter') {
                               handleAddStakeholder(e.target.value);
