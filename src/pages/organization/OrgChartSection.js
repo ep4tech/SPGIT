@@ -40,7 +40,8 @@ function renderNode(node, setSelectedOrgNodeId, selectedOrgNodeId) {
   );
 }
 
-const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
+const OrgChartSection = (props) => {
+  console.log('======>> We are in pages/organization/OrgChartSection.js');
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const { t } = useTranslation();
   const [tree, setTree] = useState(initialTree);
@@ -83,13 +84,13 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
   // Move node under new parent
   function moveNode() {
     if (!moveTargetId) return;
-    if (selectedOrgNodeId === tree.id) return; // don't move root
+    if (props.selectedOrgNodeId === tree.id) return; // don't move root
     const newTree = JSON.parse(JSON.stringify(tree));
     let movingNode = null;
     // Remove node from current parent
     function removeNode(node, parent) {
       if (!parent) return false;
-      const idx = parent.children.findIndex(child => child.id === selectedOrgNodeId);
+      const idx = parent.children.findIndex(child => child.id === props.selectedOrgNodeId);
       if (idx !== -1) {
         movingNode = parent.children[idx];
         parent.children.splice(idx, 1);
@@ -113,7 +114,7 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
     }
     addToTarget(newTree);
     setTree(newTree);
-    setSelectedOrgNodeId(movingNode.id);
+    props.setSelectedOrgNodeId(movingNode.id);
     setMoveTargetId('');
   }
 
@@ -121,7 +122,7 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
   function addSubunit() {
     if (!newNodeName.trim()) return;
     function addRec(node) {
-      if (node.id === selectedOrgNodeId) {
+      if (node.id === props.selectedOrgNodeId) {
         node.children = node.children || [];
         node.children.push({ id: String(Date.now()), name: newNodeName, children: [] });
       } else if (node.children) {
@@ -136,7 +137,7 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
   // Edit node
   function editNode() {
     function editRec(node) {
-      if (node.id === selectedOrgNodeId) {
+      if (node.id === props.selectedOrgNodeId) {
         node.name = editNodeName;
       } else if (node.children) {
         node.children.forEach(editRec);
@@ -151,12 +152,12 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
   // Delete a node from the org chart (except root)
   function deleteNode() {
     // Don't allow deleting the root node
-    if (String(tree.id) === String(selectedOrgNodeId)) {
+    if (String(tree.id) === String(props.selectedOrgNodeId)) {
       console.warn('Cannot delete the root node.');
       return;
     }
 
-    // Recursively remove the node with selectedOrgNodeId from the tree
+    // Recursively remove the node with props.selectedOrgNodeId from the tree
     function removeNodeRecursive(node, targetId) {
       if (!node.children) return;
       node.children = node.children.filter(child => String(child.id) !== String(targetId));
@@ -165,9 +166,9 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
 
     // Deep clone the tree to avoid mutating state directly
     const newTree = JSON.parse(JSON.stringify(tree));
-    removeNodeRecursive(newTree, selectedOrgNodeId);
+    removeNodeRecursive(newTree, props.selectedOrgNodeId);
     setTree(newTree);
-    setSelectedOrgNodeId(newTree.id);
+    props.setSelectedOrgNodeId(newTree.id);
   }
 
   return (
@@ -177,7 +178,7 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
         <TextField size="small" value={newNodeName} onChange={e => setNewNodeName(e.target.value)} placeholder={t('organizationPermissions.orgChart.newUnitName')} />
         <Tooltip title={t('organizationPermissions.orgChart.editUnit')}><IconButton onClick={() => {
           setEditMode(true);
-          setEditNodeName(findNodeById(tree, selectedOrgNodeId)?.name || '');
+          setEditNodeName(findNodeById(tree, props.selectedOrgNodeId)?.name || '');
         }}><EditIcon /></IconButton></Tooltip>
         <Tooltip title={t('organizationPermissions.orgChart.deleteUnit')}><IconButton onClick={() => setDeleteDialogOpen(true)}><DeleteIcon /></IconButton></Tooltip>
         <Dialog open={deleteDialogOpen} onClose={() => setDeleteDialogOpen(false)}>
@@ -227,7 +228,7 @@ const OrgChartSection = ({ selectedOrgNodeId, setSelectedOrgNodeId }) => {
           lineColor={'#bbc'}
           lineBorderRadius={'10px'}
         >
-          {renderNode(tree, setSelectedOrgNodeId, selectedOrgNodeId)}
+          {renderNode(tree, props.setSelectedOrgNodeId, props.selectedOrgNodeId)}
         </Tree>
       </div>
     </div>

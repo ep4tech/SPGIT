@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import './OrganizationPermissions.css';
 
 const OrganizationPermissionsPage = () => {
+  console.log('======>> We ae in pages/organization/OrganizationPermissionsPage.js');
   const { t } = useTranslation();
   const [selectedOrgNodeId, setSelectedOrgNodeId] = React.useState('1');
   return (

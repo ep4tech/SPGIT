@@ -95,6 +95,7 @@ i18n.on('languageChanged', (lng) => {
 });
 
 const RtlProvider = ({ children }) => {
+  console.log('======>> We ae in index.js');
   const direction = i18n.language === 'ar' ? 'rtl' : 'ltr';
   const currentTheme = createTheme({
     ...theme,

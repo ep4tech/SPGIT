@@ -18,9 +18,10 @@ import {
   Description as DescriptionIcon,
 } from '@mui/icons-material';
 
-const Documents = ({ formData, setFormData }) => {
+const Documents = (props) => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
+  const { setFormData } = props;
 
   const documentTypes = [
     'officialDecision',
@@ -81,7 +82,7 @@ const Documents = ({ formData, setFormData }) => {
             >
               <Box sx={{ flexGrow: 1 }}>
                 <Typography variant="subtitle1" gutterBottom>
-                  {t('dataWizard.documents.' + docType)}
+                  {t('dataWizard.documents.docType.' + docType)}
                 </Typography>
                 {documents[docType] ? (
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

@@ -3,6 +3,7 @@ import { Box, Typography, TextField, Button, Paper, List, ListItem, ListItemText
 import { useTranslation } from 'react-i18next';
 
 const CommunicationExecutionPage = () => {
+  console.log('======>> We ae in pages/execution/CommunicationExecutionPage.js');
   const { t } = useTranslation();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);

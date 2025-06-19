@@ -41,6 +41,7 @@ const menuItems = [
 ];
 
 const StrategicAnalysis = () => {
+  console.log('======>> We ae in components/StrategicAnalysis/index.js');
   const { t } = useTranslation();
   const [selectedPage, setSelectedPage] = useState(localStorage.getItem('strategicAnalysisPage') || 'foundation');
 

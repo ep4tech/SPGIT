@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 // Placeholder for a Gantt chart or timeline visualization
 const RoadmapExecutionPage = () => {
+  console.log('======>> We ae in pages/execution/RoadmapExecutionPage.js');
   const { t } = useTranslation();
   // You could use a third-party Gantt/timeline library here for real use
   return (

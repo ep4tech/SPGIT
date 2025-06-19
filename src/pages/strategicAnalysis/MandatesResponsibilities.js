@@ -19,6 +19,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { useTranslation } from 'react-i18next';
 
 const MandatesResponsibilities = () => {
+  console.log('======>> We ae in pages/strategicAnalysis/MandatesResponsibilities.js');
   const { t } = useTranslation();
   const [responsibilities, setResponsibilities] = useState([]);
   const [newResponsibility, setNewResponsibility] = useState('');

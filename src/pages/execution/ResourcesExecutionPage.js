@@ -3,6 +3,7 @@ import { Box, Typography, Paper, Table, TableHead, TableRow, TableCell, TableBod
 import { useTranslation } from 'react-i18next';
 
 const ResourcesExecutionPage = () => {
+  console.log('======>> We ae in pages/execution/ResourcesExecutionPage.js');
   const { t } = useTranslation();
   const [resources, setResources] = useState([]);
   const [resource, setResource] = useState({ name: '', type: '', quantity: '' });

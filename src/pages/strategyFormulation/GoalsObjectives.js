@@ -27,6 +27,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 
 const GoalsObjectives = () => {
+  console.log('======>> We ae in pages/strategyFormulation/GoalsObjectives.js');
   const { t } = useTranslation();
   const [items, setItems] = useState({
     strategicGoals: [],

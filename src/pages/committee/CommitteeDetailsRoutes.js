@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CommitteeDetailsRoutes = () => {
+  console.log('======>> We ae in pages/committee/CommitteeDetailsRoutes.js');
   return (
     <div style={{ padding: 24 }}>
       <h2>Committee Details (Starter)</h2>

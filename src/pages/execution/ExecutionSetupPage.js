@@ -3,6 +3,7 @@ import { Typography, Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 const ExecutionSetupPage = () => {
+  console.log('======>> We ae in pages/execution/ExecutionSetupPage.js');
   const { t } = useTranslation();
   return (
     <Box p={3}>

@@ -3,6 +3,7 @@ import { Box, Typography, Paper, Table, TableHead, TableRow, TableCell, TableBod
 import { useTranslation } from 'react-i18next';
 
 const ProjectsExecutionPage = () => {
+  console.log('======>> We ae in pages/execution/ProjectsExecutionPage.js');
   const { t } = useTranslation();
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState({ name: '', status: '', progress: '' });

@@ -24,6 +24,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 const MissionStatement = () => {
+  console.log('======>> We ae in pages/strategicAnalysis/MissionStatement.js');
   const { t } = useTranslation();
   const [suggestedStatements, setSuggestedStatements] = useState([]);
   const [editableStatements, setEditableStatements] = useState([]);

@@ -18,7 +18,7 @@ import {
   Edit as EditIcon,
 } from '@mui/icons-material';
 
-const ProjectSelector = ({ 
+const ProjectSelector = ({
   projects = [], 
   selectedProjectId, 
   onProjectSelect = () => {}, 

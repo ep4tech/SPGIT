@@ -29,6 +29,7 @@ const mockCommittees = [
 ];
 
 const CommitteesDashboard = () => {
+  console.log('======>> We ae in components/CommitteesDashboard.js');
   const { t } = useTranslation();
   const [committees, setCommittees] = useState(mockCommittees);
   const [searchTerm, setSearchTerm] = useState('');

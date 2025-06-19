@@ -3,6 +3,7 @@ import { Typography, Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 const ExecutionAlignmentPage = () => {
+  console.log('======>> We ae in pages/execution/ExecutionAlignmentPage.js');
   const { t } = useTranslation();
   return (
     <Box p={3}>

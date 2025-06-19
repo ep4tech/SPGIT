@@ -31,16 +31,17 @@ import ExecutivePlans from '../../pages/strategyFormulation/ExecutivePlans';
 const drawerWidth = 280;
 
 const menuItems = [
-  { id: 'initialView', icon: <InitialViewIcon /> },
-  { id: 'visionChallenges', icon: <VisionIcon /> },
-  { id: 'strategicIssues', icon: <IssuesIcon /> },
-  { id: 'goalsObjectives', icon: <GoalsIcon /> },
-  { id: 'objectivesProjects', icon: <ProjectsIcon /> },
-  { id: 'coordination', icon: <CoordinationIcon /> },
-  { id: 'executivePlans', icon: <PlansIcon /> },
+  { id: 'initialView', icon: <InitialViewIcon />, label: 'Initial View and Strategic Directions', description: 'Overview and entry point for strategic formulation.' },
+  { id: 'visionChallenges', icon: <VisionIcon />, label: 'Vision and Challenges', description: 'Define the vision and identify key challenges.' },
+  { id: 'strategicIssues', icon: <IssuesIcon />, label: 'Strategic Issues', description: 'List and analyze strategic issues.' },
+  { id: 'goalsObjectives', icon: <GoalsIcon />, label: 'Goals and Objectives', description: 'Set goals and measurable objectives.' },
+  { id: 'objectivesProjects', icon: <ProjectsIcon />, label: 'Objectives Deployment and Projects', description: 'Map objectives to actionable projects.' },
+  { id: 'coordination', icon: <CoordinationIcon />, label: 'Coordination', description: 'Plan internal and external coordination.' },
+  { id: 'executivePlans', icon: <PlansIcon />, label: 'Executive Plans', description: 'Develop executive plans and action steps.' },
 ];
 
 const StrategyFormulation = () => {
+  console.log('======>> We ae in components/StrategyFormulation/index.js');
   const { t, i18n } = useTranslation();
   const [, forceUpdate] = useState({});  // Add state to force re-render
 
@@ -102,63 +103,65 @@ const StrategyFormulation = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider', bgcolor: 'primary.main', color: 'white' }}>
-        <Typography variant="h4" gutterBottom>
-          {t('strategyFormulation.pageTitle')}
-        </Typography>
-        <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-          {t('strategyFormulation.pageDescription')}
-        </Typography>
-      </Box>
-      <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider' }}>
-        <Button
-          startIcon={<ArrowBackIcon />}
-          onClick={handleBack}
-          sx={{ mb: 2 }}
-        >
-          {t('back')}
-        </Button>
-      </Box>
-      <Box sx={{ display: 'flex', flex: 1 }}>
-        <Drawer
-          variant="permanent"
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            '& .MuiDrawer-paper': {
+    <>
+      
+      <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider', bgcolor: 'primary.main', color: 'white' }}>
+          <Typography variant="h4" gutterBottom>
+            {t('strategyFormulation.pageTitle')}
+          </Typography>
+          <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+            {t('strategyFormulation.pageDescription')}
+          </Typography>
+        </Box>
+        <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider' }}>
+          <Button
+            startIcon={<ArrowBackIcon />}
+            onClick={handleBack}
+            sx={{ mb: 2 }}
+          >
+            {t('back')}
+          </Button>
+        </Box>
+        <Box sx={{ display: 'flex', flex: 1 }}>
+          <Drawer
+            variant="permanent"
+            sx={{
               width: drawerWidth,
-              boxSizing: 'border-box',
-              position: 'relative',
-            },
-          }}
-        >
-          <List>
-            {menuItems.map((item) => (
-              <ListItem
-                button
-                key={item.id}
-                selected={selectedPage === item.id}
-                onClick={() => handlePageSelect(item.id)}
-                sx={{
-                  '&.Mui-selected': {
-                    backgroundColor: 'primary.light',
-                    '&:hover': {
+              flexShrink: 0,
+              '& .MuiDrawer-paper': {
+                width: drawerWidth,
+                boxSizing: 'border-box',
+                position: 'relative',
+              },
+            }}
+          >
+            <List>
+              {menuItems.map((item) => (
+                <ListItem
+                  button
+                  key={item.id}
+                  selected={selectedPage === item.id}
+                  onClick={() => handlePageSelect(item.id)}
+                  sx={{
+                    '&.Mui-selected': {
                       backgroundColor: 'primary.light',
+                      '&:hover': {
+                        backgroundColor: 'primary.light',
+                      },
                     },
-                  },
-                }}
-              >
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText primary={t(`strategyFormulation.menu.${item.id}`)} />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
-        <Box sx={{ flex: 1, p: 3, overflow: 'auto' }}>{renderPage()}</Box>
+                  }}
+                >
+                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemText primary={t(`strategyFormulation.menu.${item.id}`)} />
+                </ListItem>
+              ))}
+            </List>
+          </Drawer>
+          <Box sx={{ flex: 1, p: 3, overflow: 'auto' }}>{renderPage()}</Box>
+        </Box>
       </Box>
-    </Box>
-  );
+    </>
+  )
 };
-
 export default StrategyFormulation;

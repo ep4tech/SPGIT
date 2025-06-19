@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const InitiativesPage = () => {
+  console.log('======>> We ae in pages/strategyFormulation/InitiativesPage.js');
   const { t } = useTranslation();
   return (
     <div>

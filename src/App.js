@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import ProjectSelector from './components/ProjectSelector';
 import MainLayout from './components/MainLayout';
 import ProjectDataWizard from './components/ProjectDataWizard';
-import StrategicAnalysis from './components/StrategicAnalysis';
+import StrategicAnalysis from './pages/strategicAnalysis';
 import StrategyFormulation from './components/StrategyFormulation';
 // All page-level components for strategic analysis and strategy formulation are now imported in their containers from src/pages/strategy/strategicAnalysis/ and src/pages/strategy/strategyFormulation/ respectively.
 import DashboardPage from './pages/dashboard/DashboardPage';
@@ -98,6 +98,7 @@ function App() {
 
   // Load projects from localStorage on mount
   useEffect(() => {
+  console.log('======>> We ae in App.js');
     const savedProjects = localStorage.getItem('projects');
     const savedSelectedId = localStorage.getItem('selectedProjectId');
     const savedBasicInfo = localStorage.getItem('basicInfo');
@@ -230,8 +231,12 @@ function App() {
   <Route index element={<ProjectDataWizard />} />
 </Route>
         <Route path="/organization-permissions" element={<MainLayout onLanguageChange={handleLanguageChange}><OrganizationPermissionsPage /></MainLayout>} />
-        <Route path="/strategy" element={<MainLayout onLanguageChange={handleLanguageChange}><StrategicAnalysis /></MainLayout>} />
-        <Route path="/strategy-formulation" element={<MainLayout onLanguageChange={handleLanguageChange}><StrategyFormulation /></MainLayout>} />
+        <Route path="/strategy" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
+  <Route index element={<StrategicAnalysis />} />
+</Route>
+        <Route path="/strategy-formulation" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
+  <Route index element={<StrategyFormulation />} />
+</Route>
       </Routes>
     </BrowserRouter>
   );  

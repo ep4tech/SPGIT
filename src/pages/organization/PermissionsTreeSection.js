@@ -74,7 +74,8 @@ function renderTree(nodes, onEdit, onDelete, onAdd, selectedNodeId, editingNodeI
   ));
 }
 
-const PermissionsTreeSection = ({ selectedOrgNodeId }) => {
+const PermissionsTreeSection = (props) => {
+  console.log('======>> We are in pages/organization/PermissionsTreeSection.js');
   const { t, i18n } = useTranslation();
   // Permissions are now stored per org node
   const [permissionsByOrg, setPermissionsByOrg] = useState({

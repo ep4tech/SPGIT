@@ -25,6 +25,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 const drawerWidth = 280;
 
 const CommitteeLayout = () => {
+  console.log('======>> We ae in components/CommitteeLayout.js');
   const { t, i18n } = useTranslation(); // Added i18n
   const location = useLocation();
 

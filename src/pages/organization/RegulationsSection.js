@@ -9,13 +9,14 @@ const initialRegulations = [
   { id: 2, name: 'نظام المالية', file: null },
 ];
 
-const RegulationsSection = ({ selectedOrgNodeId }) => {
+const RegulationsSection = (props) => {
+  console.log('======>> We are in pages/organization/RegulationsSection.js');
   const { t } = useTranslation();
   // Regulations are now stored per org node
   const [regulationsByOrg, setRegulationsByOrg] = useState({
     '1': initialRegulations,
   });
-  const regulations = regulationsByOrg[selectedOrgNodeId] || [];
+  const regulations = regulationsByOrg[props.selectedOrgNodeId] || [];
   const [newRegulation, setNewRegulation] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editValue, setEditValue] = useState('');
@@ -24,8 +25,8 @@ const RegulationsSection = ({ selectedOrgNodeId }) => {
     if (!newRegulation.trim()) return;
     setRegulationsByOrg(prev => ({
       ...prev,
-      [selectedOrgNodeId]: [
-        ...(prev[selectedOrgNodeId] || []),
+      [props.selectedOrgNodeId]: [
+        ...(prev[props.selectedOrgNodeId] || []),
         { id: Date.now(), name: newRegulation, file: null },
       ]
     }));

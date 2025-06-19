@@ -1,8 +1,6 @@
-// src/translations.js
 export const translations = {
   en: {
     appTitle: 'Strategic Planning',
-    // Common Keys
     help: 'Help',
     notifications: 'Notifications',
     noNewNotifications: 'No new notifications',
@@ -75,6 +73,8 @@ export const translations = {
     enterTitle: 'Enter title here...',
 
     dataWizard: {
+      title: 'Project Data',
+      description: 'Project Data details',
       basicInfo: {
         title: 'Basic Information',
         description: 'Basic Information',
@@ -96,7 +96,20 @@ export const translations = {
 
       documents: {
         title: 'Documents',
-        upLoadFile: 'Upload File'
+        upLoadFile: 'Upload File',
+        docType: {
+          officialDecision: 'Officail Descesion',
+          commitmentMinutes: 'Commitment Minutes',
+          goalDocument: 'Goal Document',
+          scopeDocument: 'Scope Document',
+          workPlan: 'Work Plan',
+          financialPlan: 'Financial Plan',
+          obstaclesAndSolutions: 'Obstacles And Solutions',
+          benefitsAnalysis: 'Benefits Analysis',
+          futureStudies: 'Future Studies',
+          leadershipParticipation: 'Leadership Participation',
+          externalCoordination: 'External Coordination'
+        }
       },
 
       planningTeam: {
@@ -105,7 +118,10 @@ export const translations = {
         externalOrganization: 'External Organization',
         committeeName: 'Committee Name',
         committeeRole: 'Committee Role',
-        addMember: 'Add Member'
+        addMember: 'Add Member',
+        internalTeam: 'Internal Team',
+        externalTeam: 'External Team',
+        committees: 'Committees'
       },
       confirmation: {
         title: 'Confirmation',
@@ -134,7 +150,7 @@ export const translations = {
         kpiName: 'KPI Name',
         kpiDescription: 'KPI Description',
         mitigation: 'Mitigation',
-        monitoring: 'Monitoring',
+        assessment: 'Assessment',
         objectives: 'Objectives',
         owner: 'Owner',
         probability: 'Probability',
@@ -199,6 +215,11 @@ export const translations = {
         responsibleTeam: 'Responsible Team',
         priority: 'Priority',
         status: 'Status',
+        sections: {
+          principles: 'principles',
+          behaviors: 'behaviors',
+          values: 'values'
+        },
         principleTypes: {
           core: 'Core',
           operational: 'Operational',
@@ -340,12 +361,21 @@ export const translations = {
         title: 'Initial View and Strategic Directions',
         subtitle: 'Initial View and Strategic Directions',
         items: {
-          leadershipExpectations: 'Identify leadership expectations and organizational trends',
-          employeeExpectations: 'Employee expectations',
-          stakeholderRequirements: 'Identify beneficiary requirements (clients, employees, community...)',
-          nationalDevelopment: 'Monitor national development plan trends',
-          globalTrends: 'Study global trends and future foresight',
-        }
+          leadershipExpectations: 'Leadership Expectations & Organizational Trends',
+          employeeExpectations: 'Employee Expectations',
+          stakeholderRequirements: 'Stakeholder & Beneficiary Requirements',
+          nationalDevelopment: 'National Development Plan Trends',
+          globalTrends: 'Global Trends & Foresight',
+        },
+        add: 'Add',
+        save: 'Save',
+        delete: 'Delete',
+        enterDetails: 'Enter details here...',
+        leadershipExpectationsDesc: 'Describe leadership expectations and organizational trends',
+        employeeExpectationsDesc: 'Describe employee expectations',
+        stakeholderRequirementsDesc: 'Describe stakeholder and beneficiary requirements',
+        nationalDevelopmentDesc: 'Describe national development plan trends',
+        globalTrendsDesc: 'Describe global trends and foresight'
       },
       visionChallenges: {
         title: 'Vision and Challenges',
@@ -483,223 +513,20 @@ export const translations = {
         quantity: 'Quantity'
       },
       feedback: {
-        title: 'Data & Feedback',
-        description: 'Design feedback networks and update data.',
-        contents: 'Contents:',
-        input: 'Progress data entry.',
-        chart: 'Update/notes chart.',
-        reports: 'Periodic feedback reports.',
-        alerts: 'Automatic alerts for delays.',
-        enter: 'Enter',
-        send: 'Send'
-      },
-      projects: {
-        title: 'Projects & Initiatives Execution',
-        description: 'Apply execution plans by schedule and level.',
-        contents: 'Contents:',
-        gantt: 'Task/project Gantt chart.',
-        groups: 'Initiative change groups.',
-        status: 'Project status (in progress, late, complete...).',
-        link: 'Link each project to strategic objectives.',
-        name: 'Name',
-        progress: 'Progress'
-      },
-      support: {
-        title: 'Field Support & Challenges',
-        description: 'Identify and manage field challenges.',
-        contents: 'Contents:',
-        log: 'Field log (visit, note, challenge).',
-        resistance: 'Change resistance analysis.',
-        programs: 'Change programs matrix.',
-        send: 'Send',
-        enter: 'Enter'
-      },
-      alignment: {
-        title: 'Dynamic Linking: Plan & Reality',
-        description: 'Reconnect initiatives with operations.',
-        contents: 'Contents:',
-        compare: 'Compare initiative goals and actual results.',
-        board: 'Alignment board',
-        warnings: 'Alignment warnings'
-      },
-      communication: {
-        title: 'Execution Communication',
-        description: 'Desc',
-        contents: 'Contents:',
-        board: 'Board',
-        channels: 'Channels',
-        log: 'Log',
-        notifications: 'Notifications',
-        publish: 'Publish',
-        upload: 'Upload',
-        message: 'Message',
-        send: 'Send',
-        enter: 'Enter'
-      },
-
-      setup: {
-        title: 'Setup',
-        description: 'Setup',
-        assign: 'Assign',
-        contents: 'Contents',
-        doc: 'Doc',
-        docInput: 'DocInput',
-        org: 'Org',
-        orgChart: 'OrgChart',
-        schedule: 'Schedule',
-        teamsMatrix: 'TeamsMatrix',
-        team: {
-          title: 'Team',
-          membershipStart: 'Membership Start',
-          externalOrganization: 'External Organization',
-          committeeName: 'Committee Name',
-          committeeRole: 'Committee Role',
-          addMember: 'Add Member'
+        monitoring: {
+          title: 'Monitoring',
+          description: 'Monitor and track progress'
         },
-        timeline: 'Time line',
-        documentUpload: 'Document Upload',
-        projectInfo: {
-          title: 'Project Info',
-          projectName: 'Project Name',
-          startDate: 'Start Date',
-          endDate: 'End Date',
-          document: 'Document'
+        committeeRole: 'Committee Role',
+        committees: 'Committees',
+        committeeTypeHeader: 'Committee Type',
+        statusHeader: 'Status',
+        membersCountHeader: 'Members Count',
+        list: {
+          name: 'Committee Name',
+          chair: 'Chair',
+          members: 'Members',
         },
-
-      }
-    },
-
-    monitoring: {
-      title: "Title",
-      description: "Monitoring the strategy plan and followup it",
-      menu: {
-        mainTitle: "Monitoring Menu",
-        tools: "Monitoring Tools",
-        kpis: "KPIs",
-        feedbackForms: "Forms & Feedback",
-        planReview: "Plan Review",
-        statAnalysis: "Statistical Analysis",
-        deviations: "Deviations & Actions",
-        approval: "Results Approval",
-        reformulation: "Strategy Update",
-        sustainability: "Sustainability Renewal"
-      },
-      tools: {
-        title: "Monitoring and Evaluation Tools",
-        description: "Description for monitoring tools",
-        contents: {
-          monitoringTimeline: "Define monitoring timelines",
-          uploadFiles: "Upload tracking files/forms (PDF, Excel...)"
-        }
-      },
-      kpis: {
-        title: "Key Performance Indicators (KPIs)",
-        description: "Define KPIs for goals, assign responsibility, set target/actual values, and track with charts.",
-        contents: {
-          defineKpis: "Define KPIs for goals and objectives",
-          assignResponsibility: "Assign responsibility for each indicator",
-          targetActualValues: "Target and actual values",
-          trackCharts: "Charts for tracking indicators"
-        }
-      },
-      feedbackForms: {
-        title: "Forms and Feedback",
-        description: "Access monitoring forms, upload feedback reports from departments, and view comparison reports.",
-        contents: {
-          monitoringForms: "Ready-made and customizable monitoring forms",
-          uploadFeedback: "Upload feedback reports from departments",
-          comparisonReports: "Comparison reports between expected and achieved"
-        }
-      },
-      planReview: {
-        title: "Plan Review and Internal Integration",
-        description: "Verify linkage and integration, and review modification logs.",
-        contents: {
-          verificationTools: "Tools for verifying linkage and integration",
-          modificationLog: "Log of proposed modification notes"
-        }
-      },
-      statAnalysis: {
-        title: "Statistical Performance Analysis",
-        description: "Manual data entry or import from Excel, utilize statistical analysis tools, and extract tables and charts.",
-        contents: {
-          dataEntry: "Manual data entry or import from Excel",
-          analysisTools: "Statistical analysis tools (e.g., mean, variance)",
-          extractChartsTables: "Extract tables and charts"
-        }
-      },
-      deviations: {
-        title: "Deviation Reports and Corrective Actions",
-        description: "Identify deviations from goals, perform root cause analysis, and propose corrective actions linked to indicators.",
-        contents: {
-          deviationDetection: "Detection of deviations from goals",
-          rootCauseAnalysis: "Root cause analysis of deviation",
-          correctiveActions: "Propose corrective actions linked to indicators"
-        }
-      },
-      approval: {
-        title: "Results Approval and Recommendations",
-        description: "Approve results and submit recommendations.",
-        contents: {
-          submitRecommendations: "Submit approved recommendations",
-          managementFeedback: "Management comments and responses"
-        }
-      },
-      reformulation: {
-        title: "Strategy Reformulation and Update",
-        description: "Review plan items based on results, consider proposals to modify vision or goals, and compare modified plan with the previous version.",
-        contents: {
-          reviewPlanItems: "Review plan items based on results",
-          modificationProposals: "Proposals to modify vision or goals",
-          comparePlans: "Compare modified plan with previous"
-        }
-      },
-      sustainability: {
-        title: "Sustainability Renewal",
-        description: "Upload the modified plan, set a new timeline, and activate a new 5-year plan cycle.",
-        contents: {
-          uploadModifiedPlan: "Upload the modified plan",
-          newTimeline: "Set a new timeline",
-          activateNewCycle: "Activate a new 5-year plan cycle"
-        }
-      }
-    },
-
-    committee: {
-      title: 'Committees and Meetings',
-      description: 'Committees, teams details and meetings',
-      addCommittee: 'Add Committee',
-      pageDescription: 'Committees and Meetings',
-      pageTitle: 'Committees and Meetings',
-      searchPlaceholder: 'Search Committees',
-      actionsHeader: 'Actions',
-      membersCountHeader: 'Members Count',
-      nameHeader: 'Name',
-      statusHeader: 'Status',
-      typeHeader: 'Type',
-      menuMainTitle: 'Committees and Meetings',
-      menu: {
-        mainTitle: 'Committees and Meetings',
-        allCommittees: 'All Committees',
-        upcomingMeetings: 'Upcoming Meetings',
-        actionItems: 'Action Items Tracker',
-        attendanceOverview: 'Attendance Overview',
-        documentsRepository: 'Documents Repository',
-        dashboard: 'Dashboard',
-        list: 'Committees List',
-        assignments: 'Add Assignment',
-        feedback: 'Add Feedback'
-      },
-      committeeName: 'Committee Name',
-      committeeRole: 'Committee Role',
-      committees: 'Committees',
-      committeeTypeHeader: 'Committee Type',
-      statusHeader: 'Status',
-      membersCountHeader: 'Members Count',
-      list: {
-        name: 'Committee Name',
-        chair: 'Chair',
-        members: 'Members',
       },
     },
 
@@ -717,7 +544,7 @@ export const translations = {
       trainingHours: 'Training Hours',
       addTraining: 'Add Training'
     },
-    
+
     // Organization & Permissions
     organizationPermissions: {
       title: 'Organization Permissions',
@@ -758,5 +585,507 @@ export const translations = {
   },
 
   ar: {
+    appTitle: 'التخطيط الاستراتيجي',
+    help: 'مساعدة',
+    notifications: 'الإشعارات',
+    noNewNotifications: 'لا توجد إشعارات جديدة',
+    settings: 'الإعدادات',
+    changeLanguage: 'تغيير اللغة',
+    logout: 'تسجيل الخروج',
+    addTag: 'إضافة وسم',
+    selectProject: 'اختر مشروع',
+    projectName: 'اسم المشروع',
+    projectData: 'بيانات المشروع',
+    newProject: 'مشروع جديد',
+    editProject: 'تعديل المشروع',
+    createProject: 'إنشاء مشروع',
+    startDate: 'تاريخ البدء',
+    endDate: 'تاريخ الانتهاء',
+    progress: 'التقدم',
+    targetDate: 'تاريخ الهدف',
+    budget: 'الميزانية',
+    impact: 'الأثر',
+    category: 'الفئة',
+    responsible: 'المسؤول',
+    dateRange: 'نطاق التاريخ',
+    goal: 'الهدف',
+    department: 'القسم',
+    status: 'الحالة',
+    frequency: 'التكرار',
+    relatedProjects: 'مشاريع ذات صلة',
+    organizationName: 'اسم المنظمة',
+    responsiblePerson: 'الشخص المسؤول',
+    update: 'تحديث',
+    add: 'إضافة',
+    delete: 'حذف',
+    edit: 'تعديل',
+    save: 'حفظ',
+    cancel: 'إلغاء',
+    back: 'رجوع',
+    next: 'التالي',
+    submit: 'إرسال',
+    confirm: 'تأكيد',
+    status: 'الحالة',
+    type: 'النوع',
+    name: 'الاسم',
+    mobile: 'الجوال',
+    email: 'البريد الإلكتروني',
+    organization: 'المنظمة',
+    externalOrganization: 'منظمة خارجية',
+    role: 'الدور',
+    jobTitle: 'المسمى الوظيفي',
+    nameHeader: 'الاسم',
+    descriptionHeader: 'الوصف',
+    stakeholders: 'أصحاب المصلحة',
+    notes: 'ملاحظات',
+    actions: 'إجراءات',
+    priority: 'الأولوية',
+    title: 'العنوان',
+    description: 'الوصف',
+    tags: 'الوسوم',
+    addTag: 'إضافة وسم',
+    comingSoon: 'قريباً...',
+    enterDetails: 'أدخل التفاصيل هنا...',
+    enterDescription: 'أدخل الوصف هنا...',
+    enterTitle: 'أدخل العنوان هنا...',
+    dataWizard: {
+      title: 'بيانات  المشروع',
+      description: 'تسجيل بيانات المشروع',
+      basicInfo: {
+        title: 'المعلومات الأساسية',
+        description: 'المعلومات الأساسية',
+        projectName: 'اسم المشروع',
+        organizationName: 'اسم المنظمة',
+        responsiblePerson: 'الشخص المسؤول',
+        startDate: 'تاريخ البدء',
+        generalNotes: 'ملاحظات عامة',
+        description: 'الوصف',
+        addStakeholder: 'إضافة صاحب مصلحة',
+        relation: 'العلاقة',
+        contactInfo: 'معلومات التواصل',
+        performanceIndicators: 'مؤشرات الأداء',
+        addIndicator: 'إضافة مؤشر',
+        name: 'الاسم',
+        target: 'الهدف',
+        source: 'المصدر'
+      },
+      documents: {
+        title: 'المستندات',
+        upLoadFile: 'رفع ملف',
+        docType: {
+          officialDecision: 'القرار الرسمي',
+          commitmentMinutes: 'توثيق الالتزام',
+          goalDocument: 'مستند الهدف',
+          scopeDocument: 'مستند نطاق',
+          workPlan: 'خطة العمل',
+          financialPlan: 'خطة المالية',
+          obstaclesAndSolutions: 'التحديات والحلول',
+          benefitsAnalysis: 'تحليل الفوائد',
+          futureStudies: 'دراسات المستقبل',
+          leadershipParticipation: 'مشاركة القيادة',
+          externalCoordination: 'تنسيق خارجي'
+        }
+
+      },
+      planningTeam: {
+        title: 'فريق التخطيط',
+        membershipStart: 'بداية العضوية',
+        externalOrganization: 'منظمة خارجية',
+        committeeName: 'اسم اللجنة',
+        committeeRole: 'دور اللجنة',
+        addMember: 'إضافة عضو',
+        internalTeam: 'فريق داخلي',
+        externalTeam: 'فريق خارجي',
+        committees: 'الجداول'
+      },
+      confirmation: {
+        title: 'تأكيد',
+        confirmationTitle: 'عنوان التأكيد',
+        confirmationMessage: 'هل أنت متأكد من حفظ هذا المشروع؟',
+        projectName: 'اسم المشروع',
+        organizationName: 'اسم المنظمة',
+        responsiblePerson: 'الشخص المسؤول',
+        startDate: 'تاريخ البدء',
+        generalNotes: 'ملاحظات عامة',
+        description: 'الوصف',
+        organization: 'المنظمة',
+        planningTeam: 'فريق التخطيط',
+        internalTeam: 'الفريق الداخلي',
+        externalTeam: 'الفريق الخارجي',
+        committees: 'اللجان',
+        saveAndExit: 'حفظ وخروج'
+      },
+      evaluation: {
+        title: 'التقييم',
+        description: 'تقييم أداء المشروع',
+        addKpi: 'إضافة مؤشر أداء',
+        addRisk: 'إضافة خطر',
+        contingency: 'خطة الطوارئ',
+        keyPerformanceIndicators: 'مؤشرات الأداء الرئيسية',
+        kpiName: 'اسم المؤشر',
+        kpiDescription: 'وصف المؤشر',
+        mitigation: 'الإجراءات التصحيحية',
+        assessment: 'تقييم',
+        objectives: 'الأهداف',
+        owner: 'المالك',
+        probability: 'الاحتمالية',
+        projectObjectives: 'أهداف المشروع',
+        responsibleParty: 'الجهة المسؤولة',
+        riskAssessment: 'تقييم المخاطر',
+        riskDescription: 'وصف الخطر',
+        targetValue: 'القيمة المستهدفة',
+        unit: 'الوحدة',
+        frequency: 'التكرار',
+        impact: 'الأثر',
+        successCriteria: 'معايير النجاح',
+        committeeRole: 'دور اللجنة'
+      }
+    },
+    strategicAnalysis: {
+      title: 'التحليل الاستراتيجي',
+      description: 'تحليل العوامل الداخلية والخارجية المؤثرة على المنظمة',
+      pageTitle: 'التحليل الاستراتيجي',
+      pageDescription: 'تحليل العوامل الداخلية والخارجية المؤثرة على المنظمة',
+      menu: {
+        foundation: 'الأساس الاستراتيجي',
+        foundationDesc: 'تحديد العناصر الأساسية للخطة الاستراتيجية',
+        mandates: 'المهام والمسؤوليات',
+        mandatesDesc: 'توثيق المهام الرسمية وغير الرسمية',
+        mission: 'بيان المهمة',
+        missionDesc: 'تحديد وصياغة بيان المهمة',
+        external: 'البيئة الخارجية',
+        externalDesc: 'تحليل القوى والاتجاهات واحتياجات أصحاب المصلحة',
+        internal: 'البيئة الداخلية',
+        internalDesc: 'مراجعة الأهداف والموارد والأداء',
+        analysis: 'تحليل البيانات',
+        analysisDesc: 'تحليل سوات وصياغة المصفوفة',
+        reengineering: 'إعادة هندسة الأعمال',
+        reengineeringDesc: 'إنشاء جدول بيانات للوصف وتحميل المرفقات، وربطه بجدول الحوكمة'
+      },
+      foundation: {
+        title: 'الأساس الاستراتيجي',
+        description: 'تحديد العناصر الأساسية للخطة الاستراتيجية',
+        subtitle: 'تحديد العناصر الأساسية للخطة الاستراتيجية',
+        principles: 'المبادئ والقيم',
+        principlesDesc: 'تحديد المبادئ والقيم الأساسية التي توجه المنظمة',
+        currentState: 'الوضع الحالي',
+        currentStateDesc: 'تقييم الوضع الحالي للمنظمة وقدراتها',
+        stakeholders: 'أصحاب المصلحة',
+        stakeholdersDesc: 'تحديد وتحليل أصحاب المصلحة واحتياجاتهم',
+        performance: 'مؤشرات الأداء',
+        performanceDesc: 'تحديد مؤشرات الأداء الرئيسية والمقاييس',
+        addPrinciple: 'إضافة مبدأ',
+        editPrinciple: 'تعديل المبدأ',
+        deletePrinciple: 'حذف المبدأ',
+        principleTitle: 'العنوان',
+        principleDesc: 'الوصف',
+        principleType: 'النوع',
+        principleValue: 'القيمة',
+        principlePriority: 'الأولوية',
+        principleStatus: 'الحالة',
+        principleNotes: 'ملاحظات',
+        responsibleTeam: 'الفريق المسؤول',
+        priority: 'الأولوية',
+        status: 'الحالة',
+        sections: {
+          principles: 'المبادئ',
+          behaviors: 'السلوك',
+          values: 'القيم'
+        },
+        principleTypes: {
+          core: 'أساسي',
+          operational: 'تشغيلي',
+          strategic: 'استراتيجي'
+        },
+        principlePriorityLevels: {
+          high: 'عالية',
+          medium: 'متوسطة',
+          low: 'منخفضة'
+        },
+        principleStatusTypes: {
+          active: 'نشط',
+          draft: 'مسودة',
+          archived: 'مؤرشف'
+        }
+      },
+      purposeAndPhilosophy: {
+        title: 'الغرض والفلسفة',
+        description: 'وصف الغرض والفلسفة والهوية والوظيفة',
+        purpose: 'الغرض',
+        philosophy: 'الفلسفة',
+        identity: 'الهوية',
+        identityDescription: 'وصف الهوية',
+        identityHelperText: 'وصف هوية المنظمة وقيمها الأساسية',
+        function: 'الوظيفة',
+        functionDescription: 'وصف الوظيفة',
+        functionHelperText: 'وصف الوظائف الرئيسية للمنظمة'
+      },
+      mandates: {
+        title: 'المهام والمسؤوليات',
+        subtitle: 'تفاصيل المهام والمسؤوليات',
+        description: 'توثيق المهام الرسمية وغير الرسمية',
+        formalMandates: 'المهام الرسمية',
+        formalMandatesDesc: 'قائمة المهام واللوائح الرسمية',
+        informalMandates: 'المهام غير الرسمية',
+        informalMandatesDesc: 'ملاحظات حول التوقعات والمعايير غير الرسمية',
+        responsibilities: 'المسؤوليات الأساسية',
+        responsibilitiesDesc: 'تحديد الواجبات التنظيمية الرئيسية',
+        newMandate: 'مهمة جديدة',
+        newResponsibility: 'مسؤولية جديدة',
+        addNewMandate: 'إضافة مهمة جديدة',
+        addNewResponsibility: 'إضافة مسؤولية جديدة'
+      },
+      mission: {
+        title: 'بيان المهمة',
+        description: 'تحديد وصياغة بيان المهمة',
+        subtitle: 'تحديد وصياغة بيان المهمة',
+        suggestedTitle: 'بيانات مهمة مقترحة بالذكاء الاصطناعي',
+        suggestedDesc: 'بيانات مهمة مقترحة بناءً على مدخلاتك',
+        editableTitle: 'مسودة العمل',
+        editableDesc: 'تعديل وصقل بيان المهمة',
+        finalTitle: 'بيان المهمة النهائي',
+        finalDesc: 'بيان المهمة المعتمد',
+        generateButton: 'توليد اقتراحات',
+        copyToEditable: 'استخدم كمسودة',
+        copyToFinal: 'اعتماد البيان',
+        noSuggestions: 'لا توجد اقتراحات بعد. اضغط توليد للحصول على اقتراحات.',
+        noStatement: 'لم يتم اعتماد بيان مهمة بعد.',
+        placeholder: 'أدخل بيان المهمة...'
+      },
+      external: {
+        title: 'البيئة الخارجية',
+        description: 'تحليل القوى والاتجاهات واحتياجات أصحاب المصلحة',
+        subtitle: 'تحليل القوى والاتجاهات واحتياجات أصحاب المصلحة',
+        pestAnalysis: 'تحليل بي إي إس تي',
+        political: 'العوامل السياسية',
+        politicalDesc: 'تحليل التأثيرات السياسية والتنظيمية',
+        economic: 'العوامل الاقتصادية',
+        economicDesc: 'تحليل العوامل الاقتصادية والمالية',
+        social: 'العوامل الاجتماعية',
+        socialDesc: 'تحليل الاتجاهات الاجتماعية والثقافية',
+        technological: 'العوامل التكنولوجية',
+        technologicalDesc: 'تحليل التطورات التكنولوجية',
+        stakeholderAnalysis: 'تحليل أصحاب المصلحة',
+        beneficiaries: 'المستفيدون',
+        beneficiariesDesc: 'تحليل احتياجات وتوقعات المستفيدين',
+        funders: 'الممولون',
+        fundersDesc: 'تحليل متطلبات وتوقعات الممولين',
+        opportunities: 'الفرص',
+        threats: 'التهديدات'
+      },
+      internal: {
+        title: 'البيئة الداخلية',
+        description: 'مراجعة الأهداف والموارد والأداء',
+        subtitle: 'مراجعة الأهداف والموارد والأداء',
+        objectives: 'الأهداف',
+        objectivesDesc: 'مراجعة الأهداف الحالية',
+        services: 'الخدمات',
+        servicesDesc: 'تقييم الخدمات والبرامج',
+        culture: 'الثقافة التنظيمية',
+        cultureDesc: 'تحليل القيم والممارسات',
+        resources: 'الموارد',
+        resourcesDesc: 'تقييم الموارد المتاحة',
+        financial: 'الموارد المالية',
+        human: 'الموارد البشرية',
+        performance: 'الأداء',
+        performanceDesc: 'تقييم مؤشرات الأداء',
+        strengths: 'نقاط القوة',
+        weaknesses: 'نقاط الضعف',
+        rating: 'التقييم'
+      },
+      analysis: {
+        title: 'تحليل البيانات',
+        description: 'تحليل سوات وصياغة المصفوفة',
+        subtitle: 'تحليل سوات وصياغة المصفوفة',
+        swotTitle: 'مصفوفة سوات',
+        swotDesc: 'تحليل نقاط القوة والضعف والفرص والتهديدات',
+        strengths: 'نقاط القوة',
+        weaknesses: 'نقاط الضعف',
+        opportunities: 'الفرص',
+        threats: 'التهديدات',
+        add: 'إضافة عنصر',
+        strategicIssues: 'القضايا الاستراتيجية',
+        issuesDesc: 'التحديات والفرص الرئيسية',
+        itemPlaceholder: 'عنصر افتراضي',
+        matrixDesc: 'وصف المصفوفة',
+        matrixPlaceholder: 'عنصر في المصفوفة',
+        matrixTitle: 'عنوان المصفوفة'
+      }
+    },
+    strategyFormulation: {
+      title: 'صياغة الاستراتيجية',
+      description: 'تطوير الأهداف والخطط الاستراتيجية',
+      pageTitle: 'صياغة الاستراتيجية',
+      pageDescription: 'تطوير الأهداف والخطط الاستراتيجية',
+      menu: {
+        goalsObjectives: 'الأهداف والغايات',
+        goalsObjectivesDesc: 'تحديد الأهداف الرئيسية والغايات',
+        executivePlans: 'الخطط التنفيذية',
+        executivePlansDesc: 'تخطيط وتنفيذ البرامج والمبادرات',
+        coordination: 'التنسيق',
+        coordinationDesc: 'تنسيق الجهود مع الجهات ذات العلاقة',
+        mandates: 'المهام والمسؤوليات',
+        mandatesDesc: 'تحديد المهام والصلاحيات',
+        dataAnalysis: 'تحليل البيانات',
+        dataAnalysisDesc: 'تحليل البيانات لدعم اتخاذ القرار'
+      },
+      goalsObjectives: {
+        title: 'الأهداف والغايات',
+        description: 'تحديد الأهداف الرئيسية والغايات',
+        addGoal: 'إضافة هدف',
+        editGoal: 'تعديل الهدف',
+        deleteGoal: 'حذف الهدف',
+        goalTitle: 'عنوان الهدف',
+        goalDesc: 'وصف الهدف',
+        objectives: 'الغايات',
+        addObjective: 'إضافة غاية',
+        editObjective: 'تعديل الغاية',
+        deleteObjective: 'حذف الغاية',
+        objectiveTitle: 'عنوان الغاية',
+        objectiveDesc: 'وصف الغاية',
+        relatedProjects: 'المشاريع المرتبطة',
+        responsible: 'المسؤول',
+        status: 'الحالة',
+        priority: 'الأولوية',
+        dateRange: 'الفترة الزمنية'
+      },
+      executivePlans: {
+        title: 'الخطط التنفيذية',
+        description: 'تخطيط وتنفيذ البرامج والمبادرات',
+        addPlan: 'إضافة خطة',
+        editPlan: 'تعديل الخطة',
+        deletePlan: 'حذف الخطة',
+        planTitle: 'عنوان الخطة',
+        planDesc: 'وصف الخطة',
+        responsible: 'المسؤول',
+        dateRange: 'الفترة الزمنية',
+        status: 'الحالة',
+        relatedProjects: 'المشاريع المرتبطة'
+      },
+      coordination: {
+        title: 'التنسيق',
+        description: 'تنسيق الجهود مع الجهات ذات العلاقة',
+        addCoordination: 'إضافة تنسيق',
+        editCoordination: 'تعديل التنسيق',
+        deleteCoordination: 'حذف التنسيق',
+        coordinationTitle: 'عنوان التنسيق',
+        coordinationDesc: 'وصف التنسيق',
+        relatedProjects: 'المشاريع المرتبطة',
+        frequency: 'التكرار',
+        responsible: 'المسؤول',
+        status: 'الحالة'
+      },
+      mandates: {
+        title: 'المهام والمسؤوليات',
+        description: 'تحديد المهام والصلاحيات',
+        addMandate: 'إضافة مهمة',
+        editMandate: 'تعديل المهمة',
+        deleteMandate: 'حذف المهمة',
+        mandateTitle: 'عنوان المهمة',
+        mandateDesc: 'وصف المهمة',
+        responsible: 'المسؤول',
+        status: 'الحالة'
+      },
+      dataAnalysis: {
+        title: 'تحليل البيانات',
+        description: 'تحليل البيانات لدعم اتخاذ القرار',
+        addAnalysis: 'إضافة تحليل',
+        editAnalysis: 'تعديل التحليل',
+        deleteAnalysis: 'حذف التحليل',
+        analysisTitle: 'عنوان التحليل',
+        analysisDesc: 'وصف التحليل',
+        responsible: 'المسؤول',
+        status: 'الحالة'
+      }
+    },
+    execution: {
+      title: 'التنفيذ',
+      description: 'تنفيذ الخطط الاستراتيجية',
+      setup: {
+        title: 'إعداد التنفيذ',
+        projectInfo: {
+          title: 'معلومات المشروع',
+          description: 'تفاصيل المشروع',
+          responsible: 'المسؤول',
+          status: 'الحالة',
+          team: 'الفريق'
+        },
+        team: {
+          title: 'الفريق',
+          addMember: 'إضافة عضو',
+          editMember: 'تعديل العضو',
+          deleteMember: 'حذف العضو',
+          memberName: 'اسم العضو',
+          memberRole: 'دور العضو',
+          responsible: 'المسؤول',
+          status: 'الحالة'
+        }
+      },
+      alignment: {
+        title: 'مواءمة التنفيذ',
+        description: 'مواءمة الأهداف والخطط مع التنفيذ',
+        goal: 'الهدف',
+        department: 'القسم',
+        status: 'الحالة'
+      }
+    },
+    monitoring: {
+      title: 'المتابعة',
+      description: 'متابعة سير الخطط ',
+      kpi: 'مؤشر الأداء',
+      progress: 'التقدم',
+      issues: 'القضايا',
+      correctiveActions: 'الإجراءات التصحيحية',
+      responsible: 'المسؤول',
+      status: 'الحالة',
+      date: 'التاريخ'
+    },
+    committee: {
+      title: 'اللجان والفرق',
+      description: 'إدارة اللجان والفرق',
+      addCommittee: 'إضافة لجنة',
+      editCommittee: 'تعديل اللجنة',
+      deleteCommittee: 'حذف اللجنة',
+      committeeName: 'اسم اللجنة',
+      committeeRole: 'دور اللجنة',
+      members: 'الأعضاء',
+      responsible: 'المسؤول',
+      status: 'الحالة'
+    },
+    training: {
+      title: ' التدريب وجولات التوعية',
+      description: 'إدارة برامج التدريب والتطوير',
+      addProgram: 'إضافة برنامج',
+      editProgram: 'تعديل البرنامج',
+      deleteProgram: 'حذف البرنامج',
+      programName: 'اسم البرنامج',
+      programDesc: 'وصف البرنامج',
+      participants: 'المشاركون',
+      responsible: 'المسؤول',
+      status: 'الحالة'
+    },
+    organizationPermissions: {
+      title: 'الهيكلية والصلاحيات',
+      description: 'إدارة الصلاحيات والأدوار التنظيمية',
+      addPermission: 'إضافة صلاحية',
+      editPermission: 'تعديل الصلاحية',
+      deletePermission: 'حذف الصلاحية',
+      permissionName: 'اسم الصلاحية',
+      permissionDesc: 'وصف الصلاحية',
+      role: 'الدور',
+      responsible: 'المسؤول',
+      status: 'الحالة'
+    },
+    reports: {
+      title: 'التقارير',
+      description: 'إدارة التقارير والرسوم البيانية',
+      addReport: 'إضافة تقرير',
+      editReport: 'تعديل التقرير',
+      deleteReport: 'حذف التقرير',
+      reportName: 'اسم التقرير',
+      reportDesc: 'وصف التقرير',
+      responsible: 'المسؤول',
+      status: 'الحالة'
+    }
   }
-}
+};

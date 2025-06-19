@@ -21,6 +21,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useTranslation } from 'react-i18next';
 
 const ExecutionSection = () => {
+  console.log('======>> We ae in pages/execution/ExecutionSection.js');
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();

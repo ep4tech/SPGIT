@@ -27,8 +27,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { arSA, enUS } from 'date-fns/locale';
 
-const PlanningTeam = ({ formData, setFormData }) => {
+const PlanningTeam = (props) => {
   // Defensive: ensure we never crash if formData.planningTeam is missing
+  const { formData } = props;
   const safePlanningTeam = formData.planningTeam || {
     internalTeam: [],
     externalTeam: [],

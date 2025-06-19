@@ -3,6 +3,7 @@ import { Box, Typography, Paper, Table, TableHead, TableRow, TableCell, TableBod
 import { useTranslation } from 'react-i18next';
 
 const AlignmentExecutionPage = () => {
+  console.log('======>> We ae in pages/execution/AlignmentExecutionPage.js');
   const { t } = useTranslation();
   const [alignments, setAlignments] = useState([]);
   const [alignment, setAlignment] = useState({ goal: '', department: '', status: '' });

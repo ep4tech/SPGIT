@@ -13,6 +13,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
 
 const ExternalEnvironment = () => {
+  console.log('======>> We ae in pages/strategicAnalysis/ExternalEnvironment.js');
   const { t } = useTranslation();
 
   const pestFactors = [
@@ -52,6 +53,7 @@ const ExternalEnvironment = () => {
   ];
 
   return (
+    console.log('======>> We ae in ExternalEnvironment.js'),
     <Box>
       <Typography variant="h4" gutterBottom>
         {t('strategicAnalysis.external.title')}

@@ -36,7 +36,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare'; // Used for organization tile
 
 
-const MainLayout = ({ onLanguageChange }) => {
+const MainLayout = (props) => {
   console.log('Rendering MainLayout');
   const { t, i18n } = useTranslation();
   const [languageMenu, setLanguageMenu] = useState(null);
@@ -53,7 +53,7 @@ const MainLayout = ({ onLanguageChange }) => {
     try {
       // Notify parent component
       if (onLanguageChange) {
-        onLanguageChange(lang);
+        props.onLanguageChange(lang);
       }
       
       // Close menu
@@ -115,7 +115,6 @@ const executionMenu = [
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh', maxHeight: '100vh', overflow: 'hidden' }}>
-
       {/* Main Content Area */}
       <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: '100vh', maxHeight: '100vh', overflow: 'hidden' }}>
         <AppBar position="static" elevation={0}>
@@ -132,27 +131,18 @@ const executionMenu = [
               <Typography variant="h6" component="div">
                 {t('appTitle')}
               </Typography>
-              {/* Organization & Permissions tile */}
-              <IconButton color={isOrgPermissionsRoute ? 'primary' : 'inherit'} onClick={() => navigate('/organization-permissions')} sx={{ ml: 2 }}>
-                <CorporateFareIcon />
-                <span style={{ marginLeft: 8 }}>{t('organizationPermissions.title')}</span>
-              </IconButton>
             </Box>
-
             <IconButton color="inherit" onClick={(e) => setNotificationMenu(e.currentTarget)}>
               <Badge badgeContent={notifications.length} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-
             <IconButton color="inherit" onClick={(e) => setLanguageMenu(e.currentTarget)}>
               <LanguageIcon />
             </IconButton>
-
             <IconButton color="inherit" onClick={(e) => setSettingsMenu(e.currentTarget)}>
               <SettingsIcon />
             </IconButton>
-
             <IconButton color="inherit" onClick={(e) => setUserMenu(e.currentTarget)}>
               <Avatar sx={{ width: 32, height: 32 }}>
                 <AccountCircleIcon />
@@ -160,7 +150,6 @@ const executionMenu = [
             </IconButton>
           </Toolbar>
         </AppBar>
-
         {/* Menus & Content */}
         <Menu
           anchorEl={languageMenu}
@@ -168,19 +157,18 @@ const executionMenu = [
           onClose={() => setLanguageMenu(null)}
         >
           <MenuItem onClick={() => {
-            onLanguageChange('en');
+            props.onLanguageChange('en');
             setLanguageMenu(null);
           }}>
             English
           </MenuItem>
           <MenuItem onClick={() => {
-            onLanguageChange('ar');
+            props.onLanguageChange('ar');
             setLanguageMenu(null);
           }}>
             عربي
           </MenuItem>
         </Menu>
-
         <Menu
           anchorEl={notificationMenu}
           open={Boolean(notificationMenu)}
@@ -192,7 +180,6 @@ const executionMenu = [
             </MenuItem>
           ))}
         </Menu>
-
         <Menu
           anchorEl={settingsMenu}
           open={Boolean(settingsMenu)}
@@ -202,7 +189,6 @@ const executionMenu = [
           <MenuItem onClick={() => setSettingsMenu(null)}>Appearance</MenuItem>
           <MenuItem onClick={() => setSettingsMenu(null)}>Notifications</MenuItem>
         </Menu>
-
         <Menu
           anchorEl={userMenu}
           open={Boolean(userMenu)}
@@ -212,7 +198,6 @@ const executionMenu = [
           <MenuItem onClick={() => setUserMenu(null)}>My Account</MenuItem>
           <MenuItem onClick={() => setUserMenu(null)}>Sign Out</MenuItem>
         </Menu>
-
         <Box sx={{ flex: 1, overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
           <Outlet />
         </Box>

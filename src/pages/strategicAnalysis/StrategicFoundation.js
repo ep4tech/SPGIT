@@ -28,6 +28,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 const StrategicFoundation = () => {
+  console.log('======>> We ae in pages/strategicAnalysis/StrategicFoundation.js');
   const { t } = useTranslation();
   const [items, setItems] = useState({
     values: [],
@@ -135,7 +136,7 @@ const StrategicFoundation = () => {
           <Grid item xs={12} md={4} key={section}>
             <Paper sx={{ p: 2 }}>
               <Typography variant="h6" gutterBottom>
-                {t(`strategicAnalysis.${section}`)}
+                {t(`strategicAnalysis.foundation.sections.${section}`)}
               </Typography>
               
               <Box sx={{ mb: 2 }}>
@@ -143,7 +144,7 @@ const StrategicFoundation = () => {
                   startIcon={<AddIcon />}
                   onClick={() => handleAdd(section)}
                 >
-                  {t(`strategicAnalysis.add${section.slice(0, -1).charAt(0).toUpperCase()}${section.slice(0, -1).slice(1)}`)}
+                  {t(`add`)}
                 </Button>
               </Box>
 
@@ -210,8 +211,8 @@ const StrategicFoundation = () => {
       <Dialog open={openDialog} onClose={handleCloseDialog} maxWidth="sm" fullWidth>
         <DialogTitle>
           {editItem 
-            ? t(`strategicAnalysis.edit${currentSection?.slice(0, -1).charAt(0).toUpperCase()}${currentSection?.slice(0, -1).slice(1)}`) 
-            : t(`strategicAnalysis.add${currentSection?.slice(0, -1).charAt(0).toUpperCase()}${currentSection?.slice(0, -1).slice(1)}`)
+            ? t(`edit`) 
+            : t(`add`)
           }
         </DialogTitle>
         <DialogContent>

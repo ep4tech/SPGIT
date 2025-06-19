@@ -24,6 +24,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 
 const Coordination = () => {
+  console.log('======>> We ae in pages/strategyFormulation/Coordination.js');
   const { t } = useTranslation();
   const [items, setItems] = useState({
     projectCoordination: [],

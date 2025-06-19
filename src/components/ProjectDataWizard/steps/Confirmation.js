@@ -23,8 +23,9 @@ import {
   Warning as WarningIcon,
 } from '@mui/icons-material';
 
-const Confirmation = ({ formData }) => {
+const Confirmation = (props) => {
   const { t, i18n } = useTranslation();
+  const { formData } = props;
 
   const renderBasicInfo = () => (
     <Paper sx={{ p: 2, mb: 2 }}>
@@ -260,7 +261,6 @@ const Confirmation = ({ formData }) => {
 
       {renderBasicInfo()}
       {renderPlanningTeam()}
-      {renderTrainingContent()}
       {renderEvaluation()}
     </Box>
   );

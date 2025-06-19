@@ -21,7 +21,8 @@ import PlanningTeam from './steps/PlanningTeam';
 import Evaluation from './steps/Evaluation';
 import Confirmation from './steps/Confirmation';
 
-const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdate, startAtBasicInfo = false }) => {
+const ProjectDataWizard = (props) => {
+  console.log('======>> We are in components/ProjectDataWizard/index.js');
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const isRtl = i18n.language === 'ar';
@@ -64,7 +65,7 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
     }
   };
 
-  const [formData, setFormData] = useState(initialData || emptyFormData);
+  const [formData, setFormData] = useState(props.initialData || emptyFormData);
 
   const steps = [
     { label: t('dataWizard.basicInfo.title'), component: BasicInfo },
@@ -87,19 +88,19 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
   };
 
   const handleSaveAndExit = () => {
-    if (onDataUpdate) {
-      onDataUpdate(formData);
+    if (props.onDataUpdate) {
+      props.onDataUpdate(formData);
     }
     localStorage.setItem('projectData', JSON.stringify(formData));
-    onClose();
+    props.onClose();
   };
 
   const handleSubmit = () => {
-    if (onDataUpdate) {
-      onDataUpdate(formData);
+    if (props.onDataUpdate) {
+      props.onDataUpdate(formData);
     }
     localStorage.setItem('projectData', JSON.stringify(formData));
-    onClose();
+    props.onClose();
   };
 
   const CurrentStepComponent = steps[activeStep].component;
@@ -109,8 +110,8 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
     const stepKey = Object.keys(emptyFormData)[activeStep];
     newFormData[stepKey] = stepData;
     setFormData(newFormData);
-    if (onDataUpdate) {
-      onDataUpdate(newFormData);
+    if (props.onDataUpdate) {
+      props.onDataUpdate(newFormData);
     }
     localStorage.setItem('projectData', JSON.stringify(newFormData));
   };
@@ -132,7 +133,7 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
           <Typography variant="h6" sx={{ flex: 1 }}>
             {t('projectData')}
           </Typography>
-          <IconButton color="inherit" onClick={onClose} size="large">
+          <IconButton color="inherit" onClick={props.onClose} size="large">
             <CloseIcon />
           </IconButton>
         </Toolbar>
@@ -145,7 +146,7 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
           </Typography>
           <Button
             variant="outlined"
-            onClick={onClose}
+            onClick={props.onClose}
           >
             {t('back')}
           </Button>
@@ -172,9 +173,9 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
           onBack={handleBack}
           isLastStep={activeStep === steps.length - 1}
           isFirstStep={activeStep === 0}
-          onClose={onClose}
-          projectId={projectId}
-          onDataUpdate={onDataUpdate}
+          onClose={props.onClose}
+          projectId={props.projectId}
+          onDataUpdate={props.onDataUpdate}
           isRtl={isRtl}
         />
       </Box>
@@ -202,18 +203,7 @@ const ProjectDataWizard = ({ onClose, projectId, initialData = null, onDataUpdat
       </Box>
       </Paper>
       </Box>
-      <Box sx={{ p: 3, bgcolor: 'background.paper', borderTop: 1, borderColor: 'divider' }}>
-        <Button onClick={onClose} sx={{ mr: 1 }}>
-          {t('cancel')}
-        </Button>
-        <Button
-          variant="contained"
-          onClick={handleNext}
-          disabled={activeStep === steps.length}
-        >
-          {activeStep === steps.length - 1 ? t('submit') : t('next')}
-        </Button>
-      </Box>
+
     </Box>
   );
 };

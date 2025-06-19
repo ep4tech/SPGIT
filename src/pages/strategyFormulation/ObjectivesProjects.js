@@ -24,6 +24,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 
 const ObjectivesProjects = () => {
+  console.log('======>> We ae in pages/strategyFormulation/ObjectivesProjects.js');
   const { t } = useTranslation();
   const [items, setItems] = useState({
     objectivesDistribution: [],

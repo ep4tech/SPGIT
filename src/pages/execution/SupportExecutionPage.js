@@ -3,6 +3,7 @@ import { Box, Typography, Paper, TextField, Button, List, ListItem, ListItemText
 import { useTranslation } from 'react-i18next';
 
 const SupportExecutionPage = () => {
+  console.log('======>> We ae in pages/execution/SupportExecutionPage.js');
   const { t } = useTranslation();
   const [request, setRequest] = useState('');
   const [requests, setRequests] = useState([]);

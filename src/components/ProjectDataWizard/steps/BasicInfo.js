@@ -22,9 +22,10 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { arSA, enUS } from 'date-fns/locale';
 
-const BasicInfo = ({ formData, onUpdate }) => {
+const BasicInfo = (props) => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
+  const { formData, onUpdate } = props;
 
   const [stakeholders, setStakeholders] = useState(formData.stakeholders || []);
   const [newStakeholder, setNewStakeholder] = useState({

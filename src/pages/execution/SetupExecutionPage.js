@@ -3,6 +3,7 @@ import { Box, Typography, TextField, Button, Paper, Grid, Stepper, Step, StepLab
 import { useTranslation } from 'react-i18next';
 
 const SetupExecutionPage = () => {
+  console.log('======>> We ae in pages/execution/SetupExecutionPage.js');
   const { t } = useTranslation();
   const [activeStep, setActiveStep] = useState(0);
   const [form, setForm] = useState({

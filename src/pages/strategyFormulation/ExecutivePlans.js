@@ -24,6 +24,7 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const ExecutivePlans = () => {
+  console.log('======>> We ae in pages/strategyFormulation/ExecutivePlans.js');
   const { t } = useTranslation();
   const [items, setItems] = useState({
     planningProcess: [],

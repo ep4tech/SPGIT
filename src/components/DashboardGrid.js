@@ -3,6 +3,7 @@ import { Grid, Card, CardContent, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const DashboardGrid = ({ tiles }) => {
+  console.log('======>> We ae in components/DashboardGrid.js');
   const navigate = useNavigate();
   console.log('inside DashboardGrid tiles: ', tiles);
   return (

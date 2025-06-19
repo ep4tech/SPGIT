@@ -14,6 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
 
 const InternalEnvironment = () => {
+  console.log('======>> We ae in pages/strategicAnalysis/InternalEnvironment.js');
   const { t } = useTranslation();
 
   const sections = [

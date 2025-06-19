@@ -27,8 +27,10 @@ import {
 } from '@mui/material';
 import { Add as AddIcon, Delete as DeleteIcon } from '@mui/icons-material';
 
-const Monitoring = ({ formData, setFormData }) => {
+const Assessment = (props) => {
+  const [assessmentTab, setAssessmentTab] = React.useState(0);
   const { t } = useTranslation();
+  const { setFormData } = props;
   const [kpiDialogOpen, setKpiDialogOpen] = React.useState(false);
   const [riskDialogOpen, setRiskDialogOpen] = React.useState(false);
   const [newKpi, setNewKpi] = React.useState({
@@ -51,8 +53,8 @@ const Monitoring = ({ formData, setFormData }) => {
   const handleChange = (field) => (event) => {
     setFormData((prev) => ({
       ...prev,
-      monitoring: {
-        ...prev.monitoring,
+      assessment: {
+        ...prev.assessment,
         [field]: event.target.value,
       },
     }));
@@ -76,9 +78,9 @@ const Monitoring = ({ formData, setFormData }) => {
     if (newKpi.name && newKpi.targetValue) {
       setFormData((prev) => ({
         ...prev,
-        monitoring: {
-          ...prev.monitoring,
-          kpis: [...(prev.monitoring?.kpis || []), { ...newKpi }],
+        assessment: {
+          ...prev.assessment,
+          kpis: [...(prev.assessment?.kpis || []), { ...newKpi }],
         },
       }));
       setNewKpi({
@@ -97,9 +99,9 @@ const Monitoring = ({ formData, setFormData }) => {
     if (newRisk.description && newRisk.impact && newRisk.probability) {
       setFormData((prev) => ({
         ...prev,
-        monitoring: {
-          ...prev.monitoring,
-          risks: [...(prev.monitoring?.risks || []), { ...newRisk }],
+        assessment: {
+          ...prev.assessment,
+          risks: [...(prev.assessment?.risks || []), { ...newRisk }],
         },
       }));
       setNewRisk({
@@ -117,9 +119,9 @@ const Monitoring = ({ formData, setFormData }) => {
   const handleDeleteKpi = (index) => {
     setFormData((prev) => ({
       ...prev,
-      monitoring: {
-        ...prev.monitoring,
-        kpis: prev.monitoring.kpis.filter((_, i) => i !== index),
+      assessment: {
+        ...prev.assessment,
+        kpis: prev.assessment.kpis.filter((_, i) => i !== index),
       },
     }));
   };
@@ -127,9 +129,9 @@ const Monitoring = ({ formData, setFormData }) => {
   const handleDeleteRisk = (index) => {
     setFormData((prev) => ({
       ...prev,
-      monitoring: {
-        ...prev.monitoring,
-        risks: prev.monitoring.risks.filter((_, i) => i !== index),
+      assessment: {
+        ...prev.assessment,
+        risks: prev.assessment.risks.filter((_, i) => i !== index),
       },
     }));
   };
@@ -154,7 +156,7 @@ const Monitoring = ({ formData, setFormData }) => {
             multiline
             rows={4}
             label={t('dataWizard.evaluation.objectives')}
-            value={formData.monitoring?.objectives || ''}
+            value={formData.assessment?.objectives || ''}
             onChange={handleChange('objectives')}
           />
         </Grid>
@@ -186,7 +188,7 @@ const Monitoring = ({ formData, setFormData }) => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {formData.monitoring?.kpis?.map((kpi, index) => (
+                {formData.assessment?.kpis?.map((kpi, index) => (
                   <TableRow key={index}>
                     <TableCell>{kpi.name}</TableCell>
                     <TableCell>{kpi.description}</TableCell>
@@ -209,7 +211,7 @@ const Monitoring = ({ formData, setFormData }) => {
           </TableContainer>
         </Grid>
 
-        {monitoringTab === 2 && (
+        {assessmentTab === 2 && (
           <Grid item xs={12}>
             <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
               {t('dataWizard.evaluation.riskAssessment')}
@@ -237,7 +239,7 @@ const Monitoring = ({ formData, setFormData }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {formData.monitoring?.risks?.map((risk, index) => (
+                  {formData.assessment?.risks?.map((risk, index) => (
                     <TableRow key={index}>
                       <TableCell>{risk.description}</TableCell>
                       <TableCell>{t(risk.impact)}</TableCell>
@@ -299,7 +301,7 @@ const Monitoring = ({ formData, setFormData }) => {
                 fullWidth
                 label={t('dataWizard.evaluation.unit')}
                 value={newKpi.unit}
-                onChange={handleKpiChange('evaluation.unit')}
+                onChange={handleKpiChange('unit')}
               />
             </Grid>
             <Grid item xs={12} sm={6}>  
@@ -430,4 +432,4 @@ const Monitoring = ({ formData, setFormData }) => {
   );
 };
 
-export default Monitoring;
+export default Assessment;
