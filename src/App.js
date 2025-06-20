@@ -28,7 +28,7 @@ import ExecutionSection from './pages/execution/ExecutionSection';
 // If you need to add direct routes for individual committee/training pages, import them from src/pages/committee/ or src/pages/training/.
 import CommitteeLayout from './components/CommitteeLayout';
 import CommitteesDashboard from './components/CommitteesDashboard';
-import CommitteeListPage from './pages/committee/CommitteeListPage';
+
 import CommitteeDetailsRoutes from './pages/committee/CommitteeDetailsRoutes';
 import UpcomingMeetingsPage from './pages/committee/UpcomingMeetingsPage';
 import ActionItemsPage from './pages/committee/ActionItemsPage';
@@ -198,8 +198,8 @@ function App() {
 
         {/* Committee Section Routes */}
         <Route path="/committee" element={<MainLayout onLanguageChange={handleLanguageChange}><CommitteeLayout /></MainLayout>}>
-          <Route index element={<Navigate to="all" replace />} />
-          <Route path="all" element={<CommitteeListPage />} />
+          <Route index element={<CommitteesDashboard />} />
+          <Route path="all" element={<CommitteesDashboard />} />
           <Route path="all/:committeeId/*" element={<CommitteeDetailsRoutes />} />
           <Route path="upcoming-meetings" element={<UpcomingMeetingsPage />} />
           <Route path="action-items" element={<ActionItemsPage />} />
