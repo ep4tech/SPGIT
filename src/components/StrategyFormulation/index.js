@@ -20,25 +20,26 @@ import {
   ArrowBack as ArrowBackIcon,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import InitialView from '../../pages/strategyFormulation/InitialView';
-import VisionChallenges from '../../pages/strategyFormulation/VisionChallenges';
-import StrategicIssues from '../../pages/strategyFormulation/StrategicIssues';
-import GoalsObjectives from '../../pages/strategyFormulation/GoalsObjectives';
-import ObjectivesProjects from '../../pages/strategyFormulation/ObjectivesProjects';
-import Coordination from '../../pages/strategyFormulation/Coordination';
-import ExecutivePlans from '../../pages/strategyFormulation/ExecutivePlans';
+import InitialViewPage from './InitialViewPage';
+import VisionChallengesPage from './VisionChallengesPage';
+import StrategicIssuesPage from './StrategicIssuesPage';
+import GoalsObjectivesPage from './GoalsObjectivesPage';
+import ObjectivesProjectsPage from './ObjectivesProjectsPage';
+import CoordinationPage from './CoordinationPage';
+import ExecutivePlansPage from './ExecutivePlansPage';
 
 const drawerWidth = 280;
 
 const menuItems = [
-  { id: 'initialView', icon: <InitialViewIcon />, label: 'Initial View and Strategic Directions', description: 'Overview and entry point for strategic formulation.' },
-  { id: 'visionChallenges', icon: <VisionIcon />, label: 'Vision and Challenges', description: 'Define the vision and identify key challenges.' },
-  { id: 'strategicIssues', icon: <IssuesIcon />, label: 'Strategic Issues', description: 'List and analyze strategic issues.' },
-  { id: 'goalsObjectives', icon: <GoalsIcon />, label: 'Goals and Objectives', description: 'Set goals and measurable objectives.' },
-  { id: 'objectivesProjects', icon: <ProjectsIcon />, label: 'Objectives Deployment and Projects', description: 'Map objectives to actionable projects.' },
-  { id: 'coordination', icon: <CoordinationIcon />, label: 'Coordination', description: 'Plan internal and external coordination.' },
-  { id: 'executivePlans', icon: <PlansIcon />, label: 'Executive Plans', description: 'Develop executive plans and action steps.' },
+  { id: 'initialView', icon: <InitialViewIcon /> },
+  { id: 'visionChallenges', icon: <VisionIcon /> },
+  { id: 'strategicIssues', icon: <IssuesIcon /> },
+  { id: 'goalsObjectives', icon: <GoalsIcon /> },
+  { id: 'objectivesProjects', icon: <ProjectsIcon /> },
+  { id: 'coordination', icon: <CoordinationIcon /> },
+  { id: 'executivePlans', icon: <PlansIcon /> },
 ];
+// Use t(`strategyFormulation.menu.${item.id}`) for label and t(`strategyFormulation.menu.${item.id}Desc`) for description when rendering.
 
 const StrategyFormulation = () => {
   console.log('======>> We ae in components/StrategyFormulation/index.js');
@@ -84,21 +85,21 @@ const StrategyFormulation = () => {
   const renderPage = () => {
     switch (selectedPage) {
       case 'initialView':
-        return <InitialView />;
+        return <InitialViewPage />;
       case 'visionChallenges':
-        return <VisionChallenges />;
+        return <VisionChallengesPage />;
       case 'strategicIssues':
-        return <StrategicIssues />;
+        return <StrategicIssuesPage />;
       case 'goalsObjectives':
-        return <GoalsObjectives />;
+        return <GoalsObjectivesPage />;
       case 'objectivesProjects':
-        return <ObjectivesProjects />;
+        return <ObjectivesProjectsPage />;
       case 'coordination':
-        return <Coordination />;
+        return <CoordinationPage />;
       case 'executivePlans':
-        return <ExecutivePlans />;
+        return <ExecutivePlansPage />;
       default:
-        return <InitialView />;
+        return <InitialViewPage />;
     }
   };
 
