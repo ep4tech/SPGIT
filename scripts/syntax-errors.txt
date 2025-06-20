@@ -1,0 +1,286 @@
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\ProjectDataWizard\steps\BasicInfo.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\ProjectDataWizard\steps\Documents.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\ProjectDataWizard\steps\PlanningTeam.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\ProjectDataWizard\steps\Evaluation.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\ProjectDataWizard\steps\Confirmation.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\ProjectDataWizard\index.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategicAnalysis\index.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\Steps\InitialView.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\index.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\AspirationsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\GapPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\GoalsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\DeploymentPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\PlansPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\BudgetPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\InitialViewPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\VisionChallengesPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\StrategicIssuesPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\GoalsObjectivesPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\ObjectivesProjectsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\CoordinationPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\StrategyFormulation\ExecutivePlansPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\MainLayout.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\ProjectSelector.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\CommitteeLayout.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\CommitteesDashboard.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\components\DashboardGrid.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\dashboard\dashboardTiles.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\dashboard\DashboardPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\ActionItemsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\AttendanceOverviewPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeAssignmentsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeDetailsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeDetailsRoutes.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeDocumentsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeFeedbackPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeFormModal.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeMeetingsManagementPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeMeetingsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeMembersPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeOverviewPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\CommitteeSection.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\DocumentsRepositoryPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\MeetingDetailsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\MeetingFormModal.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\UpcomingMeetingsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\committee\AddCommitteePage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionSetupPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionCommunicationPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionRoadmapPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionResourcesPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionFeedbackPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionProjectsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionSupportPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionAlignmentPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ExecutionSection.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\SetupExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\CommunicationExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\RoadmapExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ResourcesExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\FeedbackExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\ProjectsExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\SupportExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\execution\AlignmentExecutionPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\training\TrainingAssignmentsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\training\TrainingSection.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\OrgChartDabeng.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\OrgChartFlow.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\OrgChartGoogle.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\OrgReengineering.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\StrategicFoundation.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\DataAnalysis.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\ExternalEnvironment.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\InternalEnvironment.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\MandatesResponsibilities.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\MissionStatement.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategicAnalysis\index.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\organization\OrganizationPermissionsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\organization\OrgChartSection.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\organization\PermissionsTreeSection.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\organization\RegulationsSection.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\Coordination.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\ExecutivePlans.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\GoalsObjectives.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\InitialView.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\InitiativesPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\ObjectivesPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\ObjectivesProjects.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\PerformanceIndicatorsPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\StrategicIssues.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\StrategyMapPage.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\pages\strategyFormulation\VisionChallenges.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\index.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\App.js:
+  Cannot use import statement outside a module
+
+Syntax error in P:\SPFolder\SPCode\frontend\src\translations.js:
+  Unexpected token 'export'
+
+Total syntax errors found: 95

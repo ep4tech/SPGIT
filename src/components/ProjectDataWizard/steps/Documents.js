@@ -18,10 +18,17 @@ import {
   Description as DescriptionIcon,
 } from '@mui/icons-material';
 
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+
 const Documents = (props) => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
   const { setFormData } = props;
+const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+const [deleteTarget, setDeleteTarget] = useState(null);
 
   const documentTypes = [
     'officialDecision',
@@ -51,14 +58,16 @@ const Documents = (props) => {
   };
 
   const handleDelete = (docType) => () => {
-    setFormData((prev) => ({
-      ...prev,
-      documents: {
-        ...prev.documents,
-        [docType]: null
-      },
-    }));
-  };
+  setFormData((prev) => ({
+    ...prev,
+    documents: {
+      ...prev.documents,
+      [docType]: null
+    },
+  }));
+  setDeleteDialogOpen(false);
+  setDeleteTarget(null);
+};
 
   const documents = formData.documents || {};
   return (
@@ -92,7 +101,7 @@ const Documents = (props) => {
                     </Typography>
                     <IconButton
                       size="small"
-                      onClick={handleDelete(docType)}
+                      onClick={() => { setDeleteDialogOpen(true); setDeleteTarget(docType); }}
                       sx={{ ml: 1 }}
                     >
                       <DeleteIcon />
@@ -120,7 +129,19 @@ const Documents = (props) => {
           </Grid>
         ))}
       </Grid>
-    </Box>
+    <Dialog open={deleteDialogOpen} onClose={() => setDeleteDialogOpen(false)}>
+  <DialogTitle>{t('confirmation')}</DialogTitle>
+  <DialogContent>
+    {deleteTarget && documents[deleteTarget] && documents[deleteTarget].name
+      ? t('dataWizard.documents.deleteConfirmationWithName', { name: documents[deleteTarget].name })
+      : t('dataWizard.documents.deleteConfirmation', 'Are you sure you want to delete this document?')}
+  </DialogContent>
+  <DialogActions>
+    <Button onClick={() => setDeleteDialogOpen(false)}>{t('cancel')}</Button>
+    <Button onClick={() => handleDelete(deleteTarget)()} color="error">{t('delete')}</Button>
+  </DialogActions>
+</Dialog>
+</Box>
   );
 };
 

@@ -60,12 +60,27 @@ const Coordination = () => {
     }
   };
 
-  const handleDeleteItem = (section, itemId) => {
-    setItems(prev => ({
-      ...prev,
-      [section]: prev[section].filter(item => item.id !== itemId)
-    }));
-  };
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+const [deleteTarget, setDeleteTarget] = useState({ section: null, itemId: null });
+
+const handleDeleteItem = (section, itemId) => {
+  setDeleteTarget({ section, itemId });
+  setDeleteDialogOpen(true);
+};
+
+const confirmDeleteItem = () => {
+  setItems(prev => ({
+    ...prev,
+    [deleteTarget.section]: prev[deleteTarget.section].filter(item => item.id !== deleteTarget.itemId)
+  }));
+  setDeleteDialogOpen(false);
+  setDeleteTarget({ section: null, itemId: null });
+};
+
+const cancelDeleteItem = () => {
+  setDeleteDialogOpen(false);
+  setDeleteTarget({ section: null, itemId: null });
+};
 
   const sections = [
     'projectCoordination',

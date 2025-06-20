@@ -9,6 +9,11 @@ const initialRegulations = [
   { id: 2, name: 'نظام المالية', file: null },
 ];
 
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+
 const RegulationsSection = (props) => {
   console.log('======>> We are in pages/organization/RegulationsSection.js');
   const { t } = useTranslation();
@@ -19,6 +24,8 @@ const RegulationsSection = (props) => {
   const regulations = regulationsByOrg[props.selectedOrgNodeId] || [];
   const [newRegulation, setNewRegulation] = useState('');
   const [editingId, setEditingId] = useState(null);
+const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+const [deleteTarget, setDeleteTarget] = useState(null);
   const [editValue, setEditValue] = useState('');
 
   function handleAdd() {
@@ -59,9 +66,21 @@ const RegulationsSection = (props) => {
               <IconButton edge="end" onClick={() => handleEdit(reg.id, reg.name)}>
                 <span role="img" aria-label="edit">✎</span>
               </IconButton>
-              <IconButton edge="end" onClick={() => handleDelete(reg.id)}>
+              <IconButton edge="end" onClick={() => { setDeleteTarget(reg.id); setDeleteDialogOpen(true); }}>
                 <DeleteIcon />
               </IconButton>
+              <Dialog open={deleteDialogOpen} onClose={() => setDeleteDialogOpen(false)}>
+                <DialogTitle>{t('confirmation')}</DialogTitle>
+                <DialogContent>
+                  {deleteTarget != null && regulations.find(r => r.id === deleteTarget)
+                    ? t('organizationPermissions.regulations.deleteConfirmationWithName', { name: regulations.find(r => r.id === deleteTarget).name })
+                    : t('organizationPermissions.regulations.deleteConfirmation', 'Are you sure you want to delete this regulation?')}
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={() => setDeleteDialogOpen(false)}>{t('cancel')}</Button>
+                  <Button onClick={() => { handleDelete(deleteTarget); setDeleteDialogOpen(false); }} color="error">{t('delete')}</Button>
+                </DialogActions>
+              </Dialog>
             </>
           }>
             {editingId === reg.id ? (

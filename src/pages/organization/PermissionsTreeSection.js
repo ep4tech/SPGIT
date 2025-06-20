@@ -61,7 +61,9 @@ function renderTree(nodes, onEdit, onDelete, onAdd, selectedNodeId, editingNodeI
             {selectedNodeId === node.id && (
               <>
                 <IconButton size="small" onClick={e => { e.stopPropagation(); onAdd(node); }}><AddIcon fontSize="small" /></IconButton>
-                <IconButton size="small" onClick={e => { e.stopPropagation(); onDelete(node.id); }}><DeleteIcon fontSize="small" /></IconButton>
+                <IconButton size="small" onClick={e => { e.stopPropagation(); setDeleteDialogOpen(true); setDeleteTarget(node.id); }}><DeleteIcon fontSize="small" /></IconButton>
+
+
                 <IconButton size="small" onClick={e => { e.stopPropagation(); onEdit(node.id, node.name); }}>✎</IconButton>
               </>
             )}
@@ -74,7 +76,23 @@ function renderTree(nodes, onEdit, onDelete, onAdd, selectedNodeId, editingNodeI
   ));
 }
 
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+
 const PermissionsTreeSection = (props) => {
+  // Helper function to find node name by id
+  function findNodeName(nodes, id) {
+    for (const node of nodes) {
+      if (node.id === id) return node.name;
+      if (node.children) {
+        const result = findNodeName(node.children, id);
+        if (result) return result;
+      }
+    }
+    return null;
+  }
   console.log('======>> We are in pages/organization/PermissionsTreeSection.js');
   const { t, i18n } = useTranslation();
   // Permissions are now stored per org node
@@ -84,6 +102,8 @@ const PermissionsTreeSection = (props) => {
   const tree = permissionsByOrg[selectedOrgNodeId] || [];
   const [inputValue, setInputValue] = useState('');
   const [editingNodeId, setEditingNodeId] = useState(null);
+const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+const [deleteTarget, setDeleteTarget] = useState(null);
   const [editValue, setEditValue] = useState('');
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const [selectedNodeType, setSelectedNodeType] = useState(null);

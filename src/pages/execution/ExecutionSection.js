@@ -75,16 +75,7 @@ const ExecutionSection = () => {
         </List>
       </Box>
       <Box sx={{ flex: 1, p: 0, overflow: 'auto' }}>
-        <Routes>
-          <Route path="setup" element={<SetupExecutionPage />} />
-          <Route path="communication" element={<CommunicationExecutionPage />} />
-          <Route path="roadmap" element={<RoadmapExecutionPage />} />
-          <Route path="resources" element={<ResourcesExecutionPage />} />
-          <Route path="feedback" element={<FeedbackExecutionPage />} />
-          <Route path="projects" element={<ProjectsExecutionPage />} />
-          <Route path="support" element={<SupportExecutionPage />} />
-          <Route path="alignment" element={<AlignmentExecutionPage />} />
-        </Routes>
+        <Outlet />
       </Box>
     </Box>
   );

@@ -55,7 +55,47 @@ const CommitteeLayout = () => {
       path: '/committee/documents-repository',
       icon: <ArticleIcon />,
     },
-  ];
+];
+
+// Dynamic sub-menu for a selected committee
+const committeeId = location.pathname.match(/\/committee\/all\/(\w+)/)?.[1];
+const committeeSubPages = committeeId ? [
+  {
+    textKey: 'committee.menu.overview',
+    path: `/committee/all/${committeeId}/overview`,
+    icon: <DashboardIcon />,
+  },
+  {
+    textKey: 'committee.menu.details',
+    path: `/committee/all/${committeeId}/details`,
+    icon: <AssessmentIcon />,
+  },
+  {
+    textKey: 'committee.menu.members',
+    path: `/committee/all/${committeeId}/members`,
+    icon: <PeopleIcon />,
+  },
+  {
+    textKey: 'committee.menu.assignments',
+    path: `/committee/all/${committeeId}/assignments`,
+    icon: <TaskIcon />,
+  },
+  {
+    textKey: 'committee.menu.meetings',
+    path: `/committee/all/${committeeId}/meetings`,
+    icon: <EventIcon />,
+  },
+  {
+    textKey: 'committee.menu.feedback',
+    path: `/committee/all/${committeeId}/feedback`,
+    icon: <AssessmentIcon />,
+  },
+  {
+    textKey: 'committee.menu.documents',
+    path: `/committee/all/${committeeId}/documents`,
+    icon: <ArticleIcon />,
+  },
+] : [];
 
   const drawer = (
     <div>
@@ -77,6 +117,21 @@ const CommitteeLayout = () => {
             </ListItemButton>
           </ListItem>
         ))}
+        {committeeSubPages.length > 0 && <>
+          <Typography variant="subtitle2" sx={{ mt: 2, mb: 1, ml: 2 }}>{t('committee.menu.committeeDetails')}</Typography>
+          {committeeSubPages.map((item, index) => (
+            <ListItem key={t(item.textKey)} disablePadding>
+              <ListItemButton
+                component={RouterLink}
+                to={item.path}
+                selected={location.pathname === item.path}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={t(item.textKey)} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </>}
       </List>
     </div>
   );

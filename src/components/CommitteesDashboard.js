@@ -23,16 +23,25 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 
 // Placeholder data - replace with API call
 const mockCommittees = [
-  { id: 1, name: 'Steering Committee', type: 'Permanent', status: 'Active', membersCount: 5 },
-  { id: 2, name: 'Project Alpha Review', type: 'Temporary', status: 'Active', membersCount: 3 },
-  { id: 3, name: 'Ethics Board', type: 'Permanent', status: 'Inactive', membersCount: 7 },
+  { id: 1, name: 'Steering Committee', type: 'دائم', status: 'نشط', membersCount: 5 },
+  { id: 2, name: 'Project Alpha Review', type: 'مؤقت', status: 'نشط', membersCount: 3 },
+  { id: 3, name: 'Ethics Board', type: 'دائم', status: 'غير نشط', membersCount: 7 },
 ];
+
+import { useNavigate } from 'react-router-dom';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
 
 const CommitteesDashboard = () => {
   console.log('======>> We ae in components/CommitteesDashboard.js');
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [committees, setCommittees] = useState(mockCommittees);
   const [searchTerm, setSearchTerm] = useState('');
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [committeeToDelete, setCommitteeToDelete] = useState(null);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -44,32 +53,40 @@ const CommitteesDashboard = () => {
 
   // TODO: Implement navigation for add, view, edit, delete
   const handleAddCommittee = () => {
-    console.log('Navigate to Add Committee page');
-    // Example: navigate('/committee/add-committee');
+    navigate('/committee/add');
   };
 
   const handleViewCommittee = (id) => {
-    console.log(`Navigate to View Committee page for id: ${id}`);
-    // Example: navigate(`/committee/view/${id}`);
+    navigate(`/committee/all/${id}/overview`);
   };
 
   const handleEditCommittee = (id) => {
-    console.log(`Navigate to Edit Committee page for id: ${id}`);
-    // Example: navigate(`/committee/edit/${id}`);
+    navigate(`/committee/all/${id}/details`);
   };
 
   const handleDeleteCommittee = (id) => {
-    console.log(`Delete Committee with id: ${id}`);
-    setCommittees(prev => prev.filter(c => c.id !== id));
+    setCommitteeToDelete(id);
+    setDeleteDialogOpen(true);
+  };
+
+  const confirmDeleteCommittee = () => {
+    setCommittees(prev => prev.filter(c => c.id !== committeeToDelete));
+    setDeleteDialogOpen(false);
+    setCommitteeToDelete(null);
+  };
+
+  const cancelDeleteCommittee = () => {
+    setDeleteDialogOpen(false);
+    setCommitteeToDelete(null);
   };
 
   return (
     <Box sx={{ width: '100%' }}> {/* Changed Container to Box for better fit in Outlet */}
       <Typography variant="h4" gutterBottom component="h1">
-        {t('committee.pageTitle')}
+        {t('committee.title')}
       </Typography>
       <Typography variant="subtitle1" gutterBottom sx={{ mb: 2 }}>
-        {t('committee.pageDescription')}
+        {t('committee.description')}
       </Typography>
 
       <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
@@ -94,31 +111,48 @@ const CommitteesDashboard = () => {
           <Table stickyHeader aria-label={t('committee.pageTitle')}>
             <TableHead>
               <TableRow>
-                <TableCell>{t('committee.nameHeader')}</TableCell>
-                <TableCell>{t('committee.typeHeader')}</TableCell>
-                <TableCell>{t('committee.statusHeader')}</TableCell>
-                <TableCell align="right">{t('committee.membersCountHeader')}</TableCell>
-                <TableCell align="center">{t('committee.actionsHeader')}</TableCell>
+                <TableCell>{t('name')}</TableCell>
+                <TableCell>{t('type')}</TableCell>
+                <TableCell>{t('status')}</TableCell>
+                <TableCell align="right">{t('committee.membersCount')}</TableCell>
+                <TableCell align="center">{t('actions')}</TableCell>
               </TableRow>
-            </TableHead>
+            </TableHead>  
             <TableBody>
               {filteredCommittees.map((committee) => (
-                <TableRow hover key={committee.id}>
+                <TableRow
+                  hover
+                  key={committee.id}
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => handleViewCommittee(committee.id)}
+                >
                   <TableCell>{committee.name}</TableCell>
                   {/* Using t with a fallback for dynamic keys from mock data */}
                   <TableCell>{t(`committee.committeeForm.fields.committeeTypeOptions.${committee.type.toLowerCase()}`, committee.type)}</TableCell>
                   <TableCell>{t(`committee.committeeForm.fields.statusOptions.${committee.status.toLowerCase()}`, committee.status)}</TableCell>
                   <TableCell align="right">{committee.membersCount}</TableCell>
                   <TableCell align="center">
-                    <IconButton onClick={() => handleViewCommittee(committee.id)} aria-label={t('committee.committeesDashboard.buttons.viewCommitteeDetails', 'View Details')}>
+                    <IconButton onClick={e => { e.stopPropagation(); handleViewCommittee(committee.id); }} aria-label={t('committee.committeesDashboard.buttons.viewCommitteeDetails', 'View Details')}>
                       <VisibilityIcon />
                     </IconButton>
-                    <IconButton onClick={() => handleEditCommittee(committee.id)} aria-label={t('committee.committeesDashboard.buttons.editCommittee', 'Edit Committee')}>
+                    <IconButton onClick={e => { e.stopPropagation(); handleEditCommittee(committee.id); }} aria-label={t('committee.committeesDashboard.buttons.editCommittee', 'Edit Committee')}>
                       <EditIcon />
                     </IconButton>
                     <IconButton onClick={() => handleDeleteCommittee(committee.id)} aria-label={t('committee.committeesDashboard.buttons.deleteCommittee', 'Delete Committee')}>
                       <DeleteIcon />
                     </IconButton>
+                    <Dialog open={deleteDialogOpen} onClose={cancelDeleteCommittee}>
+                      <DialogTitle>{t('confirmation')}</DialogTitle>
+                      <DialogContent>
+                        {committeeToDelete != null && committees.find(c => c.id === committeeToDelete)
+                          ? t('committee.deleteConfirmationWithName', { name: committees.find(c => c.id === committeeToDelete).name })
+                          : t('committee.deleteConfirmation', 'Are you sure you want to delete this committee?')}
+                      </DialogContent>
+                      <DialogActions>
+                        <Button onClick={cancelDeleteCommittee}>{t('cancel')}</Button>
+                        <Button onClick={confirmDeleteCommittee} color="error">{t('delete')}</Button>
+                      </DialogActions>
+                    </Dialog>
                   </TableCell>
                 </TableRow>
               ))}
