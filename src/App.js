@@ -385,15 +385,16 @@ function App() {
       <Routes>
         {/* Execution Pages handled by ExecutionSection with nested routes */}
         <Route path="/execution" element={<ExecutionSection />}>
-          <Route path="setup" element={<SetupExecutionPage />} />
-          <Route path="communication" element={<CommunicationExecutionPage />} />
-          <Route path="roadmap" element={<RoadmapExecutionPage />} />
-          <Route path="resources" element={<ResourcesExecutionPage />} />
-          <Route path="feedback" element={<FeedbackExecutionPage />} />
-          <Route path="projects" element={<ProjectsExecutionPage />} />
-          <Route path="support" element={<SupportExecutionPage />} />
-          <Route path="alignment" element={<AlignmentExecutionPage />} />
-        </Route>
+  <Route index element={<div style={{ padding: 24, textAlign: 'center' }}>اختر قسم التنفيذ من القائمة الجانبية</div>} />
+  <Route path="setup" element={<SetupExecutionPage />} />
+  <Route path="communication" element={<CommunicationExecutionPage />} />
+  <Route path="roadmap" element={<RoadmapExecutionPage />} />
+  <Route path="resources" element={<ResourcesExecutionPage />} />
+  <Route path="feedback" element={<FeedbackExecutionPage />} />
+  <Route path="projects" element={<ProjectsExecutionPage />} />
+  <Route path="support" element={<SupportExecutionPage />} />
+  <Route path="alignment" element={<AlignmentExecutionPage />} />
+</Route>
 
         {/* Committee Section Routes */}
         <Route path="/committee" element={<MainLayout onLanguageChange={handleLanguageChange}><CommitteeLayout /></MainLayout>}>

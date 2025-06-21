@@ -20,6 +20,7 @@ const DashboardGrid = ({ tiles }) => {
             }}
             onClick={() => {
               if (tile.route) {
+                console.log('Navigating to:', tile.route);
                 navigate(tile.route);
               }
             }}
