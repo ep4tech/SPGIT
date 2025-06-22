@@ -1,13 +1,13 @@
 import React from 'react';
 import { Outlet, useNavigate, useLocation, Routes, Route } from 'react-router-dom';
-import SetupExecutionPage from './SetupExecutionPage';
-import CommunicationExecutionPage from './CommunicationExecutionPage';
-import RoadmapExecutionPage from './RoadmapExecutionPage';
-import ResourcesExecutionPage from './ResourcesExecutionPage';
-import FeedbackExecutionPage from './FeedbackExecutionPage';
-import ProjectsExecutionPage from './ProjectsExecutionPage';
-import SupportExecutionPage from './SupportExecutionPage';
-import AlignmentExecutionPage from './AlignmentExecutionPage';
+import MonitoringSetupPage from './MonitoringSetupPage';
+import MonitoringCommunicationPage from './MonitoringCommunicationPage';
+import MonitoringRoadmapPage from './MonitoringRoadmapPage';
+import MonitoringResourcesPage from './MonitoringResourcesPage';
+import MonitoringFeedbackPage from './MonitoringFeedbackPage';
+import MonitoringProjectsPage from './MonitoringProjectsPage';
+import MonitoringSupportPage from './MonitoringSupportPage';
+import MonitoringAlignmentPage from './MonitoringAlignmentPage';
 import { Box, List, ListItem, ListItemIcon, ListItemText, Divider, Toolbar } from '@mui/material';
 import GroupWorkIcon from '@mui/icons-material/GroupWork';
 import ForumIcon from '@mui/icons-material/Forum';
@@ -20,21 +20,21 @@ import LinkIcon from '@mui/icons-material/Link';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useTranslation } from 'react-i18next';
 
-const ExecutionSection = () => {
-  console.log('======>> We ae in pages/execution/ExecutionSection.js');
+const MonitoringSection = () => {
+  console.log('======>> We ae in pages/monitoring/MonitoringSection.js');
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const executionMenu = [
-    { id: 'setup', label: t('execution.menu.setup'), icon: <GroupWorkIcon />, route: '/execution/setup' },
-    { id: 'communication', label: t('execution.menu.communication'), icon: <ForumIcon />, route: '/execution/communication' },
-    { id: 'roadmap', label: t('execution.menu.roadmap'), icon: <MapIcon />, route: '/execution/roadmap' },
-    { id: 'resources', label: t('execution.menu.resources'), icon: <BuildIcon />, route: '/execution/resources' },
-    { id: 'feedback', label: t('execution.menu.feedback'), icon: <FeedbackIcon />, route: '/execution/feedback' },
-    { id: 'projects', label: t('execution.menu.projects'), icon: <AssignmentIcon />, route: '/execution/projects' },
-    { id: 'support', label: t('execution.menu.support'), icon: <SupportIcon />, route: '/execution/support' },
-    { id: 'alignment', label: t('execution.menu.alignment'), icon: <LinkIcon />, route: '/execution/alignment' },
+  const monitoringMenu = [
+    { id: 'setup', label: t('monitoring.menu.setup'), icon: <GroupWorkIcon />, route: '/monitoring/setup' },
+    { id: 'communication', label: t('monitoring.menu.communication'), icon: <ForumIcon />, route: '/monitoring/communication' },
+    { id: 'roadmap', label: t('monitoring.menu.roadmap'), icon: <MapIcon />, route: '/monitoring/roadmap' },
+    { id: 'resources', label: t('monitoring.menu.resources'), icon: <BuildIcon />, route: '/monitoring/resources' },
+    { id: 'feedback', label: t('monitoring.menu.feedback'), icon: <FeedbackIcon />, route: '/monitoring/feedback' },
+    { id: 'projects', label: t('monitoring.menu.projects'), icon: <AssignmentIcon />, route: '/monitoring/projects' },
+    { id: 'support', label: t('monitoring.menu.support'), icon: <SupportIcon />, route: '/monitoring/support' },
+    { id: 'alignment', label: t('monitoring.menu.alignment'), icon: <LinkIcon />, route: '/monitoring/alignment' },
   ];
 
   return (
@@ -52,10 +52,10 @@ const ExecutionSection = () => {
         <List>
           <ListItem>
             <ListItemIcon><PlayArrowIcon color="primary" /></ListItemIcon>
-            <ListItemText primary={t('execution.menu.mainTitle')} primaryTypographyProps={{ fontWeight: 'bold' }} />
+            <ListItemText primary={t('monitoring.menu.mainTitle')} primaryTypographyProps={{ fontWeight: 'bold' }} />
           </ListItem>
           <Divider sx={{ mb: 1 }} />
-          {executionMenu.map((item) => (
+          {monitoringMenu.map((item) => (
             <ListItem
               button
               key={item.id}
@@ -81,4 +81,4 @@ const ExecutionSection = () => {
   );
 };
 
-export default ExecutionSection;
+export default MonitoringSection;

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, Typography, Paper, TextField, Button, List, ListItem, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const FeedbackExecutionPage = () => {
-  console.log('======>> We ae in pages/execution/FeedbackExecutionPage.js');
+const MonitoringFeedbackDetailsPage = () => {
+  console.log('======>> We ae in pages/monitoring/MonitoringFeedbackDetailsPage.js');
   const { t } = useTranslation();
   const [feedback, setFeedback] = useState('');
   const [feedbackList, setFeedbackList] = useState([]);
@@ -17,10 +17,10 @@ const FeedbackExecutionPage = () => {
 
   return (
     <Box p={3}>
-      <Typography variant="h5" gutterBottom>{t('execution.feedback.title')}</Typography>
+      <Typography variant="h5" gutterBottom>{t('monitoring.feedback.title')}</Typography>
       <Paper sx={{ p: 2, mb: 2 }}>
-        <TextField label={t('execution.feedback.enter')} fullWidth value={feedback} onChange={e => setFeedback(e.target.value)} onKeyPress={e => e.key === 'Enter' && handleSend()} sx={{ mb: 2 }} />
-        <Button onClick={handleSend} variant="contained">{t('execution.feedback.send')}</Button>
+        <TextField label={t('monitoring.feedback.enter')} fullWidth value={feedback} onChange={e => setFeedback(e.target.value)} onKeyPress={e => e.key === 'Enter' && handleSend()} sx={{ mb: 2 }} />
+        <Button onClick={handleSend} variant="contained">{t('monitoring.feedback.send')}</Button>
       </Paper>
       <List>
         {feedbackList.map((item, idx) => (
@@ -31,4 +31,4 @@ const FeedbackExecutionPage = () => {
   );
 };
 
-export default FeedbackExecutionPage;
+export default FeedbackMonitoringPage;

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Paper, List, ListItem, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const CommunicationExecutionPage = () => {
-  console.log('======>> We ae in pages/execution/CommunicationExecutionPage.js');
+const MonitoringCommunicationPage = () => {
+  console.log('======>> We ae in pages/monitoring/MonitoringCommunicationPage.js');
   const { t } = useTranslation();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
@@ -17,10 +17,10 @@ const CommunicationExecutionPage = () => {
 
   return (
     <Box p={3}>
-      <Typography variant="h5" gutterBottom>{t('execution.communication.title')}</Typography>
+      <Typography variant="h5" gutterBottom>{t('monitoring.communication.title')}</Typography>
       <Paper sx={{ p: 2, mb: 2 }}>
-        <TextField label={t('execution.communication.message')} fullWidth value={message} onChange={e => setMessage(e.target.value)} onKeyPress={e => e.key === 'Enter' && handleSend()} sx={{ mb: 2 }} />
-        <Button onClick={handleSend} variant="contained">{t('execution.communication.send')}</Button>
+        <TextField label={t('monitoring.communication.message')} fullWidth value={message} onChange={e => setMessage(e.target.value)} onKeyPress={e => e.key === 'Enter' && handleSend()} sx={{ mb: 2 }} />
+        <Button onClick={handleSend} variant="contained">{t('monitoring.communication.send')}</Button>
       </Paper>
       <List>
         {messages.map((msg, idx) => (
@@ -31,4 +31,4 @@ const CommunicationExecutionPage = () => {
   );
 };
 
-export default CommunicationExecutionPage;
+export default MonitoringCommunicationPage;

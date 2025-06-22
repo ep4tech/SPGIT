@@ -15,9 +15,9 @@
     "title": "الاستراتيجية",
     "description": "صياغة الاستراتيجية"
   },
-  "execution": {
-    "title": "التنفيذ",
-    "description": "تنفيذ ومتابعة الاستراتيجية"
+  "monitoring": {
+    "title": "المتابعة",
+    "description": "متابعة الاستراتيجية"
   },
   "committees": {
     "title": "اللجان",

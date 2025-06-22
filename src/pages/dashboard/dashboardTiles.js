@@ -37,11 +37,11 @@ export function getDashboardTiles(t) {
       route: '/strategy-formulation'
     },
     {
-      id: 'execution',
-      title: t('execution.title'),
-      description: t('execution.description'),
+      id: 'monitoring',
+      title: t('monitoring.title'),
+      description: t('monitoring.description'),
       icon: <PlayArrowIcon fontSize="large" />, 
-      route: '/execution'
+      route: '/monitoring'
     },
     {
       id: 'monitoring',

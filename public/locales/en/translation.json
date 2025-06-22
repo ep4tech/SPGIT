@@ -15,9 +15,9 @@
     "title": "Strategy",
     "description": "Strategy formulation"
   },
-  "execution": {
-    "title": "Execution",
-    "description": "Execution and monitoring"
+  "monitoring": {
+    "title": "Monitoring",
+    "description": "Monitoring and follow-up"
   },
   "committees": {
     "title": "Committees",

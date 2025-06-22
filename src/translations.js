@@ -528,9 +528,9 @@ export const translations = {
       }
     },
 
-    execution: {
-      title: 'Execution',
-      description: 'Executin of the Strategy Plan',
+    monitoring: {
+      title: 'Monitoring',
+      description: 'Monitoring and follow-up',
       executivePlans: 'Executive Plans and Budgets',
       projectsStatus: 'projects Status',
       projectsLink: 'Link each project to strategic objectives',
@@ -545,17 +545,6 @@ export const translations = {
         roadmap: 'Roadmap',
         resources: 'Resources',
         feedback: 'Feedback',
-        projects: 'Projects',
-        support: 'Support & Challenges',
-        alignment: 'Dynamic Linking'
-      },
-      roadmap: {
-        title: 'Execution Guide & Roadmap',
-        description: 'Design a clear implementation guide.',
-        contents: 'Contents:',
-        table: 'Interactive timeline table.',
-        taskBox: 'Task boxes (task, time, reason, owner, method).',
-        filter: 'Filter by owner or phase.',
         timeline: 'Timeline',
         addMilestone: 'Add Milestone'
       },
@@ -1215,9 +1204,9 @@ export const translations = {
       }
     },
 
-    execution: {
-      title: 'التنفيذ',
-      description: 'تنفيذ الخطة الاستراتيجية',
+    monitoring: {
+      title: 'المتابعة',
+      description: 'متابعة الاستراتيجية',
       executivePlans: 'الخطط التنفيذية والميزانيات',
       projectsStatus: 'حالة المشاريع',
       projectsLink: 'ربط كل مشروع بالأهداف الاستراتيجية',

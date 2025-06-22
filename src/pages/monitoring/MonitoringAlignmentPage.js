@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, Typography, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, TextField } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const AlignmentExecutionPage = () => {
-  console.log('======>> We ae in pages/execution/AlignmentExecutionPage.js');
+const MonitoringAlignmentPage = () => {
+  console.log('======>> We ae in pages/monitoring/MonitoringAlignmentPage.js');
   const { t } = useTranslation();
   const [alignments, setAlignments] = useState([]);
   const [alignment, setAlignment] = useState({ goal: '', department: '', status: '' });
@@ -17,7 +17,7 @@ const AlignmentExecutionPage = () => {
 
   return (
     <Box p={3}>
-      <Typography variant="h5" gutterBottom>{t('execution.alignment.title')}</Typography>
+      <Typography variant="h5" gutterBottom>{t('monitoring.alignment.title')}</Typography>
       <Paper sx={{ p: 3, mb: 2 }}>
         <TextField label={t('goal')} name="goal" value={alignment.goal} onChange={e => setAlignment({ ...alignment, goal: e.target.value })} sx={{ mr: 1 }} />
         <TextField label={t('department')} name="department" value={alignment.department} onChange={e => setAlignment({ ...alignment, department: e.target.value })} sx={{ mr: 1 }} />
@@ -46,4 +46,4 @@ const AlignmentExecutionPage = () => {
   );
 };
 
-export default AlignmentExecutionPage;
+export default MonitoringAlignmentPage;

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, Typography, Paper, TextField, Button, List, ListItem, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const SupportExecutionPage = () => {
-  console.log('======>> We ae in pages/execution/SupportExecutionPage.js');
+const MonitoringSupportDetailsPage = () => {
+  console.log('======>> We ae in pages/monitoring/MonitoringSupportDetailsPage.js');
   const { t } = useTranslation();
   const [request, setRequest] = useState('');
   const [requests, setRequests] = useState([]);
@@ -17,10 +17,10 @@ const SupportExecutionPage = () => {
 
   return (
     <Box p={3}>
-      <Typography variant="h5" gutterBottom>{t('execution.support.title')}</Typography>
+      <Typography variant="h5" gutterBottom>{t('monitoring.support.title')}</Typography>
       <Paper sx={{ p: 2, mb: 2 }}>
-        <TextField label={t('execution.support.enter')} fullWidth value={request} onChange={e => setRequest(e.target.value)} onKeyPress={e => e.key === 'Enter' && handleSend()} sx={{ mb: 2 }} />
-        <Button onClick={handleSend} variant="contained">{t('execution.support.send')}</Button>
+        <TextField label={t('monitoring.support.enter')} fullWidth value={request} onChange={e => setRequest(e.target.value)} onKeyPress={e => e.key === 'Enter' && handleSend()} sx={{ mb: 2 }} />
+        <Button onClick={handleSend} variant="contained">{t('monitoring.support.send')}</Button>
       </Paper>
       <List>
         {requests.map((item, idx) => (
@@ -31,4 +31,4 @@ const SupportExecutionPage = () => {
   );
 };
 
-export default SupportExecutionPage;
+export default MonitoringSupportDetailsPage;

@@ -61,7 +61,7 @@ title,
 saveAndExit
 }
 
-Execution: {
+Monitoring: {
     setup {
         projectInfo,
         team {
@@ -122,7 +122,7 @@ Execution: {
     }
 
 
-Execution: {
+Monitoring: {
     Foundation {
         status
         priority

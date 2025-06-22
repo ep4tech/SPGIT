@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, Typography, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, TextField } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const ProjectsExecutionPage = () => {
-  console.log('======>> We ae in pages/execution/ProjectsExecutionPage.js');
+const MonitoringProjectsDetailsPage = () => {
+  console.log('======>> We ae in pages/monitoring/MonitoringProjectsDetailsPage.js');
   const { t } = useTranslation();
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState({ name: '', status: '', progress: '' });
@@ -17,19 +17,19 @@ const ProjectsExecutionPage = () => {
 
   return (
     <Box p={3}>
-      <Typography variant="h5" gutterBottom>{t('execution.projects.title')}</Typography>
+      <Typography variant="h5" gutterBottom>{t('monitoring.projects.title')}</Typography>
       <Paper sx={{ p: 3, mb: 2 }}>
-        <TextField label={t('execution.projects.name')} name="name" value={project.name} onChange={e => setProject({ ...project, name: e.target.value })} sx={{ mr: 1 }} />
-        <TextField label={t('execution.projects.status')} name="status" value={project.status} onChange={e => setProject({ ...project, status: e.target.value })} sx={{ mr: 1 }} />
-        <TextField label={t('execution.projects.progress')} name="progress" value={project.progress} onChange={e => setProject({ ...project, progress: e.target.value })} sx={{ mr: 1 }} />
+        <TextField label={t('monitoring.projects.name')} name="name" value={project.name} onChange={e => setProject({ ...project, name: e.target.value })} sx={{ mr: 1 }} />
+        <TextField label={t('monitoring.projects.status')} name="status" value={project.status} onChange={e => setProject({ ...project, status: e.target.value })} sx={{ mr: 1 }} />
+        <TextField label={t('monitoring.projects.progress')} name="progress" value={project.progress} onChange={e => setProject({ ...project, progress: e.target.value })} sx={{ mr: 1 }} />
         <Button onClick={handleAdd} variant="contained">{t('add')}</Button>
       </Paper>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('execution.projects.name')}</TableCell>
-            <TableCell>{t('execution.projects.status')}</TableCell>
-            <TableCell>{t('execution.projects.progress')}</TableCell>
+            <TableCell>{t('monitoring.projects.name')}</TableCell>
+            <TableCell>{t('monitoring.projects.status')}</TableCell>
+            <TableCell>{t('monitoring.projects.progress')}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -46,4 +46,4 @@ const ProjectsExecutionPage = () => {
   );
 };
 
-export default ProjectsExecutionPage;
+export default ProjectsMonitoringPage;

@@ -15,23 +15,16 @@ import StrategyFormulation from './components/StrategyFormulation';
 // All page-level components for strategic analysis and strategy formulation are now imported in their containers from src/pages/strategy/strategicAnalysis/ and src/pages/strategy/strategyFormulation/ respectively.
 import DashboardPage from './pages/dashboard/DashboardPage';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import ExecutionSetupPage from './pages/execution/ExecutionSetupPage';
-import ExecutionCommunicationPage from './pages/execution/ExecutionCommunicationPage';
-import ExecutionRoadmapPage from './pages/execution/ExecutionRoadmapPage';
-import ExecutionResourcesPage from './pages/execution/ExecutionResourcesPage';
-import ExecutionFeedbackPage from './pages/execution/ExecutionFeedbackPage';
-import ExecutionProjectsPage from './pages/execution/ExecutionProjectsPage';
-import ExecutionSupportPage from './pages/execution/ExecutionSupportPage';
-import ExecutionAlignmentPage from './pages/execution/ExecutionAlignmentPage';
-import ExecutionSection from './pages/execution/ExecutionSection';
-import SetupExecutionPage from './pages/execution/SetupExecutionPage';
-import CommunicationExecutionPage from './pages/execution/CommunicationExecutionPage';
-import RoadmapExecutionPage from './pages/execution/RoadmapExecutionPage';
-import ResourcesExecutionPage from './pages/execution/ResourcesExecutionPage';
-import FeedbackExecutionPage from './pages/execution/FeedbackExecutionPage';
-import ProjectsExecutionPage from './pages/execution/ProjectsExecutionPage';
-import SupportExecutionPage from './pages/execution/SupportExecutionPage';
-import AlignmentExecutionPage from './pages/execution/AlignmentExecutionPage';
+import MonitoringSetupPage from './pages/monitoring/MonitoringSetupPage';
+import MonitoringCommunicationPage from './pages/monitoring/MonitoringCommunicationPage';
+import MonitoringRoadmapPage from './pages/monitoring/MonitoringRoadmapPage';
+import MonitoringResourcesPage from './pages/monitoring/MonitoringResourcesPage';
+import MonitoringFeedbackPage from './pages/monitoring/MonitoringFeedbackPage';
+import MonitoringProjectsPage from './pages/monitoring/MonitoringProjectsPage';
+import MonitoringSupportPage from './pages/monitoring/MonitoringSupportPage';
+import MonitoringAlignmentPage from './pages/monitoring/MonitoringAlignmentPage';
+import MonitoringSection from './pages/monitoring/MonitoringSection';
+
 // Committee and training page imports removed, as these are now routed via their respective containers/pages.
 // If you need to add direct routes for individual committee/training pages, import them from src/pages/committee/ or src/pages/training/.
 import CommitteeLayout from './components/CommitteeLayout';
@@ -383,17 +376,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Execution Pages handled by ExecutionSection with nested routes */}
-        <Route path="/execution" element={<ExecutionSection />}>
+        {/* Monitoring Pages handled by MonitoringSection with nested routes */}
+        <Route path="/monitoring" element={<MonitoringSection />}>
   <Route index element={<div style={{ padding: 24, textAlign: 'center' }}>اختر قسم التنفيذ من القائمة الجانبية</div>} />
-  <Route path="setup" element={<SetupExecutionPage />} />
-  <Route path="communication" element={<CommunicationExecutionPage />} />
-  <Route path="roadmap" element={<RoadmapExecutionPage />} />
-  <Route path="resources" element={<ResourcesExecutionPage />} />
-  <Route path="feedback" element={<FeedbackExecutionPage />} />
-  <Route path="projects" element={<ProjectsExecutionPage />} />
-  <Route path="support" element={<SupportExecutionPage />} />
-  <Route path="alignment" element={<AlignmentExecutionPage />} />
+  <Route path="setup" element={<SetupMonitoringPage />} />
+  <Route path="communication" element={<CommunicationMonitoringPage />} />
+  <Route path="roadmap" element={<RoadmapMonitoringPage />} />
+  <Route path="resources" element={<ResourcesMonitoringPage />} />
+  <Route path="feedback" element={<FeedbackMonitoringPage />} />
+  <Route path="projects" element={<ProjectsMonitoringPage />} />
+  <Route path="support" element={<SupportMonitoringPage />} />
+  <Route path="alignment" element={<AlignmentMonitoringPage />} />
 </Route>
 
         {/* Committee Section Routes */}
@@ -447,7 +440,7 @@ function App() {
         </Route>
 
         <Route path="/training/*" element={<TrainingSection />} />
-        <Route path="/execution/*" element={<ExecutionSection />} />
+        <Route path="/monitoring/*" element={<MonitoringSection />} />
         <Route path="/evaluation" element={<MainLayout onLanguageChange={handleLanguageChange}><div>Evaluation Section</div></MainLayout>} />
         <Route path="/basic-info" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
   <Route index element={<ProjectDataWizard />} />

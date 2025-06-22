@@ -64,53 +64,53 @@ const MainLayout = (props) => {
   };
 
   
-const executionMenu = [
+const monitoringMenu = [
     {
       id: 'setup',
-      label: t('execution.menu.setup'),
-      icon: <GroupWorkIcon />, route: '/execution/setup'
+      label: t('monitoring.menu.setup'),
+      icon: <GroupWorkIcon />, route: '/monitoring/setup'
     },
     {
       id: 'communication',
-      label: t('execution.menu.communication'),
-      icon: <ForumIcon />, route: '/execution/communication'
+      label: t('monitoring.menu.communication'),
+      icon: <ForumIcon />, route: '/monitoring/communication'
     },
     {
       id: 'roadmap',
-      label: t('execution.menu.roadmap'),
-      icon: <MapIcon />, route: '/execution/roadmap'
+      label: t('monitoring.menu.roadmap'),
+      icon: <MapIcon />, route: '/monitoring/roadmap'
     },
     {
       id: 'resources',
-      label: t('execution.menu.resources'),
-      icon: <BuildIcon />, route: '/execution/resources'
+      label: t('monitoring.menu.resources'),
+      icon: <BuildIcon />, route: '/monitoring/resources'
     },
     {
       id: 'feedback',
-      label: t('execution.menu.feedback'),
-      icon: <FeedbackIcon />, route: '/execution/feedback'
+      label: t('monitoring.menu.feedback'),
+      icon: <FeedbackIcon />, route: '/monitoring/feedback'
     },
     {
       id: 'projects',
-      label: t('execution.menu.projects'),
-      icon: <AssignmentIcon />, route: '/execution/projects'
+      label: t('monitoring.menu.projects'),
+      icon: <AssignmentIcon />, route: '/monitoring/projects'
     },
     {
       id: 'support',
-      label: t('execution.menu.support'),
-      icon: <SupportIcon />, route: '/execution/support'
+      label: t('monitoring.menu.support'),
+      icon: <SupportIcon />, route: '/monitoring/support'
     },
     {
       id: 'alignment',
-      label: t('execution.menu.alignment'),
-      icon: <LinkIcon />, route: '/execution/alignment'
+      label: t('monitoring.menu.alignment'),
+      icon: <LinkIcon />, route: '/monitoring/alignment'
     },
   ];
 
   const navigate = useNavigate();
   const location = useLocation();
-  const isExecutionRoute = location.pathname.startsWith('/execution/');
-  const selectedExecutionRoute = executionMenu.find(item => location.pathname === item.route)?.route;
+  const isMonitoringRoute = location.pathname.startsWith('/monitoring/');
+  const selectedMonitoringRoute = monitoringMenu.find(item => location.pathname === item.route)?.route;
   const isOrgPermissionsRoute = location.pathname === '/organization-permissions';
 
   return (

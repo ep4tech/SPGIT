@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Paper, Grid, Stepper, Step, StepLabel } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const SetupExecutionPage = () => {
-  console.log('======>> We ae in pages/execution/SetupExecutionPage.js');
+const MonitoringSetupDetailsPage = () => {
+  console.log('======>> We ae in pages/monitoring/MonitoringSetupDetailsPage.js');
   const { t } = useTranslation();
   const [activeStep, setActiveStep] = useState(0);
   const [form, setForm] = useState({
@@ -15,10 +15,10 @@ const SetupExecutionPage = () => {
   });
 
   const steps = [
-    t('execution.setup.projectInfo.title'),
-    t('execution.setup.team.title'),
-    t('execution.setup.timeline'),
-    t('execution.setup.documentUpload')
+    t('monitoring.setup.projectInfo.title'),
+    t('monitoring.setup.team.title'),
+    t('monitoring.setup.timeline'),
+    t('monitoring.setup.documentUpload')
   ];
 
   const handleChange = e => {
@@ -30,25 +30,25 @@ const SetupExecutionPage = () => {
 
   return (
     <Box p={3}>
-      <Typography variant="h5" gutterBottom>{t('execution.setup.title')}</Typography>
+      <Typography variant="h5" gutterBottom>{t('monitoring.setup.title')}</Typography>
       <Stepper activeStep={activeStep} sx={{ mb: 3 }}>
         {steps.map((label, idx) => <Step key={idx}><StepLabel>{label}</StepLabel></Step>)}
       </Stepper>
       <Paper sx={{ p: 3, mb: 2 }}>
         {activeStep === 0 && (
-          <TextField label={t('execution.setup.projectInfo.projectName')} name="projectName" fullWidth value={form.projectName} onChange={handleChange} sx={{ mb: 2 }} />
+          <TextField label={t('monitoring.setup.projectInfo.projectName')} name="projectName" fullWidth value={form.projectName} onChange={handleChange} sx={{ mb: 2 }} />
         )}
         {activeStep === 1 && (
-          <TextField label={t('execution.setup.team.title')} name="team" fullWidth value={form.team} onChange={handleChange} sx={{ mb: 2 }} />
+          <TextField label={t('monitoring.setup.team.title')} name="team" fullWidth value={form.team} onChange={handleChange} sx={{ mb: 2 }} />
         )}
         {activeStep === 2 && (
           <Grid container spacing={2}>
-            <Grid item xs={6}><TextField label={t('execution.setup.projectInfo.startDate')} name="startDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.startDate} onChange={handleChange} /></Grid>
-            <Grid item xs={6}><TextField label={t('execution.setup.projectInfo.endDate')} name="endDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.endDate} onChange={handleChange} /></Grid>
+            <Grid item xs={6}><TextField label={t('monitoring.setup.projectInfo.startDate')} name="startDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.startDate} onChange={handleChange} /></Grid>
+            <Grid item xs={6}><TextField label={t('monitoring.setup.projectInfo.endDate')} name="endDate" type="date" InputLabelProps={{ shrink: true }} fullWidth value={form.endDate} onChange={handleChange} /></Grid>
           </Grid>
         )}
         {activeStep === 3 && (
-          <TextField label={t('execution.setup.projectInfo.document')} name="document" fullWidth value={form.document} onChange={handleChange} sx={{ mb: 2 }} />
+          <TextField label={t('monitoring.setup.projectInfo.document')} name="document" fullWidth value={form.document} onChange={handleChange} sx={{ mb: 2 }} />
         )}
       </Paper>
       <Box display="flex" justifyContent="space-between">
@@ -59,4 +59,4 @@ const SetupExecutionPage = () => {
   );
 };
 
-export default SetupExecutionPage;
+export default MonitoringSetupDetailsPage;
