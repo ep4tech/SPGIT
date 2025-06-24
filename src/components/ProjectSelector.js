@@ -18,14 +18,15 @@ import {
   Edit as EditIcon,
 } from '@mui/icons-material';
 
-const ProjectSelector = ({
-  projects = [], 
-  selectedProjectId, 
-  onProjectSelect = () => {}, 
-  onProjectCreate = () => {}, 
-  onProjectUpdate = () => {},
-  sx = {}
-}) => {
+import { useProject } from '../contexts/ProjectContext';
+
+const ProjectSelector = ({ sx = {} }) => {
+  const {
+    projects,
+    selectedProjectId,
+    setSelectedProjectId,
+    setProjects
+  } = useProject();
 
   console.log('Rendering ProjectSelector');
 
@@ -53,9 +54,11 @@ const ProjectSelector = ({
 
   const handleSave = () => {
     if (editMode && selectedProjectId) {
-      onProjectUpdate({ id: selectedProjectId, name: projectName });
+      setProjects(prev => prev.map(p => p.id === selectedProjectId ? { ...p, name: projectName } : p));
     } else {
-      onProjectCreate({ name: projectName });
+      const newProject = { id: Date.now().toString(), name: projectName };
+      setProjects(prev => [...prev, newProject]);
+      setSelectedProjectId(newProject.id);
     }
     handleCloseDialog();
   };
@@ -73,29 +76,19 @@ const ProjectSelector = ({
         mb: 2,
         boxShadow: 1
       }}>
+        <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>{t('projectSelector.selectProject', 'Select Project')}</Typography>
         <Select
-          value={selectedProjectId || ''}
-          onChange={(e) => onProjectSelect(e.target.value)}
-          sx={{ 
-            minWidth: 300,
-            bgcolor: 'white',
-            '& .MuiSelect-select': {
-              textAlign: isRtl ? 'right' : 'left'
-            },
-            '& .MuiOutlinedInput-notchedOutline': {
-              borderColor: 'rgba(0, 0, 0, 0.23)'
-            }
-          }}
-          displayEmpty
-          variant="outlined"
+          value={selectedProjectId}
+          onChange={e => setSelectedProjectId(e.target.value)}
+          size="small"
+          sx={{ minWidth: 160 }}
+          MenuProps={{ anchorOrigin: { vertical: 'bottom', horizontal: isRtl ? 'right' : 'left' } }}
         >
           <MenuItem value="" disabled>
             {t('selectProject')}
           </MenuItem>
-          {projects.map((project) => (
-            <MenuItem key={project.id} value={project.id}>
-              {project.name}
-            </MenuItem>
+          {projects.map(project => (
+            <MenuItem key={project.id} value={project.id}>{project.name}</MenuItem>
           ))}
         </Select>
         

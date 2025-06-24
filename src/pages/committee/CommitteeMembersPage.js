@@ -8,7 +8,29 @@ const CommitteeMembersPage = ({ committee, addMember, deleteMember }) => {
   const [newMember, setNewMember] = useState({ name: '', role: '' });
 
   if (!committee) {
-    return <Box sx={{ p: 3 }}><Typography color="error">Committee not found</Typography></Box>;
+    return (
+      <Box sx={{ p: 3, textAlign: 'center' }}>
+        <Typography color="error" variant="h6" gutterBottom>
+          {t('committee.notFound')}
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          href="/committee/all"
+          sx={{ mt: 2 }}
+        >
+          {t('committee.goToAll')}
+        </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          href="/committee/add"
+          sx={{ mt: 2, ml: 2 }}
+        >
+          {t('committee.addCommittee')}
+        </Button>
+      </Box>
+    );
   }
 
   const handleAddMember = () => {

@@ -32,17 +32,18 @@ i18n
     debug: true,
     initImmediate: false,
     load: 'currentOnly',
-    ns: ['translation'],
-    defaultNS: 'translation'
+    defaultNS: undefined,
   }, (err) => {
     if (err) {
       console.error('i18n initialization error:', err);
     } else {
       console.log('i18n initialized successfully');
-      console.log('Current translations:', {
-        en: i18n.getResourceBundle('en', 'translation'),
-        ar: i18n.getResourceBundle('ar', 'translation')
-      });
+      // Debug: print all loaded i18n resources and current language
+      console.log('Loaded i18n resources:', i18n.options.resources);
+      console.log('Current language:', i18n.language);
+      // Optionally, print a few sample keys
+      console.log('Sample t(appTitle):', i18n.t('appTitle'));
+      console.log('Sample t(committee.sidebar.all):', i18n.t('committee.sidebar.all'));
     }
   });
 
