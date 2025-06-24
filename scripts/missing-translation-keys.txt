@@ -1,0 +1,5 @@
+# Folder: scripts
+  ## File: src\scripts\remove-unused-translation-keys.js
+    [Line 27]: // Extract all t('key') and t("key") usages
+
+

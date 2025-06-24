@@ -70,7 +70,7 @@ const [deleteTarget, setDeleteTarget] = useState(null);
                 <DeleteIcon />
               </IconButton>
               <Dialog open={deleteDialogOpen} onClose={() => setDeleteDialogOpen(false)}>
-                <DialogTitle>{t('confirmation')}</DialogTitle>
+                <DialogTitle>{t('confirm')}</DialogTitle>
                 <DialogContent>
                   {deleteTarget != null && regulations.find(r => r.id === deleteTarget)
                     ? t('organizationPermissions.regulations.deleteConfirmationWithName', { name: regulations.find(r => r.id === deleteTarget).name })

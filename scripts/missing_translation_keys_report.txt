@@ -1,3 +1,525 @@
 File: components\ProjectDataWizard\steps\BasicInfo.js
-  MISSING [Line 41]: .
+  MISSING [Line 42]: .
+  MISSING [Line 173]: dataWizard.basicInfo.title
+  MISSING [Line 190]: dataWizard.basicInfo.organizationName
+  MISSING [Line 255]: dataWizard.basicInfo.generalNotes
+  MISSING [Line 265]: dataWizard.basicInfo.description
+  MISSING [Line 276]: dataWizard.basicInfo.addStakeholder
+  MISSING [Line 285]: dataWizard.basicInfo.relation
+  MISSING [Line 286]: dataWizard.basicInfo.contactInfo
+  MISSING [Line 325]: dataWizard.basicInfo.performanceIndicators
+  MISSING [Line 327]: dataWizard.basicInfo.addIndicator
+  MISSING [Line 334]: dataWizard.basicInfo.name
+  MISSING [Line 336]: dataWizard.basicInfo.target
+  MISSING [Line 338]: dataWizard.basicInfo.source
+
+File: components\ProjectDataWizard\steps\Documents.js
+  MISSING [Line 76]: dataWizard.documents.title
+  MISSING [Line 118]: dataWizard.documents.upLoadFile
+  MISSING [Line 133]: confirmation
+
+File: components\ProjectDataWizard\steps\PlanningTeam.js
+  MISSING [Line 139]: dataWizard.planningTeam.membershipStart
+  MISSING [Line 147]: dataWizard.planningTeam.externalOrganization
+  MISSING [Line 157]: dataWizard.planningTeam.committeeName
+  MISSING [Line 158]: dataWizard.planningTeam.committeeRole
+  MISSING [Line 302]: dataWizard.planningTeam.title
+  MISSING [Line 323]: dataWizard.planningTeam.addMember
+
+File: components\ProjectDataWizard\steps\Evaluation.js
+  MISSING [Line 146]: dataWizard.evaluation.title
+  MISSING [Line 152]: dataWizard.evaluation.projectObjectives
+  MISSING [Line 158]: dataWizard.evaluation.objectives
+  MISSING [Line 166]: dataWizard.evaluation.keyPerformanceIndicators
+  MISSING [Line 174]: dataWizard.evaluation.addKpi
+  MISSING [Line 181]: dataWizard.evaluation.kpiName
+  MISSING [Line 182]: dataWizard.evaluation.kpiDescription
+  MISSING [Line 183]: dataWizard.evaluation.targetValue
+  MISSING [Line 184]: dataWizard.evaluation.unit
+  MISSING [Line 185]: dataWizard.evaluation.frequency
+  MISSING [Line 186]: dataWizard.evaluation.responsibleParty
+  MISSING [Line 217]: dataWizard.evaluation.riskAssessment
+  MISSING [Line 225]: dataWizard.evaluation.addRisk
+  MISSING [Line 232]: dataWizard.evaluation.riskDescription
+  MISSING [Line 233]: dataWizard.evaluation.impact
+  MISSING [Line 234]: dataWizard.evaluation.probability
+  MISSING [Line 235]: dataWizard.evaluation.mitigation
+  MISSING [Line 236]: dataWizard.evaluation.contingency
+  MISSING [Line 237]: dataWizard.evaluation.owner
+  MISSING [Line 294]: dataWizard.evaluation.description
+
+File: components\ProjectDataWizard\steps\Confirmation.js
+  MISSING [Line 33]: dataWizard.confirmation.title
+  MISSING [Line 38]: dataWizard.confirmation.projectName
+  MISSING [Line 44]: dataWizard.confirmation.organization
+  MISSING [Line 50]: dataWizard.confirmation.description
+  MISSING [Line 73]: dataWizard.confirmation.planningTeam
+  MISSING [Line 77]: dataWizard.confirmation.internalTeam
+  MISSING [Line 105]: dataWizard.confirmation.externalTeam
+  MISSING [Line 133]: dataWizard.confirmation.committees
+  MISSING [Line 244]: dataWizard.evaluation.successCriteria
+  MISSING [Line 259]: dataWizard.confirmation.confirmationMessage
+
+File: components\ProjectDataWizard\index.js
+  MISSING [Line 188]: dataWizard.confirmation.saveAndExit
+
+File: components\StrategyFormulation\Steps\InitialView.js
+  MISSING [Line 18]: strategyFormulation.initialView.items.leadershipExpectations
+  MISSING [Line 21]: strategyFormulation.initialView.leadershipExpectationsDesc
+  MISSING [Line 30]: strategyFormulation.initialView.items.employeeExpectations
+  MISSING [Line 33]: strategyFormulation.initialView.employeeExpectationsDesc
+  MISSING [Line 42]: strategyFormulation.initialView.items.stakeholderRequirements
+  MISSING [Line 45]: strategyFormulation.initialView.stakeholderRequirementsDesc
+  MISSING [Line 54]: strategyFormulation.initialView.items.nationalDevelopment
+  MISSING [Line 57]: strategyFormulation.initialView.nationalDevelopmentDesc
+  MISSING [Line 66]: strategyFormulation.initialView.items.globalTrends
+  MISSING [Line 69]: strategyFormulation.initialView.globalTrendsDesc
+
+File: components\StrategyFormulation\index.js
+  MISSING [Line 54]: strategyFormulation.pageTitle
+  MISSING [Line 115]: strategyFormulation.pageDescription
+
+File: components\StrategyFormulation\VisionChallengesPage.js
+  MISSING [Line 19]: strategyFormulation.visionChallenges.items.visionElements
+  MISSING [Line 31]: strategyFormulation.visionChallenges.items.challengesMatrix
+  MISSING [Line 43]: strategyFormulation.visionChallenges.items.successIndicators
+  MISSING [Line 55]: strategyFormulation.visionChallenges.items.realityGap
+
+File: components\StrategyFormulation\StrategicIssuesPage.js
+  MISSING [Line 19]: strategyFormulation.strategicIssues.items.issuesList
+  MISSING [Line 31]: strategyFormulation.strategicIssues.items.keyFactors
+  MISSING [Line 43]: strategyFormulation.strategicIssues.items.failureConsequences
+  MISSING [Line 55]: strategyFormulation.strategicIssues.items.issuesDescription
+  MISSING [Line 67]: strategyFormulation.strategicIssues.items.prioritization
+
+File: components\StrategyFormulation\GoalsObjectivesPage.js
+  MISSING [Line 19]: strategyFormulation.goalsObjectives.items.strategicGoals
+  MISSING [Line 31]: strategyFormulation.goalsObjectives.items.objectivesFormulation
+  MISSING [Line 43]: strategyFormulation.goalsObjectives.items.strategySelection
+  MISSING [Line 55]: strategyFormulation.goalsObjectives.items.obstaclesAndAlternatives
+  MISSING [Line 67]: strategyFormulation.goalsObjectives.items.strategyReview
+  MISSING [Line 79]: strategyFormulation.goalsObjectives.items.performanceIndicators
+  MISSING [Line 91]: strategyFormulation.goalsObjectives.items.timeline
+
+File: components\StrategyFormulation\ObjectivesProjectsPage.js
+  MISSING [Line 19]: strategyFormulation.objectivesProjects.items.objectivesDistribution
+  MISSING [Line 22]: strategyFormulation.objectivesProjects.items.assignStrategicObjectives
+  MISSING [Line 31]: strategyFormulation.objectivesProjects.items.projectsPrograms
+  MISSING [Line 34]: strategyFormulation.objectivesProjects.items.defineProgramsAndInitiatives
+  MISSING [Line 43]: strategyFormulation.objectivesProjects.items.requirements
+  MISSING [Line 46]: strategyFormulation.objectivesProjects.items.specifyHumanFinancialAndLogisticalNeeds
+  MISSING [Line 55]: strategyFormulation.objectivesProjects.items.documentation
+  MISSING [Line 58]: strategyFormulation.objectivesProjects.items.centralRepositoryForSupportingDocuments
+  MISSING [Line 67]: strategyFormulation.objectivesProjects.items.stakeholders
+  MISSING [Line 70]: strategyFormulation.objectivesProjects.items.linkStakeholdersToRelevantInitiatives
+
+File: components\StrategyFormulation\CoordinationPage.js
+  MISSING [Line 19]: strategyFormulation.coordination.internalCoordination
+  MISSING [Line 31]: strategyFormulation.coordination.externalCoordination
+  MISSING [Line 43]: strategyFormulation.coordination.objectivesMatrix
+  MISSING [Line 55]: strategyFormulation.coordination.plansMatrix
+  MISSING [Line 67]: strategyFormulation.coordination.relatedProjects
+
+File: components\StrategyFormulation\ExecutivePlansPage.js
+  MISSING [Line 19]: strategyFormulation.executivePlans.items.planningProcess
+  MISSING [Line 31]: strategyFormulation.executivePlans.items.budgetAllocation
+  MISSING [Line 43]: strategyFormulation.executivePlans.items.timeframes
+  MISSING [Line 55]: strategyFormulation.executivePlans.items.responsibilities
+  MISSING [Line 67]: strategyFormulation.executivePlans.items.dateRange
+
+File: components\MainLayout.js
+  MISSING [Line 70]: monitoring.menu.setup
+  MISSING [Line 75]: monitoring.menu.communication
+  MISSING [Line 80]: monitoring.menu.roadmap
+  MISSING [Line 85]: monitoring.menu.resources
+  MISSING [Line 90]: monitoring.menu.feedback
+  MISSING [Line 95]: monitoring.menu.projects
+  MISSING [Line 100]: monitoring.menu.support
+  MISSING [Line 105]: monitoring.menu.alignment
+
+File: components\CommitteeLayout.js
+  MISSING [Line 104]: committee.menuMainTitle
+  MISSING [Line 121]: committee.menu.committeeDetails
+
+File: components\CommitteesDashboard.js
+  MISSING [Line 95]: committee.searchPlaceholder
+  MISSING [Line 106]: committee.addCommittee
+  MISSING [Line 111]: committee.pageTitle
+  MISSING [Line 117]: committee.membersCount
+
+File: pages\dashboard\dashboardTiles.js
+  MISSING [Line 55]: training.title
+  MISSING [Line 56]: training.description
+  MISSING [Line 69]: organizationPermissions.title
+  MISSING [Line 70]: organizationPermissions.description
+  MISSING [Line 76]: reports.title
+  MISSING [Line 77]: reports.description
+
+File: pages\committee\CommitteeAssignmentsPage.js
+  MISSING [Line 27]: committee.committeeAssignments
+
+File: pages\committee\CommitteeDetailsPage.js
+  MISSING [Line 86]: committee.tabs.overview
+  MISSING [Line 87]: committee.tabs.members
+  MISSING [Line 88]: committee.tabs.assignments
+  MISSING [Line 89]: committee.tabs.meetings
+  MISSING [Line 90]: committee.tabs.feedback
+  MISSING [Line 91]: committee.tabs.documents
+  MISSING [Line 96]: committee.editDetails
+  MISSING [Line 141]: committee.validation.allFieldsRequired
+
+File: pages\committee\CommitteeDocumentsPage.js
+  MISSING [Line 27]: committee.committeeDocuments
+
+File: pages\committee\CommitteeFeedbackPage.js
+  MISSING [Line 27]: committee.committeeFeedback
+
+File: pages\committee\CommitteeMeetingsPage.js
+  MISSING [Line 27]: committee.committeeMeetings
+
+File: pages\committee\CommitteeMembersPage.js
+  MISSING [Line 27]: committee.committeeMembers
+
+File: pages\committee\AddCommitteePage.js
+  MISSING [Line 34]: committee.nameHeader
+  MISSING [Line 44]: committee.typeHeader
+  MISSING [Line 52]: committee.permanent
+  MISSING [Line 53]: committee.temporary
+  MISSING [Line 57]: committee.statusHeader
+  MISSING [Line 65]: committee.active
+  MISSING [Line 66]: committee.inactive
+
+File: pages\monitoring\MonitoringSetupPage.js
+  MISSING [Line 31]: monitoring.setup.title
+  MISSING [Line 33]: monitoring.setup.projectName
+  MISSING [Line 34]: monitoring.setup.team
+  MISSING [Line 35]: monitoring.setup.startDate
+  MISSING [Line 36]: monitoring.setup.endDate
+  MISSING [Line 38]: monitoring.setup.documentUpload
+
+File: pages\monitoring\MonitoringCommunicationDetailsPage.js
+  MISSING [Line 20]: monitoring.communication.title
+  MISSING [Line 22]: monitoring.communication.message
+  MISSING [Line 23]: monitoring.communication.send
+
+File: pages\monitoring\MonitoringRoadmapPage.js
+  MISSING [Line 19]: monitoring.roadmap.title
+  MISSING [Line 21]: monitoring.roadmap.milestoneTitle
+  MISSING [Line 22]: monitoring.roadmap.deadline
+  MISSING [Line 23]: monitoring.roadmap.status
+  MISSING [Line 24]: monitoring.roadmap.addMilestone
+
+File: pages\monitoring\MonitoringResourcesPage.js
+  MISSING [Line 19]: monitoring.resources.title
+  MISSING [Line 21]: monitoring.resources.name
+  MISSING [Line 22]: monitoring.resources.type
+  MISSING [Line 23]: monitoring.resources.quantity
+
+File: pages\monitoring\MonitoringFeedbackPage.js
+  MISSING [Line 19]: monitoring.feedback.title
+  MISSING [Line 21]: monitoring.feedback.enter
+  MISSING [Line 22]: monitoring.feedback.send
+
+File: pages\monitoring\MonitoringProjectsPage.js
+  MISSING [Line 20]: monitoring.projects.title
+  MISSING [Line 22]: monitoring.projects.name
+  MISSING [Line 23]: monitoring.projects.status
+  MISSING [Line 24]: monitoring.projects.progress
+
+File: pages\monitoring\MonitoringSupportPage.js
+  MISSING [Line 20]: monitoring.support.title
+  MISSING [Line 22]: monitoring.support.enter
+  MISSING [Line 23]: monitoring.support.send
+
+File: pages\monitoring\MonitoringAlignmentDetailsPage.js
+  MISSING [Line 20]: monitoring.alignment.title
+
+File: pages\monitoring\MonitoringSection.js
+  MISSING [Line 55]: monitoring.menu.mainTitle
+
+File: pages\monitoring\MonitoringSetupDetailsPage.js
+  MISSING [Line 18]: monitoring.setup.projectInfo.title
+  MISSING [Line 19]: monitoring.setup.team.title
+  MISSING [Line 20]: monitoring.setup.timeline
+  MISSING [Line 39]: monitoring.setup.projectInfo.projectName
+  MISSING [Line 46]: monitoring.setup.projectInfo.startDate
+  MISSING [Line 47]: monitoring.setup.projectInfo.endDate
+  MISSING [Line 51]: monitoring.setup.projectInfo.document
+
+File: pages\strategicAnalysis\StrategicFoundation.js
+  MISSING [Line 128]: strategicAnalysis.foundation.title
+  MISSING [Line 131]: strategicAnalysis.foundation.subtitle
+  MISSING [Line 179]: strategicAnalysis.foundation.responsibleTeam
+
+File: pages\strategicAnalysis\DataAnalysis.js
+  MISSING [Line 57]: strategicAnalysis.analysis.title
+  MISSING [Line 60]: strategicAnalysis.analysis.subtitle
+  MISSING [Line 67]: strategicAnalysis.analysis.swotTitle
+  MISSING [Line 70]: strategicAnalysis.analysis.swotDesc
+  MISSING [Line 103]: strategicAnalysis.analysis.strengths
+  MISSING [Line 106]: strategicAnalysis.analysis.strengthsDesc
+  MISSING [Line 118]: strategicAnalysis.analysis.add
+  MISSING [Line 137]: strategicAnalysis.analysis.weaknesses
+  MISSING [Line 140]: strategicAnalysis.analysis.weaknessesDesc
+  MISSING [Line 171]: strategicAnalysis.analysis.opportunities
+  MISSING [Line 174]: strategicAnalysis.analysis.opportunitiesDesc
+  MISSING [Line 205]: strategicAnalysis.analysis.threats
+  MISSING [Line 208]: strategicAnalysis.analysis.threatsDesc
+  MISSING [Line 254]: strategicAnalysis.analysis.matrixTitle
+  MISSING [Line 257]: strategicAnalysis.analysis.matrixDesc
+  MISSING [Line 264]: strategicAnalysis.analysis.matrixPlaceholder
+  MISSING [Line 282]: strategicAnalysis.analysis.itemPlaceholder
+
+File: pages\strategicAnalysis\ExternalEnvironment.js
+  MISSING [Line 22]: strategicAnalysis.external.political
+  MISSING [Line 23]: strategicAnalysis.external.politicalDesc
+  MISSING [Line 27]: strategicAnalysis.external.economic
+  MISSING [Line 28]: strategicAnalysis.external.economicDesc
+  MISSING [Line 32]: strategicAnalysis.external.social
+  MISSING [Line 33]: strategicAnalysis.external.socialDesc
+  MISSING [Line 37]: strategicAnalysis.external.technological
+  MISSING [Line 38]: strategicAnalysis.external.technologicalDesc
+  MISSING [Line 45]: strategicAnalysis.external.beneficiaries
+  MISSING [Line 46]: strategicAnalysis.external.beneficiariesDesc
+  MISSING [Line 50]: strategicAnalysis.external.funders
+  MISSING [Line 51]: strategicAnalysis.external.fundersDesc
+  MISSING [Line 59]: strategicAnalysis.external.title
+  MISSING [Line 62]: strategicAnalysis.external.subtitle
+  MISSING [Line 69]: strategicAnalysis.external.pestAnalysis
+  MISSING [Line 96]: strategicAnalysis.external.stakeholderAnalysis
+
+File: pages\strategicAnalysis\InternalEnvironment.js
+  MISSING [Line 23]: strategicAnalysis.internal.objectives
+  MISSING [Line 24]: strategicAnalysis.internal.objectivesDesc
+  MISSING [Line 29]: strategicAnalysis.internal.services
+  MISSING [Line 30]: strategicAnalysis.internal.servicesDesc
+  MISSING [Line 35]: strategicAnalysis.internal.culture
+  MISSING [Line 36]: strategicAnalysis.internal.cultureDesc
+  MISSING [Line 41]: strategicAnalysis.internal.resources
+  MISSING [Line 42]: strategicAnalysis.internal.resourcesDesc
+  MISSING [Line 46]: strategicAnalysis.internal.financial
+  MISSING [Line 51]: strategicAnalysis.internal.human
+  MISSING [Line 58]: strategicAnalysis.internal.performance
+  MISSING [Line 59]: strategicAnalysis.internal.performanceDesc
+  MISSING [Line 67]: strategicAnalysis.internal.title
+  MISSING [Line 70]: strategicAnalysis.internal.subtitle
+  MISSING [Line 103]: strategicAnalysis.internal.rating
+
+File: pages\strategicAnalysis\MandatesResponsibilities.js
+  MISSING [Line 87]: strategicAnalysis.mandates.title
+  MISSING [Line 94]: strategicAnalysis.mandates.newResponsibility
+  MISSING [Line 132]: strategicAnalysis.mandates.newMandate
+
+File: pages\strategicAnalysis\MissionStatement.js
+  MISSING [Line 125]: strategicAnalysis.mission.title
+  MISSING [Line 128]: strategicAnalysis.mission.subtitle
+  MISSING [Line 136]: strategicAnalysis.mission.suggestedTitle
+  MISSING [Line 139]: strategicAnalysis.mission.suggestedDesc
+  MISSING [Line 147]: strategicAnalysis.mission.generateButton
+  MISSING [Line 167]: strategicAnalysis.mission.copyToEditable
+  MISSING [Line 176]: strategicAnalysis.mission.noSuggestions
+  MISSING [Line 186]: strategicAnalysis.mission.editableTitle
+  MISSING [Line 189]: strategicAnalysis.mission.editableDesc
+  MISSING [Line 215]: strategicAnalysis.mission.copyToFinal
+  MISSING [Line 234]: strategicAnalysis.mission.finalTitle
+  MISSING [Line 237]: strategicAnalysis.mission.finalDesc
+  MISSING [Line 254]: strategicAnalysis.mission.noStatement
+
+File: pages\organization\OrgChartSection.js
+  MISSING [Line 177]: organizationPermissions.orgChart.addSubunit
+  MISSING [Line 178]: organizationPermissions.orgChart.newUnitName
+  MISSING [Line 179]: organizationPermissions.orgChart.editUnit
+  MISSING [Line 183]: organizationPermissions.orgChart.deleteUnit
+  MISSING [Line 196]: organizationPermissions.orgChart.moveUnit
+  MISSING [Line 202]: organizationPermissions.orgChart.selectTarget
+
+File: pages\organization\PermissionsTreeSection.js
+  MISSING [Line 198]: organizationPermissions.permissionsTree.namePlaceholder
+
+File: pages\organization\RegulationsSection.js
+  MISSING [Line 53]: organizationPermissions.regulations.addRegulation
+  MISSING [Line 89]: organizationPermissions.regulations.edit
+  MISSING [Line 90]: organizationPermissions.regulations.cancel
+
+File: pages\strategyFormulation\Coordination.js
+  MISSING [Line 100]: strategyFormulation.coordination.title
+  MISSING [Line 252]: strategyFormulation.coordination.items.selectStakeholders
+
+File: pages\strategyFormulation\ExecutivePlans.js
+  MISSING [Line 88]: strategyFormulation.executivePlans.title
+
+File: pages\strategyFormulation\GoalsObjectives.js
+  MISSING [Line 83]: strategyFormulation.goalsObjectives.title
+  MISSING [Line 192]: strategyFormulation.goalsObjectives.description
+
+File: pages\strategyFormulation\InitialView.js
+  MISSING [Line 61]: strategyFormulation.initialView.title
+
+File: pages\strategyFormulation\ObjectivesProjects.js
+  MISSING [Line 98]: strategyFormulation.objectivesProjects.title
+  MISSING [Line 202]: strategyFormulation.objectivesProjects.items.addStakeholder
+
+File: pages\strategyFormulation\StrategicIssues.js
+  MISSING [Line 91]: strategyFormulation.strategicIssues.title
+
+File: pages\execution\DocumentsPage.js
+  MISSING [Line 9]: execution.documents.title
+  MISSING [Line 12]: execution.documents.uploadTitle
+  MISSING [Line 14]: execution.documents.titleField
+  MISSING [Line 15]: execution.documents.category
+  MISSING [Line 15]: execution.documents.categoryPlaceholder
+  MISSING [Line 16]: execution.documents.uploadFile
+  MISSING [Line 17]: execution.documents.description
+  MISSING [Line 18]: execution.documents.version
+  MISSING [Line 19]: execution.documents.approvalStatus
+  MISSING [Line 19]: execution.documents.approvalStatusPlaceholder
+  MISSING [Line 25]: execution.documents.guideBuilderTitle
+  MISSING [Line 27]: execution.documents.what
+  MISSING [Line 28]: execution.documents.why
+  MISSING [Line 29]: execution.documents.when
+  MISSING [Line 30]: execution.documents.who
+  MISSING [Line 31]: execution.documents.how
+  MISSING [Line 33]: execution.documents.exportPdf
+  MISSING [Line 34]: execution.documents.exportWord
+  MISSING [Line 36]: execution.documents.versionControl
+  MISSING [Line 36]: execution.documents.placeholder
+
+File: pages\execution\StructurePage.js
+  MISSING [Line 9]: execution.structure.title
+  MISSING [Line 12]: execution.structure.orgStructure
+  MISSING [Line 16]: execution.structure.position
+  MISSING [Line 17]: execution.structure.name
+  MISSING [Line 18]: execution.structure.role
+  MISSING [Line 24]: execution.structure.projectManager
+  MISSING [Line 26]: execution.structure.manager
+  MISSING [Line 29]: execution.structure.teamLead
+  MISSING [Line 31]: execution.structure.lead
+  MISSING [Line 38]: execution.structure.roleDefinition
+  MISSING [Line 40]: execution.structure.roleTitle
+  MISSING [Line 41]: execution.structure.responsibilities
+  MISSING [Line 42]: execution.structure.kpis
+  MISSING [Line 43]: execution.structure.requiredSkills
+  MISSING [Line 44]: execution.structure.assignedPerson
+  MISSING [Line 45]: execution.structure.addRole
+  MISSING [Line 50]: execution.structure.teamBuilder
+  MISSING [Line 52]: execution.structure.teamName
+  MISSING [Line 53]: execution.structure.purpose
+  MISSING [Line 54]: execution.structure.members
+  MISSING [Line 54]: execution.structure.membersPlaceholder
+  MISSING [Line 55]: execution.structure.resourcesAssigned
+  MISSING [Line 56]: execution.structure.createTeam
+
+File: pages\execution\TasksPage.js
+  MISSING [Line 9]: execution.tasks.title
+  MISSING [Line 12]: execution.tasks.taskTracker
+  MISSING [Line 16]: execution.tasks.taskName
+  MISSING [Line 17]: execution.tasks.startDate
+  MISSING [Line 18]: execution.tasks.endDate
+  MISSING [Line 19]: execution.tasks.assignedTo
+  MISSING [Line 20]: execution.tasks.dependencies
+  MISSING [Line 21]: execution.tasks.status
+  MISSING [Line 22]: execution.tasks.progress
+  MISSING [Line 37]: execution.tasks.assignTeam
+  MISSING [Line 50]: execution.tasks.milestones
+  MISSING [Line 54]: execution.tasks.milestoneTitle
+  MISSING [Line 55]: execution.tasks.deadline
+  MISSING [Line 56]: execution.tasks.completionStatus
+  MISSING [Line 62]: execution.tasks.projectKickoff
+  MISSING [Line 76]: execution.tasks.projectOverview
+  MISSING [Line 78]: execution.tasks.projectCharter
+  MISSING [Line 79]: execution.tasks.scopeTimeline
+  MISSING [Line 80]: execution.tasks.stakeholders
+  MISSING [Line 81]: execution.tasks.budgetRisks
+  MISSING [Line 82]: execution.tasks.changeRequest
+
+File: pages\execution\CommunicationPage.js
+  MISSING [Line 9]: execution.communication.title
+  MISSING [Line 12]: execution.communication.disseminationLog
+  MISSING [Line 16]: execution.communication.channel
+  MISSING [Line 17]: execution.communication.dateSent
+  MISSING [Line 18]: execution.communication.recipientGroup
+  MISSING [Line 19]: execution.communication.confirmedReceived
+  MISSING [Line 25]: execution.communication.email
+  MISSING [Line 27]: execution.communication.allStaff
+  MISSING [Line 28]: execution.communication.no
+  MISSING [Line 31]: execution.communication.portal
+  MISSING [Line 33]: execution.communication.managers
+  MISSING [Line 34]: execution.communication.yes
+  MISSING [Line 41]: execution.communication.stakeholderResourceAccess
+  MISSING [Line 43]: execution.communication.downloads
+  MISSING [Line 44]: execution.communication.faqs
+  MISSING [Line 45]: execution.communication.feedbackBox
+  MISSING [Line 50]: execution.communication.seniorManagement
+  MISSING [Line 52]: execution.communication.reportType
+  MISSING [Line 53]: execution.communication.date
+  MISSING [Line 54]: execution.communication.summary
+  MISSING [Line 55]: execution.communication.escalation
+  MISSING [Line 56]: execution.communication.feedbackLog
+
+File: pages\execution\ResourcesPage.js
+  MISSING [Line 9]: execution.resources.title
+  MISSING [Line 12]: execution.resources.resourceRequest
+  MISSING [Line 14]: execution.resources.type
+  MISSING [Line 15]: execution.resources.description
+  MISSING [Line 16]: execution.resources.requester
+  MISSING [Line 17]: execution.resources.approval
+  MISSING [Line 17]: execution.resources.approvalPlaceholder
+  MISSING [Line 18]: execution.resources.submitRequest
+  MISSING [Line 23]: execution.resources.resourceInventory
+  MISSING [Line 24]: execution.resources.filter
+  MISSING [Line 28]: execution.resources.name
+  MISSING [Line 30]: execution.resources.quantity
+  MISSING [Line 36]: execution.resources.staff
+  MISSING [Line 37]: execution.resources.human
+  MISSING [Line 41]: execution.resources.laptops
+  MISSING [Line 42]: execution.resources.equipment
+  MISSING [Line 50]: execution.resources.serviceProviderDirectory
+  MISSING [Line 54]: execution.resources.providerName
+  MISSING [Line 55]: execution.resources.serviceType
+  MISSING [Line 56]: execution.resources.contact
+  MISSING [Line 62]: execution.resources.abcTech
+  MISSING [Line 63]: execution.resources.itSupport
+  MISSING [Line 64]: execution.resources.abcEmail
+  MISSING [Line 67]: execution.resources.xyzCatering
+  MISSING [Line 68]: execution.resources.catering
+  MISSING [Line 69]: execution.resources.xyzEmail
+
+File: pages\execution\FeedbackPage.js
+  MISSING [Line 9]: execution.feedback.title
+  MISSING [Line 12]: execution.feedback.formBuilder
+  MISSING [Line 14]: execution.feedback.targetGroup
+  MISSING [Line 15]: execution.feedback.topic
+  MISSING [Line 16]: execution.feedback.submissionType
+  MISSING [Line 17]: execution.feedback.createForm
+  MISSING [Line 22]: execution.feedback.dataCollection
+  MISSING [Line 24]: execution.feedback.method
+  MISSING [Line 25]: execution.feedback.validationRules
+  MISSING [Line 26]: execution.feedback.addDataPoint
+  MISSING [Line 31]: execution.feedback.issueReporting
+  MISSING [Line 33]: execution.feedback.issueTitle
+  MISSING [Line 34]: execution.feedback.descriptionImpact
+  MISSING [Line 35]: execution.feedback.suggestedFix
+  MISSING [Line 36]: execution.feedback.urgency
+  MISSING [Line 37]: execution.feedback.assignedTo
+  MISSING [Line 38]: execution.feedback.resolutionLog
+  MISSING [Line 39]: execution.feedback.reportIssue
+
+File: pages\execution\ChangePage.js
+  MISSING [Line 9]: execution.change.title
+  MISSING [Line 12]: execution.change.programSetup
+  MISSING [Line 14]: execution.change.titleField
+  MISSING [Line 15]: execution.change.audience
+  MISSING [Line 16]: execution.change.communicationPlan
+  MISSING [Line 17]: execution.change.trainingPlan
+  MISSING [Line 18]: execution.change.resistanceTracking
+  MISSING [Line 19]: execution.change.saveProgram
+  MISSING [Line 24]: execution.change.integrationMapping
+  MISSING [Line 26]: execution.change.initiativeDepartment
+  MISSING [Line 27]: execution.change.impactRating
+  MISSING [Line 28]: execution.change.checklistForIntegration
+  MISSING [Line 29]: execution.change.linkedKpis
+  MISSING [Line 30]: execution.change.mapIntegration
+
+File: scripts\find-missing-translation-keys.js
+  MISSING [Line 26]: key
 

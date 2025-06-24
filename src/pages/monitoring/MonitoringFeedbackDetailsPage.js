@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Typography, Paper, TextField, Button, List, ListItem, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-const MonitoringFeedbackDetailsPage = () => {
+const FeedbackMonitoringPage = () => {
   console.log('======>> We ae in pages/monitoring/MonitoringFeedbackDetailsPage.js');
   const { t } = useTranslation();
   const [feedback, setFeedback] = useState('');

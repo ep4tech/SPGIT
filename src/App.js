@@ -22,6 +22,14 @@ import MonitoringResourcesPage from './pages/monitoring/MonitoringResourcesPage'
 import MonitoringFeedbackPage from './pages/monitoring/MonitoringFeedbackPage';
 import MonitoringProjectsPage from './pages/monitoring/MonitoringProjectsPage';
 import MonitoringSupportPage from './pages/monitoring/MonitoringSupportPage';
+import ExecutionSection from './pages/execution/ExecutionSection';
+import DocumentsPage from './pages/execution/DocumentsPage';
+import StructurePage from './pages/execution/StructurePage';
+import TasksPage from './pages/execution/TasksPage';
+import CommunicationPage from './pages/execution/CommunicationPage';
+import ResourcesPage from './pages/execution/ResourcesPage';
+import FeedbackPage from './pages/execution/FeedbackPage';
+import ChangePage from './pages/execution/ChangePage';
 import MonitoringAlignmentPage from './pages/monitoring/MonitoringAlignmentPage';
 import MonitoringSection from './pages/monitoring/MonitoringSection';
 
@@ -376,17 +384,28 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Execution Section Route */}
+        <Route path="/execution" element={<MainLayout onLanguageChange={handleLanguageChange}><ExecutionSection /></MainLayout>}>
+  <Route index element={<DocumentsPage />} />
+  <Route path="documents" element={<DocumentsPage />} />
+  <Route path="structure" element={<StructurePage />} />
+  <Route path="tasks" element={<TasksPage />} />
+  <Route path="communication" element={<CommunicationPage />} />
+  <Route path="resources" element={<ResourcesPage />} />
+  <Route path="feedback" element={<FeedbackPage />} />
+  <Route path="change" element={<ChangePage />} />
+</Route>
         {/* Monitoring Pages handled by MonitoringSection with nested routes */}
-        <Route path="/monitoring" element={<MonitoringSection />}>
+        <Route path="/monitoring" element={<MainLayout onLanguageChange={handleLanguageChange}><MonitoringSection /></MainLayout>}>
   <Route index element={<div style={{ padding: 24, textAlign: 'center' }}>اختر قسم التنفيذ من القائمة الجانبية</div>} />
-  <Route path="setup" element={<SetupMonitoringPage />} />
-  <Route path="communication" element={<CommunicationMonitoringPage />} />
-  <Route path="roadmap" element={<RoadmapMonitoringPage />} />
-  <Route path="resources" element={<ResourcesMonitoringPage />} />
-  <Route path="feedback" element={<FeedbackMonitoringPage />} />
-  <Route path="projects" element={<ProjectsMonitoringPage />} />
-  <Route path="support" element={<SupportMonitoringPage />} />
-  <Route path="alignment" element={<AlignmentMonitoringPage />} />
+  <Route path="setup" element={<MonitoringSetupPage />} />
+  <Route path="communication" element={<MonitoringCommunicationPage />} />
+  <Route path="roadmap" element={<MonitoringRoadmapPage />} />
+  <Route path="resources" element={<MonitoringResourcesPage />} />
+  <Route path="feedback" element={<MonitoringFeedbackPage />} />
+  <Route path="projects" element={<MonitoringProjectsPage />} />
+  <Route path="support" element={<MonitoringSupportPage />} />
+  <Route path="alignment" element={<MonitoringAlignmentPage />} />
 </Route>
 
         {/* Committee Section Routes */}
@@ -440,7 +459,7 @@ function App() {
         </Route>
 
         <Route path="/training/*" element={<TrainingSection />} />
-        <Route path="/monitoring/*" element={<MonitoringSection />} />
+        
         <Route path="/evaluation" element={<MainLayout onLanguageChange={handleLanguageChange}><div>Evaluation Section</div></MainLayout>} />
         <Route path="/basic-info" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
   <Route index element={<ProjectDataWizard />} />

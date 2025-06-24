@@ -142,11 +142,11 @@ const CommitteesDashboard = () => {
                       <DeleteIcon />
                     </IconButton>
                     <Dialog open={deleteDialogOpen} onClose={cancelDeleteCommittee}>
-                      <DialogTitle>{t('confirmation')}</DialogTitle>
+                      <DialogTitle>{t('confirm')}</DialogTitle>
                       <DialogContent>
                         {committeeToDelete != null && committees.find(c => c.id === committeeToDelete)
-                          ? t('committee.deleteConfirmationWithName', { name: committees.find(c => c.id === committeeToDelete).name })
-                          : t('committee.deleteConfirmation', 'Are you sure you want to delete this committee?')}
+                          ? t('confirm', { name: committees.find(c => c.id === committeeToDelete).name })
+                          : t('confirm', 'Are you sure you want to delete this committee?')}
                       </DialogContent>
                       <DialogActions>
                         <Button onClick={cancelDeleteCommittee}>{t('cancel')}</Button>

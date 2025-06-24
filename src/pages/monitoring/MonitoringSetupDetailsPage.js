@@ -16,7 +16,7 @@ const MonitoringSetupDetailsPage = () => {
 
   const steps = [
     t('monitoring.setup.projectInfo.title'),
-    t('monitoring.setup.team.title'),
+    t('monitoring.setup.team'),
     t('monitoring.setup.timeline'),
     t('monitoring.setup.documentUpload')
   ];
@@ -39,7 +39,7 @@ const MonitoringSetupDetailsPage = () => {
           <TextField label={t('monitoring.setup.projectInfo.projectName')} name="projectName" fullWidth value={form.projectName} onChange={handleChange} sx={{ mb: 2 }} />
         )}
         {activeStep === 1 && (
-          <TextField label={t('monitoring.setup.team.title')} name="team" fullWidth value={form.team} onChange={handleChange} sx={{ mb: 2 }} />
+          <TextField label={t('monitoring.setup.team')} name="team" fullWidth value={form.team} onChange={handleChange} sx={{ mb: 2 }} />
         )}
         {activeStep === 2 && (
           <Grid container spacing={2}>

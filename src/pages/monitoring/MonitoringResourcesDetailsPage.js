@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, TextField } from '@mui/material';
+import { Box, Typography, Paper, Button, TextField, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 const MonitoringResourcesDetailsPage = () => {
@@ -18,11 +18,11 @@ const MonitoringResourcesDetailsPage = () => {
   return (
     <Box p={3}>
       <Typography variant="h5" gutterBottom>{t('monitoring.resources.title')}</Typography>
-      <Paper sx={{ p: 3, mb: 2 }}>
-        <TextField label={t('monitoring.resources.name')} name="name" value={resource.name} onChange={e => setResource({ ...resource, name: e.target.value })} sx={{ mr: 1 }} />
-        <TextField label={t('monitoring.resources.type')} name="type" value={resource.type} onChange={e => setResource({ ...resource, type: e.target.value })} sx={{ mr: 1 }} />
-        <TextField label={t('monitoring.resources.quantity')} name="quantity" value={resource.quantity} onChange={e => setResource({ ...resource, quantity: e.target.value })} sx={{ mr: 1 }} />
-        <Button onClick={handleAdd} variant="contained">{t('add')}</Button>
+      <Paper sx={{ p: 2, mb: 2 }}>
+        <TextField label={t('monitoring.resources.name')} name="name" value={resource.name} onChange={e => setResource({ ...resource, name: e.target.value })} sx={{ mr: 1, mb: 1 }} />
+        <TextField label={t('monitoring.resources.type')} name="type" value={resource.type} onChange={e => setResource({ ...resource, type: e.target.value })} sx={{ mr: 1, mb: 1 }} />
+        <TextField label={t('monitoring.resources.quantity')} name="quantity" type="number" value={resource.quantity} onChange={e => setResource({ ...resource, quantity: e.target.value })} sx={{ mr: 1, mb: 1 }} />
+        <Button onClick={handleAdd} variant="contained" sx={{ mt: 1 }}>{t('add')}</Button>
       </Paper>
       <Table>
         <TableHead>

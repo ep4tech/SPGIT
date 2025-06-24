@@ -130,7 +130,7 @@ const [deleteTarget, setDeleteTarget] = useState(null);
         ))}
       </Grid>
     <Dialog open={deleteDialogOpen} onClose={() => setDeleteDialogOpen(false)}>
-  <DialogTitle>{t('confirmation')}</DialogTitle>
+  <DialogTitle>{t('confirm')}</DialogTitle>
   <DialogContent>
     {deleteTarget && documents[deleteTarget] && documents[deleteTarget].name
       ? t('dataWizard.documents.deleteConfirmationWithName', { name: documents[deleteTarget].name })

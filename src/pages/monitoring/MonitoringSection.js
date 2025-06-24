@@ -27,14 +27,14 @@ const MonitoringSection = () => {
   const location = useLocation();
 
   const monitoringMenu = [
-    { id: 'setup', label: t('monitoring.menu.setup'), icon: <GroupWorkIcon />, route: '/monitoring/setup' },
+    { id: 'alignment', label: t('monitoring.menu.alignment'), icon: <LinkIcon />, route: '/monitoring/alignment' },
     { id: 'communication', label: t('monitoring.menu.communication'), icon: <ForumIcon />, route: '/monitoring/communication' },
     { id: 'roadmap', label: t('monitoring.menu.roadmap'), icon: <MapIcon />, route: '/monitoring/roadmap' },
     { id: 'resources', label: t('monitoring.menu.resources'), icon: <BuildIcon />, route: '/monitoring/resources' },
     { id: 'feedback', label: t('monitoring.menu.feedback'), icon: <FeedbackIcon />, route: '/monitoring/feedback' },
     { id: 'projects', label: t('monitoring.menu.projects'), icon: <AssignmentIcon />, route: '/monitoring/projects' },
     { id: 'support', label: t('monitoring.menu.support'), icon: <SupportIcon />, route: '/monitoring/support' },
-    { id: 'alignment', label: t('monitoring.menu.alignment'), icon: <LinkIcon />, route: '/monitoring/alignment' },
+    { id: 'setup', label: t('monitoring.menu.setup'), icon: <GroupWorkIcon />, route: '/monitoring/setup' },
   ];
 
   return (

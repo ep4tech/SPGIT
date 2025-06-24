@@ -3,10 +3,9 @@ import { Box, Typography, TextField, Button, Paper, List, ListItem, ListItemText
 import { useTranslation } from 'react-i18next';
 
 const MonitoringCommunicationPage = () => {
-  console.log('======>> We ae in pages/monitoring/MonitoringCommunicationPage.js');
   const { t } = useTranslation();
-  const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = React.useState('');
+  const [messages, setMessages] = React.useState([]);
 
   const handleSend = () => {
     if (message.trim()) {

@@ -45,8 +45,8 @@ function flatten(obj, prefix = '', result = {}) {
 }
 
 // Main script
-const SRC_DIR = path.resolve(__dirname, 'src');
-const TRANSLATION_FILE = path.resolve(__dirname, 'src', 'translations.js');
+const SRC_DIR = path.resolve(__dirname, '../src');
+const TRANSLATION_FILE = path.resolve(__dirname, '../src', 'translations.json');
 const OUTPUT_FILE = path.resolve(__dirname, 'missing_translation_keys_report.txt');
 
 // 1. Get all code files
@@ -64,19 +64,15 @@ codeFiles.forEach(file => {
 
 // 3. Load and flatten translation keys
 let translations;
+let flatTranslations;
 try {
   const translationModule = fs.readFileSync(TRANSLATION_FILE, 'utf8');
-  // Use regex to extract the JS object for translations.en
-  const match = translationModule.match(/en:\s*({[\s\S]*?})\s*,\s*ar:/);
-  if (!match) throw new Error('Could not find English translations object');
-  const enObjStr = match[1];
-  // eslint-disable-next-line no-eval
-  translations = eval('(' + enObjStr + ')');
+  translations = JSON.parse(translationModule);
+  flatTranslations = flatten(translations.en);
 } catch (err) {
   console.error('Failed to parse translation file:', err);
   process.exit(1);
 }
-const flatTranslations = flatten(translations);
 
 // 4. Compare and collect missing keys (with line numbers)
 let report = '';
