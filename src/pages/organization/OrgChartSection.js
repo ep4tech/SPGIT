@@ -1,12 +1,4 @@
-import React, { useState } from 'react';
-import { Tree, TreeNode } from 'react-organizational-chart';
-import { Button, TextField, IconButton, Tooltip, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import { useTranslation } from 'react-i18next';
-
+// (file cleared for rebuild)
 const initialTree = {
   id: '1',
   name: 'الرئيس التنفيذي',

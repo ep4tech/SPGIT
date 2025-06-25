@@ -34,6 +34,7 @@ import SupportIcon from '@mui/icons-material/Support';
 import LinkIcon from '@mui/icons-material/Link';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare'; // Used for organization tile
+import CommitteeMenu, { drawerWidth as committeeDrawerWidth } from '../pages/committees/CommitteeMenu';
 
 
 const MainLayout = (props) => {
@@ -112,21 +113,20 @@ const monitoringMenu = [
   const isMonitoringRoute = location.pathname.startsWith('/monitoring/');
   const selectedMonitoringRoute = monitoringMenu.find(item => location.pathname === item.route)?.route;
   const isOrgPermissionsRoute = location.pathname === '/organization-permissions';
+  const isCommitteesRoute = location.pathname.startsWith('/committees');
+  const isArabic = i18n.language === 'ar';
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh', maxHeight: '100vh', overflow: 'hidden' }}>
-      {/* Main Content Area */}
-      <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: '100vh', maxHeight: '100vh', overflow: 'hidden' }}>
-        <AppBar position="static" elevation={0}>
+    <>
+      <Box sx={{ display: 'flex', minHeight: '100vh', maxHeight: '100vh', overflow: 'hidden' }}>
+        <CssBaseline />
+        <AppBar position="fixed" elevation={0} sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
           <Toolbar>
             <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
               <img
                 src="/logo.png"
                 alt="Strategic Planning Logo"
-                style={{
-                  height: '40px',
-                  marginRight: '32px',
-                }}
+                style={{ height: '40px', marginRight: '32px' }}
               />
               <Typography variant="h6" component="div">
                 {t('appTitle')}
@@ -150,59 +150,66 @@ const monitoringMenu = [
             </IconButton>
           </Toolbar>
         </AppBar>
-        {/* Menus & Content */}
-        <Menu
-          anchorEl={languageMenu}
-          open={Boolean(languageMenu)}
-          onClose={() => setLanguageMenu(null)}
+        {isCommitteesRoute && <CommitteeMenu />}
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: 3,
+            marginRight: isCommitteesRoute && isArabic ? `${committeeDrawerWidth}px` : 0,
+            marginLeft: isCommitteesRoute && !isArabic ? `${committeeDrawerWidth}px` : 0,
+            width: { sm: `calc(100% - ${isCommitteesRoute ? committeeDrawerWidth : 0}px)` },
+          }}
         >
-          <MenuItem onClick={() => {
-            props.onLanguageChange('en');
-            setLanguageMenu(null);
-          }}>
-            English
-          </MenuItem>
-          <MenuItem onClick={() => {
-            props.onLanguageChange('ar');
-            setLanguageMenu(null);
-          }}>
-            عربي
-          </MenuItem>
-        </Menu>
-        <Menu
-          anchorEl={notificationMenu}
-          open={Boolean(notificationMenu)}
-          onClose={() => setNotificationMenu(null)}
-        >
-          {notifications.map(notification => (
-            <MenuItem key={notification.id} onClick={() => setNotificationMenu(null)}>
-              {notification.text}
+          <Toolbar />
+          {/* Only render Menus and Outlet ONCE! */}
+          <Menu
+            anchorEl={languageMenu}
+            open={Boolean(languageMenu)}
+            onClose={() => setLanguageMenu(null)}
+          >
+            <MenuItem onClick={() => {
+              props.onLanguageChange('en');
+              setLanguageMenu(null);
+            }}>
+              English
             </MenuItem>
-          ))}
-        </Menu>
-        <Menu
-          anchorEl={settingsMenu}
-          open={Boolean(settingsMenu)}
-          onClose={() => setSettingsMenu(null)}
-        >
-          <MenuItem onClick={() => setSettingsMenu(null)}>General Settings</MenuItem>
-          <MenuItem onClick={() => setSettingsMenu(null)}>Appearance</MenuItem>
-          <MenuItem onClick={() => setSettingsMenu(null)}>Notifications</MenuItem>
-        </Menu>
-        <Menu
-          anchorEl={userMenu}
-          open={Boolean(userMenu)}
-          onClose={() => setUserMenu(null)}
-        >
-          <MenuItem onClick={() => setUserMenu(null)}>Profile</MenuItem>
-          <MenuItem onClick={() => setUserMenu(null)}>My Account</MenuItem>
-          <MenuItem onClick={() => setUserMenu(null)}>Sign Out</MenuItem>
-        </Menu>
-        <Box sx={{ flex: 1, overflow: 'auto', display: 'flex', flexDirection: 'column' }}>
+            <MenuItem onClick={() => {
+              props.onLanguageChange('ar');
+              setLanguageMenu(null);
+            }}>
+              عربي
+            </MenuItem>
+          </Menu>
+          <Menu
+            anchorEl={notificationMenu}
+            open={Boolean(notificationMenu)}
+            onClose={() => setNotificationMenu(null)}
+          >
+            {notifications.map(n => (
+              <MenuItem key={n.id}>{n.text}</MenuItem>
+            ))}
+          </Menu>
+          <Menu
+            anchorEl={settingsMenu}
+            open={Boolean(settingsMenu)}
+            onClose={() => setSettingsMenu(null)}
+          >
+            <MenuItem>{t('settings.profile')}</MenuItem>
+            <MenuItem>{t('settings.preferences')}</MenuItem>
+          </Menu>
+          <Menu
+            anchorEl={userMenu}
+            open={Boolean(userMenu)}
+            onClose={() => setUserMenu(null)}
+          >
+            <MenuItem>{t('user.profile')}</MenuItem>
+            <MenuItem>{t('user.logout')}</MenuItem>
+          </Menu>
           <Outlet />
         </Box>
       </Box>
-    </Box>
+  </>  
   );
 };
 

@@ -122,7 +122,7 @@ export const translations = {
         planningTeam: 'Planning Team',
         internalTeam: 'Internal Team',
         externalTeam: 'External Team',
-        committees: 'Committees',
+        
         saveAndExit: 'Save and Exit'
       },
       evaluation: {
@@ -945,7 +945,7 @@ export const translations = {
         send: "Send"
       },
     },
-    committee: {
+    
       title: 'Committees and Meetings',
       description: 'Committees, teams details and meetings',
       addCommittee: 'Add Committee',
@@ -973,7 +973,7 @@ export const translations = {
       },
       committeeName: 'Committee Name',
       committeeRole: 'Committee Role',
-      committees: 'Committees',
+      
       committeeTypeHeader: 'Committee Type',
       statusHeader: 'Status',
       membersCountHeader: 'Members Count',
@@ -987,8 +987,8 @@ export const translations = {
       active: 'Active',
       inactive: 'Inactive',
       membersCount: 'Members Count',
-      committeeAssignments: 'Committee Assignments',
-      committeeFeedback: 'Committee Feedback',
+      
+      
       tabs: {
         overview: 'Overview',
         members: 'Members',
@@ -1002,11 +1002,11 @@ export const translations = {
         allFieldsRequired: 'All fields are required'
       },
       documents: 'Documents',
-      committeeDocuments: 'Committee Documents',
-      committeeFeedback: 'Committee Feedback',
-      committeeMeetings: 'Committee Meetings',
-      committeeMembers: 'Committee Members',
-      committeeCount: 'Committee Members'
+      
+      
+      
+      
+      
     },
 
     training: {

@@ -114,10 +114,23 @@ export const translations = {
     strategicAnalysis: {
       title: 'Strategic Analysis',
       description: 'Analyze internal and external factors affecting your organization',
+      menu: {
+        foundation: 'Foundation',
+        external: 'External Environment',
+        internal: 'Internal Environment',
+        analysis: 'SWOT Analysis',
+        mandates: 'Mandates & Responsibilities',
+        mission: 'Mission Statement'
+      },
       foundation: {
         title: 'Strategic Foundation',
         subtitle: 'Define the fundamental elements of your strategic plan',
-        responsibleTeam: 'Responsible Team'
+        responsibleTeam: 'Responsible Team',
+        sections: {
+          values: 'Values',
+          behaviors: 'Behaviors',
+          principles: 'Principles'
+        }
       },
       mandates: {
         title: 'Mandates & Responsibilities',
@@ -286,16 +299,16 @@ export const translations = {
     execution: {
       title: 'Execution English',
       description: 'Executin of the Strategy Plan',
-    menu: {
-      mainTitle: 'Execution Menu',
-      documents: 'Documents',
-      resources: 'Resources & Support Management',
-      feedback: 'Data & Feedback',
-      communication: 'Execution Communication',
-      structure: 'Structure',
-      tasks: 'Tasks',
-      change: 'Change'
-    },
+      menu: {
+        mainTitle: 'Execution Menu',
+        documents: 'Documents',
+        resources: 'Resources & Support Management',
+        feedback: 'Data & Feedback',
+        communication: 'Execution Communication',
+        structure: 'Structure',
+        tasks: 'Tasks',
+        change: 'Change'
+      },
       documents: {
         title: 'Documents',
         uploadTitle: 'Upload Document',
@@ -520,56 +533,147 @@ export const translations = {
       }
     },
     committee: {
-      sidebar: {
-        all: 'All Committees',
-        add: 'Add Committee',
-        upcoming: 'Upcoming Meetings',
-        actionItems: 'Action Items',
-        attendance: 'Attendance Overview',
-        members: 'Committee Members',
-        assignments: 'Committee Assignments',
-        meetings: 'Committee Meetings',
-        feedback: 'Committee Feedback',
-        documents: 'Committee Documents',
-        repository: 'Documents Repository'
-      },
-      notFound: 'Committee not found',
-      goToAll: 'Go to All Committees',
-      addCommittee: 'Add Committee',
-      title: 'Committees and Meetings',
-      description: 'Committees, teams details and meetings',
-      addCommittee: 'Add Committee',
-      pageTitle: 'Committees and Meetings',
-      searchPlaceholder: 'Search Committees',
-      nameHeader: 'Name',
-      statusHeader: 'Status',
-      typeHeader: 'Type',
-      menuMainTitle: 'Committees and Meetings',
-      menu: {
-        committeeDetails: 'Committee Details'
-      },
-      permanent: 'Permanent',
-      temporary: 'Temporary',
-      active: 'Active',
-      inactive: 'Inactive',
-      membersCount: 'Members Count',
-      committeeAssignments: 'Committee Assignments',
-      committeeFeedback: 'Committee Feedback',
-      tabs: {
-        overview: 'Overview',
-        members: 'Members',
-        assignments: 'Assignments',
-        meetings: 'Meetings',
-        feedback: 'Feedback',
-        documents: 'Documents'
-      },
-      editDetails: 'Edit Details',
-      validation: {
-        allFieldsRequired: 'All fields are required'
-      },
-      committeeDocuments: 'Committee Documents',
-      committeeMeetings: 'Committee Meetings',
-      committeeMembers: 'Committee Members'
+      committees: {
+        dashboard: {
+          title: 'Dashboard and Reports',
+          stats: {
+            inProgress: 'In Progress',
+            late: 'Late Tasks',
+            completed: 'Completed',
+            total: 'Total Tasks'
+          },
+          alerts: {
+            title: 'Alerts',
+            message: 'There are overdue tasks that require follow-up and execution!'
+          },
+          table: {
+            headers: {
+              description: 'Description',
+              assignedTo: 'Assigned To',
+              dueDate: 'Due Date',
+              priority: 'Priority',
+              status: 'Status'
+            }
+          }
+        },
+        management: {
+          title: 'Committee and Team Management',
+          assignRoles: 'Assign Members and Roles',
+          manageMeetings: 'Manage Meetings',
+          meetingDocs: 'Meeting Documentation',
+          manageTasks: 'Manage Tasks',
+          dashboard: 'Dashboard and Reports',
+          nameLabel: 'Committee or Team Name:',
+          namePlaceholder: 'Enter committee or team name',
+          objectivesLabel: 'Objectives:',
+          objectivesPlaceholder: 'Specify committee or team objectives',
+          startDateLabel: 'Start Date:',
+          endDateLabel: 'End Date:',
+          permissionsLabel: 'Permissions:',
+          permissionsPlaceholder: 'Specify permissions (optional)',
+          membersLabel: 'Members:',
+          memberNamePlaceholder: 'Member Name',
+          memberEmailPlaceholder: 'Email (optional)',
+          addMemberButton: 'Add Member',
+          removeMemberButton: 'Remove',
+          addCommitteeButton: 'Add Committee/Team',
+          addedCommitteesTitle: 'Added Committees and Teams',
+          table: {
+            name: 'Name',
+            members: 'Members',
+            objectives: 'Objectives',
+            period: 'Period',
+            permissions: 'Permissions'
+          },
+          noCommittees: 'No committees or teams added yet.',
+          role: {
+            Chair: 'Chair',
+            Coordinator: 'Coordinator',
+            Member: 'Member'
+          }
+        },
+        roles: {
+          title: 'Assign Members and Roles',
+          selectCommitteeLabel: 'Select Committee or Team:',
+          memberNameHeader: 'Member Name',
+          roleHeader: 'Role',
+          'رئيس': 'Chair',
+          'مقرر': 'Coordinator',
+          'عضو': 'Member'
+        },
+        meetings: {
+          title: 'Manage Meetings',
+          timeLabel: 'Time:',
+          invitedMembersLabel: 'Invited Members',
+          attendancePlaceholder: '- Attendance/Excuse -',
+          attendancePresent: 'Present',
+          attendanceAbsent: 'Excused',
+          notesLabel: 'Meeting Notes:',
+          addMeetingButton: 'Schedule Meeting',
+          scheduledMeetingsTitle: 'Scheduled Meetings',
+          tableHeaderCommittee: 'Committee/Team',
+          tableHeaderDate: 'Date',
+          tableHeaderTime: 'Time',
+          tableHeaderAttendance: 'Attendance',
+          tableHeaderAbsent: 'Excuse',
+          tableHeaderNotes: 'Notes',
+          noMeetingsFound: 'No meetings found.'
+        },
+        tasks: {
+          title: 'Manage Tasks from Meetings',
+          descriptionLabel: 'Task Description',
+          descriptionPlaceholder: 'Enter task description',
+          assignedToLabel: 'Assign To',
+          dueDateLabel: 'Due Date',
+          priorityLabel: 'Priority',
+          statusLabel: 'Status',
+          addTaskButton: 'Add Task',
+          tasksTableTitle: 'Tasks Table',
+          tasksTable: {
+            descriptionHeader: 'Description',
+            assignedToHeader: 'Assigned To',
+            dueDateHeader: 'Due Date',
+            priorityHeader: 'Priority',
+            statusHeader: 'Status'
+          },
+          noTasksMessage: 'No tasks yet.'
+        },
+        meetingDocs: {
+          title: 'Meeting Documentation',
+          meetingLabel: 'Meeting',
+          minutesLabel: 'Meeting Minutes',
+          minutesPlaceholder: 'Enter meeting minutes',
+          fileLabel: 'Attach File or Form',
+          uploadButton: 'Document',
+          docsTitle: 'Minutes and Files Log',
+          meetingHeader: 'Meeting',
+          minutesHeader: 'Minutes',
+          fileHeader: 'Attached File',
+          noDocsMessage: 'No minutes or files yet.'
+        },
+        menu: {
+          dashboard: 'Dashboard',
+          management: 'Management',
+          roles: 'Roles',
+          meetings: 'Meetings',
+          meetingDocs: 'Meeting Docs',
+          tasks: 'Tasks',
+          committeeDetails: 'Committee Details'
+        },
+        menuMainTitle: 'Committees and Meetings',
+        pageTitle: 'Committees and Meetings',
+        title: 'Committees and Meetings',
+        searchPlaceholder: 'Search Committees',
+        nameHeader: 'Name',
+        statusHeader: 'Status',
+        typeHeader: 'Type',
+        permanent: 'Permanent',
+        temporary: 'Temporary',
+        active: 'Active',
+        notFound: 'Committee not found',
+        goToAll: 'Go to All Committees',
+        addCommittee: 'Add Committee'
+      }
     },
     training: {
       title: 'Training',
@@ -715,25 +819,38 @@ export const translations = {
     strategicAnalysis: {
       title: 'التحليل الاستراتيجي',
       description: 'تحليل العوامل الداخلية والخارجية المؤثرة على منظمتك',
+      menu: {
+        foundation: 'الأساس الاستراتيجي',
+        external: 'بيئة خارجية',
+        internal: 'بيئة داخلية',
+        analysis: 'التحليل الرباعي',
+        mandates: 'الصلاحيات والمسؤوليات',
+        mission: 'بيان الرسالة'
+      },
       foundation: {
         title: 'الأساس الاستراتيجي',
-        subtitle: 'حدد العناصر الأساسية لخطتك الاستراتيجية',
-        responsibleTeam: 'الفريق المسؤول'
+        subtitle: 'حدد العناصر الأساسيةلخطتك الاستراتيجية',
+        responsibleTeam: 'الفريق المسؤول',
+        sections: {
+          values: 'القيم',
+          behaviors: 'السلوك',
+          principles: 'المبادئ'
+        }
       },
       mandates: {
-        title: 'الولايات والمسؤوليات',
+        title: 'الصلاحيات والمسؤوليات',
         newMandate: 'ولاية جديدة',
         newResponsibility: 'مسؤولية جديدة'
       },
       mission: {
-        title: 'بيان المهمة',
+        title: 'بيان الرسالة',
         subtitle: 'حدد وصياغة بيان مهمتك',
-        suggestedTitle: 'بيانات المهمة المقترحة من الذكاء الاصطناعي',
-        suggestedDesc: 'بيانات المهمة المقترحة من الذكاء الاصطناعي بناءً على مدخلاتك',
+        suggestedTitle: 'بيانات الرسالة المقترحة من الذكاء الاصطناعي',
+        suggestedDesc: 'بيانات الرسالة المقترحة من الذكاء الاصطناعي بناءً على مدخلاتك',
         editableTitle: 'مسودة العمل',
         editableDesc: 'عدل وصقل بيان مهمتك',
-        finalTitle: 'بيان المهمة النهائي',
-        finalDesc: 'بيان المهمة المعتمد لديك',
+        finalTitle: 'بيان الرسالة النهائي',
+        finalDesc: 'بيان الرسالة المعتمد لديك',
         generateButton: 'إنشاء اقتراحات',
         copyToEditable: 'استخدام كمسودة',
         copyToFinal: 'اعتماد البيان',
@@ -750,8 +867,8 @@ export const translations = {
         economicDesc: 'تحليل العوامل الاقتصادية والمالية',
         social: 'العوامل الاجتماعية',
         socialDesc: 'تحليل الاتجاهات الاجتماعية والثقافية',
-        technological: 'العوامل التكنولوجية',
-        technologicalDesc: 'تحليل التطورات التكنولوجية',
+        technological: 'العوامل التقنية',
+        technologicalDesc: 'تحليل التطورات التقنية',
         stakeholderAnalysis: 'تحليل أصحاب المصلحة',
         beneficiaries: 'المستفيدون',
         beneficiariesDesc: 'تحليل احتياجات وتوقعات المستفيدين',
@@ -800,6 +917,15 @@ export const translations = {
       description: 'تطوير الأهداف الاستراتيجية وخطط العمل',
       pageTitle: 'صياغة الاستراتيجية',
       pageDescription: 'تطوير الأهداف الاستراتيجية وخطط العمل',
+      menu: {
+        initialView: 'النظرة الأولية والاتجاهات الاستراتيجية',
+        visionChallenges: 'التحديات والاتجاهات',
+        strategicIssues: 'القضايا الاستراتيجية',
+        goalsObjectives: 'الغايات والأهداف',
+        objectivesProjects: 'مشروعات الأهداف',
+        coordination: 'تنسيق',
+        executivePlans: 'خطة التنفيذ'
+      },
       initialView: {
         title: 'النظرة الأولية والاتجاهات الاستراتيجية',
         items: {
@@ -887,17 +1013,18 @@ export const translations = {
     execution: {
       title: 'التنفيذ',
       description: 'تنفيذ خطة الاستراتيجية',
-    menu: {
-      mainTitle: 'قائمة التنفيذ',
-      documents: 'المستندات',
-      resources: 'إدارة الموارد والدعم',
-      feedback: 'البيانات والتغذية الراجعة',
-      communication: 'اتصالات التنفيذ',
-      structure: 'الهيكل',
-      tasks: 'المهام',
-      change: 'التغيير'
-    },
+      menu: {
+        mainTitle: 'قائمة التنفيذ',
+        documents: 'المستندات',
+        resources: 'إدارة الموارد والدعم',
+        feedback: 'البيانات والتغذية الراجعة',
+        communication: 'اتصالات التنفيذ',
+        structure: 'الهيكل',
+        tasks: 'المهام',
+        change: 'التغيير'
+      },
       documents: {
+        
         title: 'المستندات',
         uploadTitle: 'رفع مستند',
         titleField: 'العنوان',
@@ -1120,57 +1247,146 @@ export const translations = {
         send: 'إرسال'
       }
     },
-    committee: {
-      sidebar: {
-        all: 'جميع اللجان',
-        add: 'إضافة لجنة',
-        upcoming: 'الاجتماعات القادمة',
-        actionItems: 'بنود العمل',
-        attendance: 'نظرة عامة على الحضور',
-        members: 'أعضاء اللجنة',
-        assignments: 'مهام اللجنة',
-        meetings: 'اجتماعات اللجنة',
-        feedback: 'تغذية راجعة اللجنة',
-        documents: 'مستندات اللجنة',
-        repository: 'مستودع المستندات'
+    committees: {
+      dashboard: {
+        title: 'لوحة التحكم والتقارير',
+        stats: {
+          inProgress: 'قيد التنفيذ',
+          late: 'مهام متأخرة',
+          completed: 'مكتملة',
+          total: 'إجمالي المهام'
+        },
+        alerts: {
+          title: 'تنبيهات',
+          message: 'هناك مهام متأخرة تحتاج إلى متابعة وتنفيذ!'
+        },
+        table: {
+          headers: {
+            description: 'الوصف',
+            assignedTo: 'مُعيّن لـ',
+            dueDate: 'تاريخ الاستحقاق',
+            priority: 'الأولوية',
+            status: 'الحالة'
+          }
+        }
       },
-      notFound: 'اللجنة غير موجودة',
-      goToAll: 'الذهاب إلى جميع اللجان',
-      addCommittee: 'إضافة لجنة',
-      title: 'اللجان والاجتماعات',
-      description: 'تفاصيل اللجان والفرق والاجتماعات',
-      addCommittee: 'إضافة لجنة',
+      management: {
+        title: 'إدارة اللجان والفريق',
+        assignRoles: 'تعيين الأعضاء والأدوار',
+        manageMeetings: 'إدارة الاجتماعات',
+        meetingDocs: 'توثيق الاجتماعات',
+        manageTasks: 'إدارة المهام',
+        dashboard: 'لوحة التحكم والتقارير',
+        nameLabel: 'اسم اللجنة أو الفريق:',
+        namePlaceholder: 'أدخل اسم اللجنة أو الفريق',
+        objectivesLabel: 'الأهداف:',
+        objectivesPlaceholder: 'حدد أهداف اللجنة أو الفريق',
+        startDateLabel: 'تاريخ البدء:',
+        endDateLabel: 'تاريخ الانتهاء:',
+        permissionsLabel: 'الصلاحيات:',
+        permissionsPlaceholder: 'حدد الصلاحيات (اختياري)',
+        membersLabel: 'الأعضاء:',
+        memberNamePlaceholder: 'اسم العضو',
+        memberEmailPlaceholder: 'البريد الإلكتروني (اختياري)',
+        addMemberButton: 'إضافة عضو',
+        removeMemberButton: 'إزالة',
+        addCommitteeButton: 'إضافة لجنة/فريق',
+        addedCommitteesTitle: 'اللجان والفرق المضافة',
+        table: {
+          name: 'الاسم',
+          members: 'الأعضاء',
+          objectives: 'الأهداف',
+          period: 'المدة',
+          permissions: 'الصلاحيات'
+        },
+        noCommittees: 'لا توجد لجان أو فرق مضافة بعد.',
+        role: {
+          Chair: 'رئيس',
+          coordiator: 'مقرر',
+          member: 'عضو'
+        }
+      },
+      roles: {
+        title: 'تعيين الأعضاء والأدوار',
+        selectCommitteeLabel: 'اختر اللجنة أو الفريق:',
+        memberNameHeader: 'اسم العضو',
+        roleHeader: 'الدور',
+        'رئيس': 'رئيس',
+        'مقرر': 'مقرر',
+        'عضو': 'عضو'
+      },
+      meetings: {
+        title: 'إدارة الاجتماعات',
+        timeLabel: 'الوقت:',
+        invitedMembersLabel: 'الأعضاء المدعوون',
+        attendancePlaceholder: '- الحضور/الاعتذار -',
+        attendancePresent: 'حاضر',
+        attendanceAbsent: 'معتذر',
+        notesLabel: 'ملاحظات الاجتماع:',
+        addMeetingButton: 'جدولة اجتماع',
+        scheduledMeetingsTitle: 'الاجتماعات المجدولة',
+        tableHeaderCommittee: 'اللجنة/الفريق',
+        tableHeaderDate: 'التاريخ',
+        tableHeaderTime: 'الوقت',
+        tableHeaderAttendance: 'الحضور',
+        tableHeaderAbsent: 'الاعتذار',
+        tableHeaderNotes: 'ملاحظات',
+        noMeetingsFound: 'لا توجد اجتماعات.'
+      },
+      tasks: {
+        title: 'إدارة مهام الاجتماعات',
+        descriptionLabel: 'وصف المهمة',
+        descriptionPlaceholder: 'أدخل وصف المهمة',
+        assignedToLabel: 'تعيين لـ',
+        dueDateLabel: 'تاريخ الاستحقاق',
+        priorityLabel: 'الأولوية',
+        statusLabel: 'الحالة',
+        addTaskButton: 'إضافة مهمة',
+        tasksTableTitle: 'جدول المهام',
+        tasksTable: {
+          descriptionHeader: 'الوصف',
+          assignedToHeader: 'مُعيّن لـ',
+          dueDateHeader: 'تاريخ الاستحقاق',
+          priorityHeader: 'الأولوية',
+          statusHeader: 'الحالة'
+        },
+        noTasksMessage: 'لا توجد مهام بعد.'
+      },
+      meetingDocs: {
+        title: 'توثيق الاجتماعات',
+        meetingLabel: 'الاجتماع',
+        minutesLabel: 'محضر الاجتماع',
+        minutesPlaceholder: 'أدخل محضر الاجتماع',
+        fileLabel: 'إرفاق ملف أو نموذج',
+        uploadButton: 'توثيق',
+        docsTitle: 'سجل المحاضر والملفات',
+        meetingHeader: 'الاجتماع',
+        minutesHeader: 'المحضر',
+        fileHeader: 'الملف المرفق',
+        noDocsMessage: 'لا توجد محاضر أو ملفات بعد.'
+      },
+      menu: {
+        dashboard: 'لوحة التحكم',
+        management: 'الإدارة',
+        roles: 'الأدوار',
+        meetings: 'الاجتماعات',
+        meetingDocs: 'وثائق الاجتماعات',
+        tasks: 'المهام',
+        committeeDetails: 'تفاصيل اللجنة'
+      },
+      menuMainTitle: 'اللجان والاجتماعات',
       pageTitle: 'اللجان والاجتماعات',
+      title: 'اللجان والاجتماعات',
       searchPlaceholder: 'بحث اللجان',
       nameHeader: 'الاسم',
       statusHeader: 'الحالة',
       typeHeader: 'النوع',
-      menuMainTitle: 'اللجان والاجتماعات',
-      menu: {
-        committeeDetails: 'تفاصيل اللجنة'
-      },
       permanent: 'دائمة',
       temporary: 'مؤقتة',
       active: 'نشطة',
-      inactive: 'غير نشطة',
-      membersCount: 'عدد الأعضاء',
-      committeeAssignments: 'مهام اللجنة',
-      committeeFeedback: 'تغذية راجعة اللجنة',
-      tabs: {
-        overview: 'نظرة عامة',
-        members: 'الأعضاء',
-        assignments: 'المهام',
-        meetings: 'الاجتماعات',
-        feedback: 'التغذية الراجعة',
-        documents: 'المستندات'
-      },
-      editDetails: 'تعديل التفاصيل',
-      validation: {
-        allFieldsRequired: 'جميع الحقول مطلوبة'
-      },
-      committeeDocuments: 'مستندات اللجنة',
-      committeeMeetings: 'اجتماعات اللجنة',
-      committeeMembers: 'أعضاء اللجنة'
+      notFound: 'اللجنة غير موجودة',
+      goToAll: 'الانتقال إلى جميع اللجان',
+      addCommittee: 'إضافة لجنة'
     },
     training: {
       title: 'التدريب',

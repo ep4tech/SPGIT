@@ -1,13 +1,4 @@
-import React, { useState } from 'react';
-import { Button, TextField, List, ListItem, IconButton } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import UploadFileIcon from '@mui/icons-material/UploadFile';
-import { useTranslation } from 'react-i18next';
-
-const initialRegulations = [
-  { id: 1, name: 'لائحة الموارد البشرية', file: null },
-  { id: 2, name: 'نظام المالية', file: null },
-];
+// (file cleared for rebuild)
 
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';

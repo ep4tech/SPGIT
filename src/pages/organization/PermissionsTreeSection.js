@@ -1,12 +1,4 @@
-import React, { useState } from 'react';
-import TreeView from '@mui/lab/TreeView';
-import TreeItem from '@mui/lab/TreeItem';
-import { Button, TextField } from '@mui/material';
-import SecurityIcon from '@mui/icons-material/Security';
-import AssignmentIcon from '@mui/icons-material/Assignment';
-import BuildIcon from '@mui/icons-material/Build';
-import DescriptionIcon from '@mui/icons-material/Description';
-import { useTranslation } from 'react-i18next';
+// (file cleared for rebuild)
 
 const initialTree = [
   {
@@ -99,11 +91,11 @@ const PermissionsTreeSection = (props) => {
   const [permissionsByOrg, setPermissionsByOrg] = useState({
     '1': initialTree,
   });
-  const tree = permissionsByOrg[selectedOrgNodeId] || [];
+  const tree = permissionsByOrg[props.selectedOrgNodeId] || [];
   const [inputValue, setInputValue] = useState('');
   const [editingNodeId, setEditingNodeId] = useState(null);
-const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
-const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [deleteTarget, setDeleteTarget] = useState(null);
   const [editValue, setEditValue] = useState('');
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const [selectedNodeType, setSelectedNodeType] = useState(null);
@@ -151,7 +143,7 @@ const [deleteTarget, setDeleteTarget] = useState(null);
     }
     setPermissionsByOrg(prev => ({
       ...prev,
-      [selectedOrgNodeId]: newTree
+      [props.selectedOrgNodeId]: newTree
     }));
     setInputValue('');
   }

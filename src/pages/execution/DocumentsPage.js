@@ -5,7 +5,10 @@ import { Box, Typography, TextField, Button, Table, TableHead, TableRow, TableCe
 const DocumentsPage = () => {
   const { t } = useTranslation();
   return (
-    <Box p={3}>
+    <React.Fragment>
+      <div style={{color: 'red', fontWeight: 'bold'}}>DEBUG: DocumentsPage Rendered</div>
+      <Box p={3}>
+
       <Typography variant="h5" gutterBottom>{t('execution.documents.title')}</Typography>
       {/* Upload Document Section */}
       <Box mt={3} mb={4} p={2} bgcolor="#fafafa" borderRadius={2}>
@@ -37,6 +40,7 @@ const DocumentsPage = () => {
         </Box>
       </Box>
     </Box>
+    </React.Fragment>
   );
 };
 

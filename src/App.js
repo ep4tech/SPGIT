@@ -13,6 +13,15 @@ import ProjectDataWizard from './components/ProjectDataWizard';
 import StrategicAnalysis from './pages/strategicAnalysis';
 import StrategyFormulation from './components/StrategyFormulation';
 // All page-level components for strategic analysis and strategy formulation are now imported in their containers from src/pages/strategy/strategicAnalysis/ and src/pages/strategy/strategyFormulation/ respectively.
+import {
+  CommitteeManagementPage,
+  MemberRolesPage,
+  MeetingsPage,
+  MeetingDocsPage,
+  TasksPage
+} from './pages/committees';
+import CommitteeMenu from './pages/committees/CommitteeMenu';
+import CommitteesDashboardPage from './pages/committees/DashboardPage';
 import DashboardPage from './pages/dashboard/DashboardPage';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import MonitoringSetupPage from './pages/monitoring/MonitoringSetupPage';
@@ -22,36 +31,23 @@ import MonitoringResourcesPage from './pages/monitoring/MonitoringResourcesPage'
 import MonitoringFeedbackPage from './pages/monitoring/MonitoringFeedbackPage';
 import MonitoringProjectsPage from './pages/monitoring/MonitoringProjectsPage';
 import MonitoringSupportPage from './pages/monitoring/MonitoringSupportPage';
-import ExecutionSection from './pages/execution/ExecutionSection';
+import ExecutionSection from './components/ExecutionSection';
 import DocumentsPage from './pages/execution/DocumentsPage';
 import StructurePage from './pages/execution/StructurePage';
-import TasksPage from './pages/execution/TasksPage';
+
 import CommunicationPage from './pages/execution/CommunicationPage';
 import ResourcesPage from './pages/execution/ResourcesPage';
 import FeedbackPage from './pages/execution/FeedbackPage';
 import ChangePage from './pages/execution/ChangePage';
 import MonitoringAlignmentPage from './pages/monitoring/MonitoringAlignmentPage';
-import MonitoringSection from './pages/monitoring';
+import MonitoringSection from './components/MonitoringSection';
 
 // Committee and training page imports removed, as these are now routed via their respective containers/pages.
 // If you need to add direct routes for individual committee/training pages, import them from src/pages/committee/ or src/pages/training/.
-import CommitteeLayout from './pages/committee/CommitteeLayout';
-import CommitteesDashboard from './pages/committee/CommitteesDashboard';
 
-import CommitteeDetailsRoutes from './pages/committee/CommitteeDetailsRoutes';
-import AddCommitteePage from './pages/committee/AddCommitteePage';
-import UpcomingMeetingsPage from './pages/committee/UpcomingMeetingsPage';
-import ActionItemsPage from './pages/committee/ActionItemsPage';
-import AttendanceOverviewPage from './pages/committee/AttendanceOverviewPage';
-import DocumentsRepositoryPage from './pages/committee/DocumentsRepositoryPage';
-import CommitteeMembersPage from './pages/committee/CommitteeMembersPage';
-import CommitteeAssignmentsPage from './pages/committee/CommitteeAssignmentsPage';
-import CommitteeMeetingsPage from './pages/committee/CommitteeMeetingsPage';
-import CommitteeFeedbackPage from './pages/committee/CommitteeFeedbackPage';
-import CommitteeDocumentsPage from './pages/committee/CommitteeDocumentsPage';
 import TrainingSection from './pages/training';
 import ReportsSection from './pages/reports';
-import OrganizationPermissionsPage from './pages/organization/OrganizationPermissionsPage';
+import OrganizationSection from './components/OrganizationSection';
 import DashboardGrid from './components/DashboardGrid';
 import { ProjectProvider } from './contexts/ProjectContext';
 
@@ -169,53 +165,29 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Execution Section Route */}
-        <Route path="/execution" element={<MainLayout onLanguageChange={handleLanguageChange}><ExecutionSection /></MainLayout>}>
-  <Route index element={<DocumentsPage />} />
-  <Route path="documents" element={<DocumentsPage />} />
-  <Route path="structure" element={<StructurePage />} />
-  <Route path="tasks" element={<TasksPage />} />
-  <Route path="communication" element={<CommunicationPage />} />
-  <Route path="resources" element={<ResourcesPage />} />
-  <Route path="feedback" element={<FeedbackPage />} />
-  <Route path="change" element={<ChangePage />} />
-</Route>
+        <Route path="/execution" element={<ExecutionSection />} />
         {/* Monitoring Pages handled by MonitoringSection with nested routes */}
-        <Route path="/monitoring" element={<MainLayout onLanguageChange={handleLanguageChange}><MonitoringSection /></MainLayout>}>
-  <Route index element={<div style={{ padding: 24, textAlign: 'center' }}>اختر قسم التنفيذ من القائمة الجانبية</div>} />
-  <Route path="setup" element={<MonitoringSetupPage />} />
-  <Route path="communication" element={<MonitoringCommunicationPage />} />
-  <Route path="roadmap" element={<MonitoringRoadmapPage />} />
-  <Route path="resources" element={<MonitoringResourcesPage />} />
-  <Route path="feedback" element={<MonitoringFeedbackPage />} />
-  <Route path="projects" element={<MonitoringProjectsPage />} />
-  <Route path="support" element={<MonitoringSupportPage />} />
-  <Route path="alignment" element={<MonitoringAlignmentPage />} />
-</Route>
-
-        {/* Committee Section Routes */}
-        <Route path="/committee" element={<MainLayout onLanguageChange={handleLanguageChange}/>}> 
-  <Route element={<CommitteeLayout />}> 
-    <Route index element={<Navigate to="all" replace />} />
-    <Route path="all" element={<CommitteesDashboard />} />
-    <Route path="all/:committeeId/*" element={<CommitteeDetailsRoutes />} />
-    <Route path="add" element={<AddCommitteePage />} />
-    <Route path="upcoming-meetings" element={<UpcomingMeetingsPage />} />
-    <Route path="action-items" element={<ActionItemsPage />} />
-    <Route path="attendance-overview" element={<AttendanceOverviewPage />} />
-    <Route path="documents-repository" element={<DocumentsRepositoryPage />} />
-    <Route path="members" element={<CommitteeMembersPage />} />
-    <Route path="assignments" element={<CommitteeAssignmentsPage />} />
-    <Route path="meetings" element={<CommitteeMeetingsPage />} />
-    <Route path="feedback" element={<CommitteeFeedbackPage />} />
-    <Route path="documents" element={<CommitteeDocumentsPage />} />
-  </Route>
-</Route>
-
-        {/* Organization & Permissions Route */}
-        <Route path="/organization-permissions" element={<MainLayout onLanguageChange={handleLanguageChange}><OrganizationPermissionsPage /></MainLayout>} />
-
+        <Route path="/monitoring" element={<MonitoringSection />} />
+        {/* Organization Section Routes */}
+        <Route path="/organization" element={<MainLayout onLanguageChange={handleLanguageChange}/>}> 
+          <Route index element={<OrganizationSection />} />
+        </Route>
+        {/* Redirect old /committee route to new /committees/dashboard */}
+        <Route path="/committee" element={<Navigate to="/committees/dashboard" replace />} />
+        {/* Committees Section Routes (new system) */}
+        <Route path="/committees" element={<MainLayout onLanguageChange={handleLanguageChange}/>}> 
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard" element={<><CommitteeMenu /><CommitteesDashboardPage /></>} />
+          <Route path="management" element={<><CommitteeMenu /><CommitteeManagementPage /></>} />
+          <Route path="roles" element={<><CommitteeMenu /><MemberRolesPage /></>} />
+          <Route path="meetings" element={<><CommitteeMenu /><MeetingsPage /></>} />
+          <Route path="meeting-docs" element={<><CommitteeMenu /><MeetingDocsPage /></>} />
+          <Route path="tasks" element={<><CommitteeMenu /><TasksPage /></>} />
+        </Route>
+         {/* Organization & Permissions Route */}
+        
         {/* Main Dashboard Route (cleaned up) */}
-        <Route path="/" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
+        <Route path="/" element={<MainLayout onLanguageChange={handleLanguageChange} />}> 
           <Route index element={
             <>
               <ProjectSelector />
@@ -231,8 +203,7 @@ function App() {
         <Route path="/basic-info" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
   <Route index element={<ProjectDataWizard />} />
 </Route>
-        <Route path="/organization-permissions" element={<MainLayout onLanguageChange={handleLanguageChange}><OrganizationPermissionsPage /></MainLayout>} />
-        <Route path="/strategy" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
+                <Route path="/strategy" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
   <Route index element={<StrategicAnalysis />} />
 </Route>
         <Route path="/strategy-formulation" element={<MainLayout onLanguageChange={handleLanguageChange} />}>
